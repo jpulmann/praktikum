@@ -1,0 +1,52 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+set fit quiet
+set samples 1000
+set print "output/gnuplot_output.dat"
+#~ set border linewidth 1.5
+
+set term epslatex color colortext size 6, 4
+set output 'output/kombinovane_spektrum.tex'
+
+set yrange [200:4e5]
+set xrange [20:147]
+
+set xlabel '$2\theta\,/\,^\circ$'
+set ylabel 'Counts $N$'
+
+set logscale y
+
+set style fill transparent solid 0.7 noborder
+
+plot 'data/A19-pulmann_bez_Ni.xy' w boxes lc rgb '#69D2E7' title 'Spektrum bez Ni tienenia' , \
+ 'data/A19-pulmann.xy' w boxes lc rgb '#FA6900' title 'Spektrum s Ni tienením'
+
+set term epslatex monochrome size 6, 4
+
+set output 'output/kor_graph.tex'
+
+unset logscale
+
+tx = 0.65
+ty = 0.15
+spacing = 0.06
+
+
+set xrange [0:3]
+set yrange [*:*]
+
+set xlabel '$\cos\theta\cot\theta$'
+set ylabel '$a_{hkl}\,/\unit{\AA}$'
+
+f(x) = s*x+ a0
+fit f(x) 'output/kor.dat' using 1:3:4 via s, a0
+
+print 'ae ', a0, a0_err
+
+set label 1 sprintf('$a_e = (\input{output/ae.tex}) \unit{\AA}$', a0, a0_err) at graph tx, ty
+set label 2 sprintf('$s = (%1.1f\pm %1.1f) \cdot 10^{-3}\unit{\AA}$', s*1000, s_err*1000) at graph tx, ty-spacing
+
+
+plot 'output/kor.dat' using 1:3:2:4 with xyerrorbars lw 2 title 'Namerané $a_{hkl}$', f(x) lw 3 title 'Vážený fit vzťahom \ref{eq:teor:korekcia}'
