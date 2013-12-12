@@ -1,0 +1,14 @@
+##Body 20
+
+##Komentáre v protokole
+
+##Moje komentáre
+
+##Inštrukcie
+Spúštajte
+```
+>python process.py
+>gnuplot graph.gnp
+>pdflatex ulohaA19.tex
+>pdflatex ulohaA19.tex #kvôli citáciám
+```

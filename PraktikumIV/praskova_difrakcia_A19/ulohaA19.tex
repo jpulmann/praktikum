@@ -1,0 +1,239 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage[version=3]{mhchem}
+
+
+\usepackage{float}
+\newfloat{graph}{h}{graphs}
+\floatname{graph}{Graf}
+\usepackage{caption}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Rentgenografické difrakční určení mřížového parametru známé kubické látky}
+\author{Ján Pulmann}
+\date{13. 11. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Pripravte vzorku na meranie a merajte na komerčnom práškovom difraktometre. 
+	\item Z Braggovej rovnice vypočítajte medzirovinné vzdialenosti a mriežkové parametre pre jednotlivé difraktujúce roviny.
+    \item Urobte korekciu na inštrumentálne efekty a určte mriežkový parameter zadanej kubickej látky s maximálnou presnosťou
+    \item Nájdite štandardný práškový difraktogram danej látky v databázi {\it PDF-2}
+    \item Diskutujte odchýľky medzi určeným parametrom konkrétnej vzorky a tabelovaným mriežkovým parametrom.
+
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+Ak na kryštál dopadá žiarenie s vlnovou dĺžkou $\lambda$, budeme schopný v istých miestach pozorovať difrakčné maximá. Pre difrakciu na rovine s medzirovinnými vzdialenosťami $d_{hkl}$ musí žiarenie dopadať pod uhlom $\theta_{hkl}$ spĺňajúcim vzťah (\cite{stud}) 
+\begin{equation}
+\label{eq:teor:bragg}
+2 d_{hkl} \sin\theta_{hkl} = \lambda\,.
+\end{equation}
+
+V prípade práškovej difrakcie svietime monochromatickým R\"ontgenovým žiarením na vzorku zloženú z množstva malých kryštálov. Ak teda posvietime pod uhlom $\theta_{hkl}$ spĺňajúcim vzťah \ref{eq:teor:bragg} pre nejaké vybrané $h, k, l$, niektoré kryštáliky budú mať roviny orientované správne, aby vznikla difrakcia. V Bragg-Brentanovej geometrii bude uhol medzi žiarením a vzorkou rovnaký ako medzi žiarením a detektorom, budeme teda pozorovať signál pre uhol $2\theta_{hkl}$ od smeru pôvodného žiarenia. Spektrum je (z dôvodov konvencie) závislosť intenzity na $2\theta$.
+
+Pre kubickú mriežku platí jednoduchý vzťah pre medzirovinnú vzdialenosť rovín daných Millerovými indexami $hkl$ (z \cite{stud})
+
+\begin{equation}
+\label{eq:teor:medzi_rovinami}
+d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}\,.
+\end{equation}
+
+Medzi štruktúrnymi typmi vieme rozlíšíť z vyhasínacích podmienok:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l|l}
+štruktúrny typ & 
+difrakcia prebieha na rovinách 
+\\
+\midrule 
+primitívna  &   $h, k, l$ ľubovoľné \\
+priestorovo centrovaná & súčet $h + k + l$ párny \\
+plošne centrovaná & $h, k, l$ všetký párne alebo nepárne \\
+typ diamantu & ($h, k, l $ všetky párne so súčtom deliteľným 4) alebo všetky nepárne
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Vyhasínacie podmienky \label{tab:vyhasinanie}
+}
+\end{table}
+
+Na určenie štruktúrneho typu a koeficientov $h, k, l$ každé namerané $d_{hkl}$ vydelíme najnižším nameraným $d_{h_1 k_1 l_1}$. Toto číslo na mínus druhú značíme $Q_i$ a jeho hodnota je 
+\begin{equation}
+\label{eq:teor:Qi}
+Q_i := \left(\frac{d_{h_1 k_1 l_1}}{d_{hkl}}\right)^2 = \frac{h^2 + k^2 + l^2}{h_1^2 + k_1^2 + l_1^2}\,.
+\end{equation}
+Hodnota tohoto výrazu bude rôzna podľa vyhasínacích podmienok, 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}
+
+
+štruktúrny typ	& \multicolumn {10}{c}{$Q_i$}\\
+\midrule
+primitívna &1	&2	&3	&4	&5	&6	&8	&9	&10	&11\\
+priestorovo centrovaná &1	&2	&3	&4	&5	&6	&7	&8	&9	&10\\
+plošne centrovaná &1	&1.33	&2.66	&3.67	&4	&5.33	&6.33	&6.67	&8	&9\\
+typ diamantu	&1	&2.66	&3.67	&5.33	&6.33	&8	&9	&10.67	&11.67	&13.33\\
+
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Možné hodnoty pomeru $Q_i$ \label{tab:Qi}
+}
+\end{table}
+
+\subsection*{Korekcia}
+\cite{stud} uvádza vzťah pre korekciu nameraného mriežkového parametra. Ak zanedbáme členy popisujúce zbytkové napätie a poruchy kryštálovej mriežky, ostane člen popisujúci hlavne vysunutie vzorky z osi goniometru
+\begin{equation}
+\label{eq:teor:korekcia}
+a_{hkl} (\theta) = a_e + s \cos\theta \cot \theta\,,
+\end{equation}
+kde $a_{hkl}$ je spočítaná mriežková konštanta z namerného $d_{hkl}$, $a_e$ je extrapolovaný mriežkový parameter a $s$  je konštanta popisujúca geometriu prístroja.
+%%%
+\section*{Postup merania}
+\begin{itemize}
+\item Budeme merať v už spomínanej Bragg-Brentanovej geometrii. Používame prístroj \mbox{PANalytical} \mbox{X'PertPRO}. Urýchlovacie napätie je $40 \unit{kV}$. Za r\"ontgenovou lampou nasleduje optika na usmernenie zväzku. Pred detektorom je fólia z niklu slúžiaca hlavne na urezanie spektrálnej čiary $K_\beta$. 
+
+Použijeme lampu s medenou anódou. Charakteristické vlnové dĺžky, prislúchajúce prechodom $K_{\alpha_1}$, $K_{\alpha_2}$ a $K_{\beta}$ sú
+\begin{align*}
+\lambda_{\alpha_1} &= 1.54050 \,\mathrm{\AA} \\
+\lambda_{\alpha_2} &= 1.54434 \,\mathrm{\AA} \\
+\lambda_{\beta} &= 1.39217 \,\mathrm{\AA}
+\end{align*}
+
+\item V nameranom spektre určíme polohy dvojíc peakov (prekryv $K_{\alpha_1}$ a $K_{\alpha_2}$) prislúchajúcich difrakcii na jednej rovine. V programe WinPLOTR tieto peaky prekladáme súčtom dvoch lorentziánov (typ funkcie~$1/(1+x^2)$) a určíme tak polohy peakov. Z \ref{eq:teor:bragg} určíme $d_{hkl}$ a z pomerov $Q_i$ určíme štruktúrny typ látky. Potom môžeme určiť súčty $h^2 + k^2 + l^2$ a s pomocou vyhasínacých podmienok aj priamo čísla $h, k, l$. 
+\item Podľa vzťahu \ref{eq:teor:medzi_rovinami} dopočítame $a_{hkl}$. Teraz už môžeme zistiť korigovanú hodnotu mriežkového parametra prekladaním závislosťou \ref{eq:teor:korekcia}.
+\item V papierovej a elektronickej databáze vyhľadáme vzorku podľa najsilnejších nameraných peakov a porovnáme určený priežkový parameter. Tiež si môžeme pomôcť ďalšími vlastnosťami vzorky ako farba.
+\end{itemize}
+
+\subsection*{Pomôcky}
+Práškový difraktometer PANalytical X'PertPRO, vzorka, počítač
+%%%
+\section*{Výsledky merania}
+V grafe 1 sú namerané difrakčné záznamy. Okrem popísanej metódy merania sme merali (pre malé uhly) aj bez niklového filtru. V grafe pozorujeme väčšiu intenzitu a tiež výrazné zosilnenie niektorých peakov.
+
+V tabuľke 1 sú parametre prekladania jednotlivých peakov. Peaky sme museli prekladať súčtom dvoch lorentziánov, kvôli dvom blízkym čiaram $K_{\alpha_1}$ a $K_{\alpha_2}$. My sme určovali polohu ľavého, intenzívnejšieho peaku prislúchajúcemu žiareniu $K_{\alpha_1}$. Taktiež sme tu dopočítali medzirovinné vzdialenosti a pomery $Q_i$. Neistoty polôh a intenzít peakov sú neistoty prekladania z WinPLOTRu, tri peaky na najnižších uhloch majú zvýšenú neistotu - pri prekladaní sme totiž videli rozdiel určenej a skutočnej polohy peaku. Neistoty odvodených veličín vždy počítame podľa vzťahu o prenose chýb podľa prvých parciálnych derivácií.
+
+\begin{graph}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/kombinovane_spektrum.tex}
+\caption{ Spektrá namerané s a bez tienenia \label{graph:spektrum}}
+\end{graph}
+
+
+\begin{table}[h!]
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|c|c}
+$ 2\theta \,/\,^\circ $ & 
+Intenzita $N$ &
+$ d_{hkl}\,/\unit{\AA}$ & 
+$ Q_i$ 
+\\
+\midrule 
+\input{output/Qi.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Vypočítané medzirovinné vzdialenosti a pomery $d_{hkl}$\label{tab:Qi_merane}}
+\end{table}
+
+Pohľadom do tabuľky \ref{tab:Qi} už ľahko určíme, že naša vzorka je plošne centrovaná. Najmenšie pozorované $hkl$ teda je $111$ a platí $h^2 + k^2 + l^2 = 3Q_i$. Teraz už vieme určiť (v našom prípade bude určenie jednoznačné) hodnoty $h, k, l$ a teda aj $a_{hkl}$. Tento výpočet je v tabuľke \ref{tab:ahkl}
+
+\begin{table}[h!]
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|ccc|c}
+$ 2\theta \,/\,^\circ $ & 
+$3Q_i$ &
+$h$ &
+$k$ &
+$l$ &
+$a_{hkl}\,/\unit{\AA}$
+\\
+\midrule 
+\input{output/ahkl.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Určené Millerove koeficienty $h, k, l$ a dopočítané mriežkové parametre \label{tab:ahkl}}
+\end{table}
+
+Teraz ostáva určiť korigovaný mriežkový parameter pomocou vzťahu \ref{eq:teor:korekcia}. Závislosť nameraného $a_{hkl}$ na $\cos\theta\cot\theta$ je v grafe \ref{graph:korekcia} aj s preloženou hodnotou a parametrami fitu. Neistoty parametrov sú štatistické neistoty programu gnuplot. Pri prekladaní sú jednotlivé body vážené obrátenou hodnotou ich disperzie.
+
+\begin{graph}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/kor_graph.tex}
+\caption{Určenie extrapolovanej hodnoty mriežkového parametra \label{graph:korekcia} }
+\end{graph}
+
+Podľa $d_{hkl}$ tiež vyhľadáme možné látky v databáze. Najbližší kandidát je $\ce{LiF}$, ktorý spĺňa všetky vlastnosti. Jeho mriežkový parameter je v databáze {\it PDF-2} udávaný ako $4.0270\unit\AA$. Udávané intenzity peakov nezodpovedajú úplne presne nameraným intenzitám.
+
+Ďalší podobný kandidát, $\ce{Al}$, vylúčime aj na základe farby vzorky - tá je biela a nemetalická.
+
+%%%
+\section*{Diskusia}
+V grafe \ref{graph:spektrum} vidíme efekt niklového filtru. Znížil intenzitu všeobecne (čo má práve negatívny vplyv na meranie, pretože sa snažíme dosiahnuť čo najviac zaznamenaných lúčov), ale výrazne potlačil peaky prislúchajúce čiare $K_\beta$. Ďalšia pozorovaná čiara môže byť tiež čiara wolfrámu, ktorý znečistil anódu lampy kvôli vysokým teplotám. Na zázname s filtrom sú tieto peaky takmer nepozorovateľné, bez filtru dosahujú výšky ostatných peakov. My sa ich chceme zbaviť kvôli zjednodušieniu záznamu a vyhodnotenia.
+
+Pri fitovaní vo WinPLOTRi pre najmenšie uhly $2\theta$ už prekladaná funkcia nesúhlasila s nameranými hodnotami ideálne. Vidíme to aj na vypočítaných hodnotách $Q_i$, ktoré sa už na druhom desatinnom mieste líšia s hodnotami v tabuľke 2 \ref{tab:Qi}. Keďže všetky namerané hodnoty $Q_i$ sú väčšie ako tie tabelované, očakávame, že sme namerali príliš malé $d_{h_1 k_1 l_1}$. \cite{pres} udáva ako možný dôvod asymetrie peakov prílišnú štrbinu pred detektorom. Detektor potom zaznamenáva časť kuželu, na ktorom vzniká koštruktívna interferencia. Takéto vysvetlenie súhlasí s pozorovaním, že asymetria je veľká pre malé uhly - malé uhly znamenajú väčší polomer krivosti a teda väčší efekt zakrivenia kužela.
+
+Priložený záznam z \textit{PDF-2} udáva pomer intenzít prvých troch peakov ako $95:100:48$, my sme ale pozorovali skôr $41:100:28$.  \cite{pres} spomína, že kvôli drveniu častíc nám ostávajú pomerne veľké veľkosti a tým sa obmedzuje ich počet. Menší počet častíc potom spôsobí systematické odchýľky kvôli nehomogenite ich rozloženia ich orientácií.
+
+Vidíme, že sme určili hodnotu mriežkového parametru s dobrou presnosťou - 5 platných cifier a v rámci chyby merania sa zhoduje s udávanou hodnotou mriežkovej konštantny. Mali sme zrejme šťastie, že išlo o čistú vzorku a správne sa nám podarilo skorigovať vplyvy meracieho prístroja. Je možné, že je určenie neistoty $a_e$ je príliš optimistické. 
+
+Ďalšie chyby mohli spôsobiť práve javy, ktorých popis sme nezahrnuli do vzťahu \ref{eq:teor:korekcia} - napätie vo vzorke a kryštálové poruchy. 
+
+%%%
+\section*{Záver}
+Namerali sme spektrum vzorky (graf \ref{graph:spektrum}) a určili sme plohy peakov. Dopočítali sme $d_{hkl}$ a $Q_i$  - tabuľka \ref{tab:Qi_merane}. Určili sme, že ide o plošne centrovanú látku a dopočítali sme mriežkové parametre - tabuľka \ref{tab:ahkl}. Nakoniec sme urobili korekciu na vyosenie vzorky (ktorá bola cielene vyosená, aby sme namerali nejaký efekt) v grafe \ref{graph:korekcia} a určili sme extrapolovaný mriežkový parameter
+$$
+a_e = (\input{output/ae.tex})\unit\AA\,.
+$$
+Meraný materiál sme identifikovali ako fluorid lítny.
+
+Ku protokolu je okrem záznamu z merania priložená aj karta $\ce{LiF}$ a vytlačené spektrum pre meranie s filtrom.
+
+%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    \emph{Stránky s pokynmi ku úlohe A19} \\
+    \url{http://krystal.karlov.mff.cuni.cz/kfes/vyuka/lp/
+} 18.11.2013
+
+\bibitem{pres}
+    Systematic Errors and Sample Preparation for X-Ray Powder Diffraction.  \textit{Jim Connolly}. prezentácia
+    \url{http://epswww.unm.edu/xrd/xrdclass/07-Errors-Sample-Prep-PPT.pdf}
+
+
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,22 @@
+ => TITLE: 
+! Ang_init   Ang_fin  Nbac Npeak  Ncyc  Inte  Inst  Jobt  Cont Weight Corr Constr  Percent   IRF
+   44.3632   45.4662     2     1    30     1   -99     1     0     0     0      0        0     0
+    1.540500    1.544340  <=  Lambda1 & Lambda2
+!  Global Profile Parameters:
+        0.500000     0      <= Kalph2/Kalph1 ratio      &  Flag 
+        0.000000     0      <= Asymmetry parameter(S_L) &    "  
+        0.000000     0      <= Asymmetry parameter(D_L) &    "  
+        0.000000     0      <= Parameter  U             &    "  
+        0.000000     0      <= Parameter  V             &    "  
+        0.000000     0      <= Parameter  W             &    "  
+        0.000000     0      <= Parameter  Z             &    "  
+        0.951103     1      <= Parameter Eta0           &    "  
+        0.000000     0      <= Parameter  X             &    "  
+!  Background Parameters:
+!    2Theta/TOF/Energy   Background    Flag
+       44.3632      486.4871     1
+       45.4662     -403.2844     1
+!  Reflection Parameters:
+!       2Theta     Intensity    Shift-FWHM     Shift-Eta    Flags 
+     44.913651      15155.18      0.106269      0.000000  1  1  1  0
+!  Chi2 =    418.859    

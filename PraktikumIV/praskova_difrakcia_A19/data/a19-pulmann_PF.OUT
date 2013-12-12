@@ -1,0 +1,321 @@
+ 
+ 
+            ------------------------------------ 
+                  --- PROGRAM: XRFIT ---
+            (Author: J. Rodriguez-Carvajal, LLB)
+                 (version 3.0 October 1998) 
+            ------------------------------------ 
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => 2Theta range, peaks and cycles read 
+ => 2Theta(init)    :    44.355946
+ => 2Theta(fin )    :    45.469719
+ => Number of peaks :     1
+ => Number of background points :     2
+ => Number of cycles:    30
+ => Wave (A)               :      1.540500      1.544340
+
+ => Global parameters                 Flag
+ => Kalph2/Kalph1 ratio    :      0.500000  0
+ => Asymmetry parameter S_L:      0.000000  0
+ => Asymmetry parameter D_L:      0.000000  0
+
+      Profile Parameters for Pseudo-Voigt
+        pV(x) = ETA* L(x) + (1-ETA)* G(x)
+    FWHM = SQRT((U tanT + V) tanT + W) + Z/cosT
+    ETA  = Eta0 + X * 2T 
+
+ => Parameter  U           :      0.000000  0
+ => Parameter  V           :      0.000000  0
+ => Parameter  W           :      0.000000  0
+ => Parameter  Z           :      0.000000  0
+ => Parameter Eta0         :      0.000100  1
+ => Parameter  X           :      0.000000  0
+
+ => Background parameters
+      Scatt. Variable     Background  Flag
+           44.3559         1105.9974   1
+           45.4697         1278.8083   1
+
+      Position      Intensity      D-Gamma         D-Eta          Flags
+
+     44.925663       8147.62      0.106071      0.000000       1  1  1  0
+
+ => Total number of refined parameters:    6
+
+
+ -------------------------------------------------
+ => Marquardt Least Squares Fitting for  30 cycles
+ -------------------------------------------------
+
+ => Number of observations   :     85
+ => Number of free parameters:      6
+ => Range of variable X      : (     44.3632,     45.4662)
+
+
+ => Cycle No.:    1  Chi2 =    583.978699
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.000100        0.962597        0.962697        0.003930      244.954620
+ background_1       10      1105.997440     -460.685913      645.311523       10.544401      -43.690098
+ background_2       11      1278.808350    -1357.710940      -78.902641       11.797324     -115.086349
+ Bragg_Pos_1        12        44.925663       -0.019196       44.906467        0.000110     -174.023727
+ Intensity_1        13      8147.617680     6545.130370    14692.748000       18.655415      350.843475
+ Shf_Gamma_1        14         0.106071       -0.010710        0.095361        0.000240      -44.702103
+
+
+ => Cycle No.:    2  Chi2 =    456.723633
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.962697       -0.074107        0.888590        0.002129      -34.808128
+ background_1       10       645.311523     -196.582336      448.729187       10.471868      -18.772425
+ background_2       11       -78.902641     -419.783966     -498.686615       11.147978      -37.655617
+ Bragg_Pos_1        12        44.906467        0.008186       44.914654        0.000083       99.068008
+ Intensity_1        13     14692.748000      645.605469    15338.353500       18.329578       35.222057
+ Shf_Gamma_1        14         0.095361        0.025016        0.120377        0.000274       91.275513
+
+
+ => Cycle No.:    3  Chi2 =    455.011810
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.888590        0.061266        0.949857        0.002169       28.247467
+ background_1       10       448.729187      -42.858490      405.870697       11.014618       -3.891056
+ background_2       11      -498.686615      126.803406     -371.883209       12.000610       10.566413
+ Bragg_Pos_1        12        44.914654       -0.004135       44.910519        0.000100      -41.547787
+ Intensity_1        13     15338.353500     -118.905273    15219.448200       19.280199       -6.167222
+ Shf_Gamma_1        14         0.120377       -0.018414        0.101963        0.000359      -51.314400
+
+
+ => Cycle No.:    4  Chi2 =    428.559509
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.949857       -0.031965        0.917891        0.002087      -15.313006
+ background_1       10       405.870697       81.656586      487.527283       10.613768        7.693459
+ background_2       11      -371.883209      -66.257568     -438.140778       11.448665       -5.787362
+ Bragg_Pos_1        12        44.910519        0.003803       44.914322        0.000086       44.225166
+ Intensity_1        13     15219.448200      -23.244141    15196.204100       18.572865       -1.251511
+ Shf_Gamma_1        14         0.101963        0.010775        0.112738        0.000290       37.161018
+
+
+ => Cycle No.:    5  Chi2 =    426.977661
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.917891        0.032887        0.950778        0.002179       15.090474
+ background_1       10       487.527283      -31.951782      455.575500       10.914344       -2.927504
+ background_2       11      -438.140778       58.716949     -379.423828       11.917902        4.926786
+ Bragg_Pos_1        12        44.914322       -0.002090       44.912231        0.000095      -21.914854
+ Intensity_1        13     15196.204100      -27.822266    15168.381800       19.151438       -1.452751
+ Shf_Gamma_1        14         0.112738       -0.008844        0.103895        0.000337      -26.236399
+
+
+ => Cycle No.:    6  Chi2 =    421.634583
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.950778       -0.015752        0.935026        0.002116       -7.442955
+ background_1       10       455.575500       35.663483      491.238983       10.664903        3.344004
+ background_2       11      -379.423828      -40.065033     -419.488861       11.576810       -3.460801
+ Bragg_Pos_1        12        44.912231        0.001869       44.914101        0.000088       21.178606
+ Intensity_1        13     15168.381800       -1.088867    15167.293000       18.693563       -0.058248
+ Shf_Gamma_1        14         0.103895        0.005449        0.109344        0.000302       18.060986
+
+
+ => Cycle No.:    7  Chi2 =    420.735535
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.935026        0.016502        0.951528        0.002157        7.652114
+ background_1       10       491.238983      -16.901733      474.337250       10.810096       -1.563514
+ background_2       11      -419.488861       30.402130     -389.086731       11.807568        2.574800
+ Bragg_Pos_1        12        44.914101       -0.001102       44.912998        0.000093      -11.855761
+ Intensity_1        13     15167.293000      -11.332031    15155.960900       18.974058       -0.597238
+ Shf_Gamma_1        14         0.109344       -0.004367        0.104977        0.000325      -13.437514
+
+
+ => Cycle No.:    8  Chi2 =    419.621735
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951528       -0.007939        0.943588        0.002128       -3.731366
+ background_1       10       474.337250       15.659882      489.997131       10.689466        1.464983
+ background_2       11      -389.086731      -22.292328     -411.379059       11.637555       -1.915551
+ Bragg_Pos_1        12        44.912998        0.000912       44.913910        0.000089       10.195827
+ Intensity_1        13     15155.960900        3.412109    15159.373000       18.751972        0.181960
+ Shf_Gamma_1        14         0.104977        0.002757        0.107735        0.000308        8.956259
+
+
+ => Cycle No.:    9  Chi2 =    419.287109
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.943588        0.008046        0.951634        0.002147        3.747500
+ background_1       10       489.997131       -8.610992      481.386139       10.762887       -0.800063
+ background_2       11      -411.379059       15.459351     -395.919708       11.753579        1.315289
+ Bragg_Pos_1        12        44.913910       -0.000561       44.913349        0.000092       -6.108325
+ Intensity_1        13     15159.373000       -5.199219    15154.173800       18.893364       -0.275188
+ Shf_Gamma_1        14         0.107735       -0.002139        0.105596        0.000319       -6.694007
+
+
+ => Cycle No.:   10  Chi2 =    419.075226
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951634       -0.004013        0.947621        0.002133       -1.881248
+ background_1       10       481.386139        7.178009      488.564148       10.704470        0.670562
+ background_2       11      -395.919708      -11.515167     -407.434875       11.669875       -0.986743
+ Bragg_Pos_1        12        44.913349        0.000443       44.913792        0.000090        4.914385
+ Intensity_1        13     15154.173800        2.702148    15156.876000       18.785658        0.143841
+ Shf_Gamma_1        14         0.105596        0.001375        0.106970        0.000311        4.417599
+
+
+ => Cycle No.:   11  Chi2 =    418.956512
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.947621        0.003876        0.951497        0.002143        1.808914
+ background_1       10       488.564148       -4.276855      484.287292       10.741122       -0.398176
+ background_2       11      -407.434875        7.745911     -399.688965       11.727410        0.660496
+ Bragg_Pos_1        12        44.913792       -0.000282       44.913509        0.000091       -3.094461
+ Intensity_1        13     15156.876000       -2.525391    15154.350600       18.855961       -0.133931
+ Shf_Gamma_1        14         0.106970       -0.001046        0.105925        0.000317       -3.299026
+
+
+ => Cycle No.:   12  Chi2 =    418.922302
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951497       -0.002048        0.949449        0.002136       -0.958632
+ background_1       10       484.287292        3.354645      487.641937       10.712749        0.313145
+ background_2       11      -399.688965       -5.799988     -405.488953       11.686194       -0.496311
+ Bragg_Pos_1        12        44.913509        0.000217       44.913727        0.000090        2.406338
+ Intensity_1        13     15154.350600        1.641602    15155.992200       18.803509        0.087303
+ Shf_Gamma_1        14         0.105925        0.000687        0.106612        0.000313        2.197391
+
+
+ => Cycle No.:   13  Chi2 =    418.879700
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.949449        0.001883        0.951332        0.002141        0.879794
+ background_1       10       487.641937       -2.159546      485.482391       10.731110       -0.201242
+ background_2       11      -405.488953        3.867584     -401.621368       11.714800        0.330145
+ Bragg_Pos_1        12        44.913727       -0.000141       44.913586        0.000091       -1.551909
+ Intensity_1        13     15155.992200       -1.208008    15154.784200       18.838612       -0.064124
+ Shf_Gamma_1        14         0.106612       -0.000514        0.106098        0.000316       -1.628908
+
+
+ => Cycle No.:   14  Chi2 =    418.878845
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951332       -0.001036        0.950297        0.002138       -0.484476
+ background_1       10       485.482391        1.638489      487.120880       10.717189        0.152884
+ background_2       11      -401.621368       -2.872131     -404.493500       11.694462       -0.245598
+ Bragg_Pos_1        12        44.913586        0.000103       44.913689        0.000091        1.137809
+ Intensity_1        13     15154.784200        0.838867    15155.623000       18.812824        0.044590
+ Shf_Gamma_1        14         0.106098        0.000341        0.106439        0.000314        1.086636
+
+
+ => Cycle No.:   15  Chi2 =    418.866089
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.950297        0.000879        0.951175        0.002140        0.410623
+ background_1       10       487.120880       -1.078125      486.042755       10.726349       -0.100512
+ background_2       11      -404.493500        1.884766     -402.608734       11.708500        0.160974
+ Bragg_Pos_1        12        44.913689       -0.000069       44.913620        0.000091       -0.756109
+ Intensity_1        13     15155.623000       -0.561523    15155.061500       18.830198       -0.029820
+ Shf_Gamma_1        14         0.106439       -0.000245        0.106194        0.000315       -0.778306
+
+
+ => Cycle No.:   16  Chi2 =    418.865479
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951175       -0.000471        0.950705        0.002077       -0.226546
+ background_1       10       486.042755        0.759277      486.802032       10.596440        0.071654
+ background_2       11      -402.608734       -1.334137     -403.942871       11.546627       -0.115543
+ Bragg_Pos_1        12        44.913620        0.000050       44.913670        0.000090        0.551024
+ Intensity_1        13     15155.061500        0.377930    15155.439500       18.559605        0.020363
+ Shf_Gamma_1        14         0.106194        0.000156        0.106349        0.000306        0.507878
+
+
+ => Cycle No.:   17  Chi2 =    418.859711
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.950705        0.000379        0.951084        0.002133        0.177651
+ background_1       10       486.802032       -0.468842      486.333191       10.711192       -0.043771
+ background_2       11      -403.942871        0.842682     -403.100189       11.689592        0.072088
+ Bragg_Pos_1        12        44.913670       -0.000031       44.913639        0.000091       -0.336544
+ Intensity_1        13     15155.439500       -0.245117    15155.194300       18.799229       -0.013039
+ Shf_Gamma_1        14         0.106349       -0.000107        0.106242        0.000314       -0.341471
+
+
+ => Cycle No.:   18  Chi2 =    418.858612
+
+
+    Name-Par        No.      Old-Value          Change        New-Value         Sigma        Change/Sigma
+
+ Eta0-PV             8         0.951084        0.000023        0.951106        0.000867        0.026185
+ background_1       10       486.333191        0.119019      486.452209        6.427442        0.018517
+ background_2       11      -403.100189       -0.065125     -403.165314        6.601761       -0.009865
+ Bragg_Pos_1        12        44.913639        0.000008       44.913647        0.000062        0.123227
+ Intensity_1        13     15155.194300       -0.042969    15155.151400       10.710484       -0.004012
+ Shf_Gamma_1        14         0.106242        0.000019        0.106261        0.000140        0.133532
+
+ => Convergence reached! : Chi2(old)-Chi2(new) < 0.000001 * Chi2(old)
+
+
+  Rfact=   14.855   Rwfact=   17.162   Rex=    0.839
+
+  Final value of Marquardt F-Lambda =            0.000
+
+ => Correlation Matrix: 
+
+    Correlation:  31 >  0% for parameters:           Eta0-PV & Intensity_1    
+    Correlation:  16 >  0% for parameters:      background_1 & background_2   
+    Correlation:  18 >  0% for parameters:      background_1 & Bragg_Pos_1    
+    Correlation:  12 >  0% for parameters:       Bragg_Pos_1 & Shf_Gamma_1    
+    Correlation:   7 >  0% for parameters:       Intensity_1 & Shf_Gamma_1    
+
+ => There are   5 values of Correlation >  0%
+
+
+    FINAL LIST OF REFINED PARAMETERS AND STANDARD DEVIATIONS
+    --------------------------------------------------------
+
+
+       Name-Par      No.          Final-Value    Standard Deviation 
+
+   Eta0-PV             8             0.951103            0.002139
+   background_1       10           486.487091           10.721680
+   background_2       11          -403.284424           11.702258
+   Bragg_Pos_1        12            44.913651            0.000091
+   Intensity_1        13         15155.181600           18.821930
+   Shf_Gamma_1        14             0.106269            0.000315
+
+ => Final value of Chi2:  418.85852

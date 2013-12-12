@@ -1,0 +1,131 @@
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   99.772606    0.001116       626.16        7.10     0.241815    0.003146    0.805283    0.015021    0.013777    0.117374    0.182021    0.124941    0.285918    0.347644     1511.60
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.772713    0.001117       629.53        7.10     0.240998    0.003200    0.825510    0.014884    0.012324    0.111015    0.187271    0.118172    0.294164    0.349546     1511.58
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.772728    0.001128       632.79        9.17     0.240223    0.003489    0.841489    0.076957    0.011171    0.105693    0.191341    0.112507    0.300558    0.350885     1513.02
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.513969    0.001284      2328.35       34.43     0.401693    0.005448    1.477629    0.012011    ******    ******    ******    ******    4.221993        551.5
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.538246    0.001909      1213.43       12.10     0.606783    0.004843    0.000100    0.000000    0.368156    0.606759    0.000044    0.645875    0.000070    0.645921      637.03
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.760757    0.001112       481.58        3.54     0.263031    0.002128    0.000100    0.000000    0.069180    0.263021    0.000019    0.279977    0.000030    0.279997     1454.07
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.760757    0.088229       481.60     5491.56     0.263026    0.017640    0.000100    0.000000    0.069177    0.263016    0.000019    0.279972    0.000030    0.279992     1454.12
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   99.771187    0.001113       481.44        3.54     0.264018    0.002119    0.000100    0.000000    0.069700    0.264007    0.000019    0.281027    0.000030    0.281047     1460.36
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   99.773048    0.001123       635.24        7.45     0.241861    0.003217    0.831352    0.014999    0.012015    0.109615    0.189656    0.116681    0.297910    0.351701     1513.07
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+  112.924377    0.001283       492.09        6.86     0.253980    0.003663    0.719312    0.018971    0.021501    0.146633    0.165798    0.156086    0.260434    0.351960     1261.01
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+  117.543327    0.000646      1867.63        7.73     0.277433    0.002094    0.875243    0.006817    0.011843    0.108824    0.232558    0.115839    0.365301    0.411378     3437.54
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+  139.100723    0.000968      1891.11        9.08     0.386269    0.003511    0.961566    0.007491    0.007276    0.085297    0.366547    0.090796    0.575771    0.595857     2564.29
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   82.909767    0.000665       964.19        6.02     0.190183    0.002016    0.859514    0.009600    0.006237    0.078976    0.155701    0.084068    0.244575    0.280027     2678.75
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   78.669640    0.000576      1217.86        6.50     0.185336    0.001775    0.868598    0.008308    0.005555    0.074534    0.153822    0.079339    0.241623    0.274000     3407.07
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   65.417557    0.000262      4218.27        9.91     0.170520    0.000822    0.760217    0.003922    0.008350    0.091380    0.119303    0.097271    0.187400    0.240429    12780.00
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   44.913685    0.000091     15193.76       18.97     0.106337    0.000316    0.955693    0.002141    0.000635    0.025195    0.100088    0.026820    0.157218    0.163587    66879.49
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.913685    0.000091     15193.76       18.97     0.106337    0.000316    0.955693    0.002141    0.000635    0.025195    0.100088    0.026820    0.157218    0.163587    66879.50
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.991058    0.000323     33277.73     1170.71     0.147715    0.000673   -0.956822    0.009064    ******    ******    ******    ******    1.056400      31501.1
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.971096    0.000070     12189.37       19.22     0.168692    0.000185    0.000100    0.000000    0.028455    0.168685    0.000012    0.179560    0.000019    0.179573    52431.57
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.913784    0.000088     15211.96       19.54     0.105600    0.000326    0.966905    0.004078    0.000469    0.021646    0.100951    0.023042    0.158573    0.163305    67070.85
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.905334    0.000104     12184.42       13.47     0.176644    0.000258    0.000100    0.000000    0.031201    0.176637    0.000013    0.188024    0.000020    0.188038    51012.36
+
+ => TITLE: Yobs                                                                                                                                                                                                                                                            
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+   44.914097    0.000087     15261.76       18.23     0.103413    0.000222    1.000100    0.000000    ******    ******    ******    ******    0.225639      67637.8
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   38.597115    0.000180      6253.50       14.96     0.148800    0.000766    0.639951    0.004708    0.009319    0.096537    0.084140    0.102760    0.132167    0.199558    24795.00
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+
+ => TITLE: a19-pulmann.xy                                                                                                                                                                                                                                                  
+!   Position      Sigma     Intensity       Sigma       FWHM        Sigma       Eta         Sigma       HG**2          HG        HL       Beta_G       Beta_L       Beta        Imax
+   44.913651    0.000091     15155.18       18.82     0.106269    0.000315    0.951103    0.002139    0.000699    0.026434    0.099385    0.028138    0.156114    0.163132    66894.12
