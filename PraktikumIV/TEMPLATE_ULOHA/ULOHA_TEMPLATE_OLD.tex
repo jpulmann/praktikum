@@ -1,0 +1,118 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{ULOHA}
+\author{Ján Pulmann}
+\date{1. 3. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item 
+	\item 
+
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+
+\begin{equation}
+\label{eq:}
+\end{equation}
+
+
+\begin{figure}[htb]
+\centering
+%\includegraphics[scale=1]{zap1.eps}
+\caption{Zapojenie usmerňovača}
+\label{fig:zap1}
+\end{figure}
+
+%%%
+\section*{Postup merania}
+
+\subsection*{Pomôcky}
+
+%%%
+\section*{Výsledky merania}
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{r|r||r|r}
+$ n $ & 
+$ x\,/\unit{\mu m}$ &
+$ n$ & 
+$ x\,/\unit{\mu m}$ 
+\\
+\midrule 
+%\input{data/kalib_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 1} Kalibrácia - závislosť počtu \\prekrytých maxím na posunutí meradla $x$}
+\end{table}
+
+\begin{wraptable}[25]{r|r}[10pt]{3cm}
+\vspace*{-30pt}
+\textbf{ Tab. 1}\newline Napätie
+\newline
+\begin{tabular}{r|r}
+$ C\, / \unit {\mu F}$ & $U_\mathrm{ss} \, / \unit {V}$ \\
+\midrule 
+%\input{data/.tex}
+\end{tabular}
+\end{wraptable}
+
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+%\input{data/kalibracia.tex}
+\textbf{Graf 1.} Kalibrácia - závislosť počtu prekrytých maxím na posunutí meradla $x$
+\end{figure}
+
+%%%
+\section*{Diskusia}
+
+%%%
+\section*{Záver}
+
+%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{kniha}
+    \emph{Fyzikální praktikum III - Optika}, I. Pelant a kol., 2005
+
+\bibitem{cizek}
+    \emph{Úvod do praktické fyziky}, J. Čížek, seminář 11
+    \url{http://physics.mff.cuni.cz/kfnt/cs/vyuka/upf/obsah.html} 11. 3. 2013
+
+\bibitem{normal}
+    \emph{Normal distribution}
+    \url{http://en.wikipedia.org/wiki/Normal_distribution} 11. 3. 2013
+
+\end{thebibliography}
+\end{document}

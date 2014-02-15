@@ -1,0 +1,99 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage[version=3]{mhchem}
+
+
+\usepackage{float}
+\newfloat{graph}{h}{graphs}
+\floatname{graph}{Graf}
+\usepackage{caption}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{NAZOV}
+\author{Ján Pulmann}
+\date{DATUM}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item ULOHY
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+\begin{equation}
+\label{eq:teor:bragg}
+2 d_{hkl} \sin\theta_{hkl} = \lambda\,.
+\end{equation}
+%%%
+\section*{Postup merania}
+\subsection*{Pomôcky}
+%%%
+\section*{Výsledky merania}
+
+\begin{graph}[h!]
+\centering
+\vspace*{-15pt}
+%~ \input{output/kombinovane_spektrum.tex}
+\caption{ Spektrá namerané s a bez tienenia \label{graph:spektrum}}
+\end{graph}
+
+
+\begin{table}[h!]
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|c|c}
+$ 2\theta \,/\,^\circ $ & 
+Intenzita $N$ &
+$ d_{hkl}\,/\unit{\AA}$ & 
+$ Q_i$ 
+\\
+\midrule 
+%~ \input{output/Qi.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Vypočítané medzirovinné vzdialenosti a pomery $d_{hkl}$\label{tab:Qi_merane}}
+\end{table}
+
+%%%
+\section*{Diskusia}
+
+%%%
+\section*{Záver}
+%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    \emph{Stránky s pokynmi ku úlohe A19} \\
+    \url{http://krystal.karlov.mff.cuni.cz/kfes/vyuka/lp/
+} 18.11.2013
+
+\bibitem{pres}
+    Systematic Errors and Sample Preparation for X-Ray Powder Diffraction.  \textit{Jim Connolly}. prezentácia
+    \url{http://epswww.unm.edu/xrd/xrdclass/07-Errors-Sample-Prep-PPT.pdf}
+
+
+\end{thebibliography}
+\end{document}
