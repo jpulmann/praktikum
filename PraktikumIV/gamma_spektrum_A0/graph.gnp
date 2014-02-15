@@ -1,0 +1,122 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+#set fit quiet
+set samples 1000
+
+
+#~ set term epslatex color colortext size 6, 4
+set term epslatex monochrome size 6, 4.5
+set output "output/kalibrace_CoCs_graph.tex"
+
+set xrange [0:1500]
+#~ set yrange [0:10000]
+
+set tics out
+set xlabel 'E\, / \unit{keV}'
+set ylabel '$N \,/ \unit{counts}$'
+
+set key at graph 0.42,0.97
+
+set arrow from  749, 2330 to 670, 1135
+set label 'FEP $661.66\unit{keV},\; ^{137}\mathrm{Cs}$' at 749, 2330 left offset 0, 0.2 rotate by 90
+
+set arrow from  1222, 1736  to 1188, 1043
+set label 'FEP $1173.24\unit{keV},\; ^{60}\mathrm{Co}$' at 1222, 1736 left offset 0, 0.2 rotate by 90
+
+set arrow from 1366, 1736   to 1340, 1043 
+set label 'FEP $1332.50\unit{keV},\; ^{60}\mathrm{Co}$' at 1366, 1736 left offset 0, 0.2 rotate by 90
+
+plot "output/kalibrace_CoCs.Spe_gnp.dat" with boxes fs solid lc rgb "#484848" title 'Namerané spektrum' 
+
+
+set xrange [0:750]
+set yrange [0:4300]
+
+set output "output/Cs_graph.tex"
+#~ set term wxt
+unset arrow
+unset label
+
+set arrow from 690, 1010 to  671, 237
+set label 'FEP $661.66\unit{keV},\; ^{137}\mathrm{Cs}$' at 690, 1010 left offset 0, 0.2 rotate by 90
+
+set arrow from 497, 1668 to  482, 1098
+set label 'comptonovská hrana $^{137}\mathrm{Cs}$' at 497, 1668  left offset 0, 0.2 rotate by 90
+
+set arrow from 169, 2500 to  180, 2200
+set label 'hrana S.R. $^{137}\mathrm{Cs}$' at 169, 2500  left offset 0, 0.2 rotate by 90
+
+set arrow from 565, 1100 to  552, 341
+set label '2. comptonovská hrana $^{137}\mathrm{Cs}$' at 565, 1100   left offset 0, 0.2 rotate by 90
+
+set arrow from 611, 1225 to 609, 627
+set label 'pozadie $609.3\unit{keV},\; \mathrm{Ra}$' at 611, 1225   left offset 0, 0.2 rotate by 90
+
+plot "output/Cs.Spe_gnp.dat" with boxes fs solid lc rgb "#484848" title 'Namerané spektrum' 
+
+set output "output/NaCl_graph.tex"
+#~ set term wxt
+
+set xrange [0:3000]
+set yrange [0:3000]
+
+
+unset arrow
+unset label
+
+set arrow from 2778, 1000 to  2767, 575
+set label 'FEP $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at 2778, 1000 left offset 0, 0.2 rotate by 90
+
+set arrow from 510, 992 to  510, 649
+set label 'anihilačný peak' at 510, 992 left offset 0, 0.2 rotate by 90
+
+set arrow from   2250, 464 to 2250, 150 
+set label 'SEP zodpovedajúci $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at 2250, 464  left offset 0, 0.2 rotate by 90
+
+set arrow from 1718, 640 to 1729, 224 
+set label 'DEP zodpovedajúci $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at  1718, 640 left offset 0, 0.2 rotate by 90
+
+set arrow from 1375, 1500 to 1367, 1094
+set label 'FEP $1368.63\unit{keV},\; ^{24}\mathrm{Na}$' at  1375, 1500 left offset 0, 0.2 rotate by 90
+
+set arrow from 1480, 1337 to 1464, 596
+set label 'pozadie $1460.08 \unit{keV},\; ^{40}\mathrm{K}$' at 1480, 1337  left offset 0, 0.2 rotate by 90
+
+set arrow from 2632, 405 to 2625, 91
+set label 'pozadie $2614.6 \unit{keV},\; \mathrm{Th}$' at 2632, 405  left offset 0, 0.2 rotate by 90
+
+plot "output/NaCl.Spe_gnp.dat" with boxes fs solid lc rgb "#484848" title 'Namerané spektrum'
+
+
+#~ set output "output/pozadie_graph.tex"
+#~ set term wxt
+#~ 
+#~ set xrange [0:3000]
+#~ set yrange [0:100]
+#~ 
+#~ 
+#~ unset arrow
+#~ unset label
+#~ 
+#~ set arrow from 2778, 1000 to  2767, 575
+#~ set label 'FEP $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at 2778, 1000 left offset 0, 0.2 rotate by 90
+#~ 
+#~ set arrow from 510, 992 to  510, 649
+#~ set label 'anihilačný peak' at 510, 992 left offset 0, 0.2 rotate by 90
+#~ 
+#~ set arrow from   2250, 464 to 2250, 150 
+#~ set label 'SEP zodpovedajúci $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at 2250, 464  left offset 0, 0.2 rotate by 90
+#~ 
+#~ set arrow from 1718, 640 to 1729, 224 
+#~ set label 'DEP zodpovedajúci $2754.03\unit{keV},\; ^{24}\mathrm{Na}$' at  1718, 640 left offset 0, 0.2 rotate by 90
+#~ 
+#~ set arrow from 1395, 1500 to 1367, 1094
+#~ set label 'FEP $1368.63\unit{keV},\; ^{24}\mathrm{Na}$' at  1395, 1500 left offset 0, 0.2 rotate by 90
+#~ 
+#~ set arrow from 1480, 1337 to 1464, 596
+#~ set label 'pozadie $1460.08 \unit{keV},\; ^{40}\mathrm{K}$' at 1480, 1337  left offset 0, 0.2 rotate by 90
+#~ 
+#~ plot "output/kalibrace_CoCs.Spe_gnp.dat" with boxes fs solid lc rgb "#484848" title 'Namerané spektrum'
+

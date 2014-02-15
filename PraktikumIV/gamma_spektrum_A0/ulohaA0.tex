@@ -1,0 +1,270 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+\usepackage{tikz}
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Studium spekter $\gamma$-záření polovodičovým spektrometrem}
+\author{Ján Pulmann}
+\date{29. 10. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Kalibrujte stupnicu spektrometra.
+	\item Namerajte spektrum $\gamma$-žiariča $^{137}\mathrm{Cs}$. Zo spektra určte energiu žiarenia, polohu comptonovej hrany, hraničnú energiu dvojitého comptonovho rozptylu, polohu peaku spätného rozptylu a tiež polohu a zdroje žiarenia prirodzeného pozadia
+    \item Namerajte spektrum $\gamma$-žiariča $^{24}\mathrm{Na}$. Zo spektra určte energie žiarení, polohy comptonových hrán oboch spektier, polohu spoločného peaku spätného rozptylu, polohy viditeľných únikových peakov a polohu anihilačného peaku.
+    \item Vysvetlite mechanizmy vzniku pozorovaných objektov v aparatúrnych spektrách. Porovnajte namerané hodnoty s tabuľkovými alebo vypočítanými hodnotami.
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+$\gamma$-žiarenie pri prechode materiálom polovodičového detektora odovzdá elektrónom, v závislosti od fyzikálneho javu, istú kinetickú energiu a uvolní elektróny. Detektor obsahuje kondenzátor, takže voľné elektróny zaregistrujeme ako napätie. Toto napätie je priamo úmerné odovzdanej kinetickej energii $T$, vzťah z \cite{stud} je
+$$
+V = \alpha \frac{T}{\omega C}\,,
+$$
+kde $\alpha$ je konštanta charakterizujúca prístroj, $\omega$ je stredná energia potrebná na tvorbu voľného páru  a $C$ je kapacita detektoru.
+
+Nech do detektoru prilieta fotón s energiou $E_0$. Javy, ktoré budeme na spektru (závislosť intenzity na napätí, ktoré vieme prepočítať na vlnovú dĺžku) pozorovať, sú
+\begin{itemize}
+	\item \textbf{Fotoefekt} Fotón vyrazí elektrón z obalu jadra a dá mu kinetickú energiu $E_0 - I_i$, kde $I_i$ je ionizačná energia elektrónu v jeho príslušnej hladine. Pre vonkajšie elektróny je $I_i \ll E_0$. Pre vnútorné elektróny sú už obe energie porovnateľné, no excitovaný atóm opäť vyžiari získanú energiu v podobe r\"ontgenového žiarenia a odvozdaná energia bude opäť podobná $E_0$. Zodpovedajúci peak sa nazýva \textit{Full Energy Peak}.
+	\item \textbf{Comptonov efekt} Pre $I_i \ll E_0$ je elektrón prakticky voľný elektrón. Preto môžeme uvažovať rozptyl fotónu s uhlom $\vartheta$ a energiou (\cite{stud})
+
+    \begin{equation}
+    \label{eq:teor:compton}
+    E(\vartheta) = \frac{E\varepsilon}{\varepsilon + E_0 (1-\cos\theta)}\,,
+    \end{equation}
+    kde $\varepsilon$ je kľudová energia elektrónu. Maximálnu energiu elektrón získa pri spätnom odraze, a táto energia (comptonovská hrana) je 
+    \begin{equation}
+    \label{eq:teor:compton:max}
+    T = E_0 - E(180^\circ) = \frac{E_0}{\varepsilon/(2E_0) + 1}\,.
+    \end{equation}
+    
+    \item \textbf{Elektrón-pozitrónový pár} Pre $E_0 > 2\varepsilon$ sa môže fotón premeniť na elektrón a pozitrón. Obe častice rýchlo zastavia a pozitrón v zápätí anihiluje, vysielajúc dve kvantá žiarenia s energiou $\varepsilon$. Tieto kvantá môžu uniknúť z detektoru, čo pozorujeme ako tri pulzy
+    \begin{enumerate}
+        \item pulz s energiou $E_0$, obe $\gamma$ fotóny boli zachytené v detektore (totožný s \textit{FEP})
+        \item pulz s energiou $E_0 - \varepsilon$, jeden fotón unikol, nazývame \textit{Single Escape Peak}
+        \item pulz s energiou $E_0 = 2\varepsilon$, oba fotóny unikli, nazývame \textit{Double Escape Peak}
+    \end{enumerate}
+    Podieľ jednotlivých javov závisí na účinnosti jednotlivých procesov.
+    
+    \item Comptonovsky rozptýlené fotóny môžu opät interagovať:
+    \begin{enumerate}
+        \item rozptýlený fotón interaguje fotoefektom - zvyšná energia sa tiež odovzdá detektoru a pozorujeme \textit{FEP}
+        \item rozptýlený fotón vytvorí elektrón-pozitrónový pár a opäť môže jeden či oba z $\gamma$-fotónov uniknúť. Ostatnú energiu zaregistrujeme, pozorujeme teda peaky \textit{FEP, SEP, DEP}
+        \item rozptýlený fotón opäť interaguje comptonovým rozptylom a môžeme pozorovať druhé spektrum so schodom. Maximálna energia druhého elektrónu je pre dva rozptyly o $\vartheta = 180^\circ$, čo dáva celkovú uvolnenú mechanickú energiu (podľa \cite{stud})
+        \begin{equation}
+            \label{teor:eq:compton:max2}
+            T_2 = \frac{E_0}{\varepsilon/(4E_0)+1}
+        \end{equation}
+        Takto rozptýlených fotónov je ale menej ako len raz rozptýlených. 
+
+    \end{enumerate}
+    \item fotón môže tiež interagovať mimo detektor. Po comptonovskom rozptyle má fotón spektrum energií od $E(\vartheta=180^\circ)$ do $E_0$. Dostávame teda podobný schod ako pri comptonovskej hrane, ale opačným smerom. Energia totiž spojite klesá až po hodnotu $E(\vartheta=180^\circ)$
+    \item fotón tiež môže, pri dostatočnej energii, vytvoriť pár $e^+ + e^-$. V detektore potom zaznamenáme FEP peak pri energii $\varepsilon$, takzvaný \textit{anihilačný peak}
+    \item Samozrejme, nameriame aj pozadie. Medzi výrazné žiariče patria podľa \cite{stud} 
+    \\
+    \begin{tabular}{r|rrrr}
+    $\mathrm{Ra}$ & $295.2\unit{keV}$ &$609.3\unit{keV}$
+    \\Th & $238.6\unit{keV}$& $583.1\unit{keV}$& $911.1\unit{keV}$& $2614.6\unit{keV}$
+    \\$^{40}\mathrm{K}$ &$1460.8\unit{keV}$
+    \end{tabular}
+
+    \item na záver uvádza \cite{stud} \textit{sumačné peaky}. Pri nevhodnom usporiadaní môžeme dohromady zlúčiť dva nesúvislé javy, napríklad od rôznych žiaričov. Takto dostávame energiu predanú detektoru ako súčet dvoch energií čiastkových javov
+    
+ \end{itemize}
+Neistotu určenia polohy peaku zistíme podľa vzťahu (vzťah som sa dozvedel pri meraní, vychádza zo vzťahov 5, 6 a 7 v \cite{stud5})
+\begin{equation}
+\label{eq:teor:chyba}
+\Delta E = \frac{\mathrm{FWHM}}{2.35\cdot \sqrt{\mathrm{Net Area}}}\,,
+\end{equation}
+kde FWHM (skratka \textit{Full Width Half Maximum}) je šírka peaku v polovici jeho výšky a Net Area je počet udalostí tvoriacich peak. Obe tieto hodnoty vieme určiť z pomocou programu v praktiku.
+
+%%%
+\section*{Postup merania}
+\begin{enumerate}
+\item Pri každom meraní položíme zdroj do vhodnej vzdialenosti od merača (čím ďalej, tým menšia mŕtva doba, no tým slabší signál). Potom na počítači začneme zaznamenávať signály z detektora, ktoré majú tvar histogramu udalostí podľa absorbovanej energie.
+\item Najprv nakalibrujeme prístroj. Súčasným meraním spektra cézia a kobaltu môžeme určiť výrazné hodnoty energie, hlavne pre \textit{FEP}. Už na tomto spektre môžeme pozorovať pozadie.
+\item Nameriame spektrá pre $^{137}\mathrm{Cs}$ a $^{24}\mathrm{Na}$. Identifikujeme hľadané javy a tiež odhadneme chybu merania. Pre peaky môžeme použiť vzťah \ref{eq:teor:chyba}.
+
+\end{enumerate}
+\subsection*{Pomôcky}
+Žiariče, detektor, počítač.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Výsledky merania}
+
+V grafoch sú zaznačené teoretické hodnoty peakov. Ich namerané polohy sú aj s chybou a ostatnými parametrami vymenované ďalej.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Kalibrácia}
+Spektrum použité ku kalibrácii je v grafe 1. Tu sme iba identifikovali tri výrazné \textit{FEP} peaky a priradili im hodnoty energie. Program kalibroval pomocou kvadratickej závislosti.
+
+\begin{figure}[h!]
+\centering
+%~ \vspace*{-15pt}
+\input{output/kalibrace_CoCs_graph.tex}
+\textbf{Graf 1.} Kalibrácia - spektrum cézia a kobaltu. 
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Spektrum $^{137}\mathrm{Cs}$}
+Spektrum cézia je v grafe 2. Namerali sme
+\begin{itemize}
+\item \textit{FEP} prislúchajúci energii $\gamma$ žiarenia. My sme namerali 
+\begin{align*}
+E &= 661.69\unit{keV}\\
+\mathrm{FWHM} &= 1.77\unit{keV}\\
+\mathrm{Net Area} &= 71100\\
+\rightarrow E &= (661.69\pm 0.01)\unit {keV}
+\end{align*}
+\textit{(Chyba vypočítaná \ref{eq:teor:chyba} je menšia ako posledná cifra hodnoty $E$, preto zvýšime chybu práve na túto poslednú cifru. Je to spôsobené veľmi výrazným peakom s množstvom meraní, relatívne ku šírke jedného kanálu.)}
+
+\item prvá comptonova hrana v rozsahu $476 - 483\unit{keV}$. Jej teoretická hodnota je $477.34\unit{keV}$.
+\item druhá comptonova hrana, spôsobená dva krát rozptýlenými fotónmi, je veľmi zle pozorovaľná, skôr zo znalosti jej polohy $554.58\unit{keV}$ môžeme identifikovať slabý pokles v intervale \mbox{$545-560\unit{keV}$}
+\item hrana spätného rozptylu. Ide o FEP fónov, ktoré comptonovsky interagujú mimo detektor. Preto pozorujeme obrátenú hranu v intervale $185-188\unit{keV}$. Teoretická energia je rozdiel energie fotónu a prvej hrany, teda $184.32\unit{keV}$
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\input{output/Cs_graph.tex}
+\textbf{Graf 2.} Spektrum $^{137}\mathrm{Cs}$
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Spektrum $^{24}\mathrm{Na}$}
+
+\begin{figure}[h!]
+\centering
+\input{output/NaCl_graph.tex}
+\textbf{Graf 3.} Spektrum $^{24}\mathrm{Na}$
+\end{figure}
+
+
+Toto spektrum je, kvôli dvom prechodom s energiou väčšou ako $2\varepsilon$, oveľa komplikovanejšie. Pozorovali sme
+\begin{itemize}
+\item \textit{FEP} prislúchajúci $\gamma$ prechodu s energiou $2754.03\unit{keV}$. My sme namerali 
+\begin{align*}
+E &= 2766.55\unit{keV}\\
+\mathrm{FWHM} &= 2.81\unit{keV}\\
+\mathrm{Net Area} &= 900\\
+\rightarrow E &= (2766.55\pm 0.04)\unit {keV}
+\end{align*}
+
+\item \textit{SEP} prislúchajúci $\gamma$ prechodu s energiou $2754.03\unit{keV}$:
+\begin{align*}
+E &= 2249.05\unit{keV}\\
+\mathrm{FWHM} &= 3.45\unit{keV}\\
+\mathrm{Net Area} &= 200\\
+\rightarrow E &= (2249.0\pm 0.1)\unit {keV}
+\end{align*}
+Teoretická hodnota je $2754.03\unit{keV}-\varepsilon = 2243.03$
+Tomuto javu zodpovedá únik jedného kvanta $\gamma$ s energiou $\varepsilon$ po tvorbe elektrón-pozitrónového páru.
+
+\item \textit{DEP} prislúchajúci $\gamma$ prechodu s energiou $2754.03\unit{keV}$:
+\begin{align*}
+E &= 1733.12\unit{keV}\\
+\mathrm{FWHM} &= 2.16\unit{keV}\\
+\mathrm{Net Area} &= 270\\
+\rightarrow E &= (1733.12\pm 0.06)\unit {keV}
+\end{align*}
+\textit{(kedže som zabudol opísať hodnotu peaku z programu v praktiku, prekladal som okolie peaku gaussovskou závislosťou)}
+
+Teoretická hodnota je $2754.03\unit{keV}-2\varepsilon = 1732.03$
+Tomuto javu zodpovedá únik oboch $\gamma$ fotónov po anihilácii pozitrónu.
+
+\item \textit{FEP} prislúchajúci $\gamma$ prechodu s energiou $1368.63\unit{keV}$:
+\begin{align*}
+E &= 1368.52\unit{keV}\\
+\mathrm{FWHM} &= 0.69\unit{keV}\\
+\mathrm{Net Area} &= 1750\\
+\rightarrow E &= (1368.52\pm 0.01)\unit {keV}
+\end{align*}
+\textit{(opäť zvyšujeme chybu na $0.01\unit{keV}$)}
+
+\item \textit{DEP} pre túto menšiu energiu je takmer nepozorovateľný, asi o štvrtinu intenzity vyšší ako okolný šum. Slabší \textit{SEP} je na tom ešte horšie.
+
+\item \textit{anihilačný peak} s teoretickou hodnotou $\varepsilon$ sme namerali s parametrami
+
+\begin{align*}
+E &= 511.60\unit{keV}\\
+\mathrm{FWHM} &= 3.01\unit{keV}\\
+\mathrm{Net Area} &= 820\\
+\rightarrow E &= (511.60\pm 0.05)\unit {keV}
+\end{align*}
+Tento jav zvniká detekciou $\gamma$ kvánt vytvorených anihiláciou pozitrónu mimo detektor.
+
+\item v rozsahu $1155-1160 \unit{keV}$ je veľmi slabá hrana zodpovedajúca comptonovskej hrane pre slabšie $\gamma$-žiarenie. Teoretická hodnota tu je $1153.32\unit{keV}$.
+
+\item hrany spätného rozptylu sú nepozorovateľné, zrejme kvôli silnému šumu.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Identifikácia pozadia}
+
+\begin{itemize}
+\item \textbf{Radón} V spektre cézia a sodíku je pozorovateľný peak pri hodnote okolo $609\unit{keV}$, zodpovedajúci radónu - $609.3\unit{keV}$. Tento peak sme vyznačili iba v grafe 2. 
+\item \textbf{Tórium} pozorujeme vo všetkých spektrách, vyznačili sme ho v spektre sodíku (v ostatných spektrách totiž nemá zmysel ísť do takých vysokých energií). Odhadovaná nameraná poloha je okolo $(2625\pm 1)\unit keV$ (neistota už len jednoducho pološírka peaku). 
+\item \textbf{Draslík 40} je jeden z najvýraznejších prirodzených žiaričov, čo vidíme na grafe 3. Nameraná hodnota $(1461\pm 1)\unit{keV}$ dobre súhlasí s teoretickou $1460.8\unit{keV}$
+\end{itemize}
+
+%%%
+\section*{Diskusia}
+Medzi javy vnášajúce do merania neistoty patria
+\begin{itemize}
+\item \textbf{Kalibrácia} prebiehala iba v rozsahu troch vysokých peakov v grafe 1. My sme ale potom merali energie takmer dva krát tak vysoké. Preto vidíme na energiách dobre určených vysokých peakov (hlavne graf 3, \textit{FEP} pre tvrdšiu $\gamma$) systematickú chybu. Mohli by sme opäť kalibrovať alebo priamo pri kalibrácii použiť vysokoenergetické žiarenie. Tu nastáva logistický problém, vzorka rádioaktívneho sodíku bola totiž pripravená priamo pre meranie ožarovaním kuchynskej soli.
+\item \textbf{Detektor} a AD prevodník majú istý profil, ktorý spôsobuje roznášanie ostrých čŕt v grafe. Aj preto majú peaky tvar gaussiánu a preto sme neurčili presne comptonovu hranu. Tento efekt je dobre pozorovateľný na hranách v grafe 2.
+\item \textbf{Pozadie} Hlavne v grafe 3 máme veľké množstvo rôznych peakov, ktoré sťažujú identifikáciu spektra sodíka. Pri meraní boli na vedľajšom stole položené hodinky s rádiom, čo môže vysvetlovať silné signály od tohoto žiariča.
+\item \textbf{Mŕtva doba} merača bola v rádoch jednotiek percent pri všetkých meraniach (tým sa myslí pomer stratených udalostí). Museli sme optimalizovať vzdialenosť žiariča ku detektoru, pri vyšších intenzitách sme mohli nazbierať viacero dát no mali sme väčšiu mŕtvu dobu
+\end{itemize}
+
+Zhoda teoretických a nameraných hodnôt je dobrá najmä pre ostré peaky vo vnútri intervalu, na jeho hraniciach ležia kalibračné hodnoty. Dobrý príklad je anihilačný či \textit{FEP} peaky cézia a slabšej $\gamma$ sodíka. Už spomenuté vysokoenergetické peaky sa odchylujú, až o $0.4\%$. 
+
+Napriek tomu nie sme v zhode v rámci vypočítanej chyby merania. To môže byť spôsobené nepresnou kalibráciou (kvadratická kalibrácia nemusí vystihovať tvar skutočnej závislosti) alebo príliš optimistickým určením chyby polohy peaku.
+
+Zhoda je v prípade hrán v rámci chyby merania, ale chyba meranie je tu oveľa väčšia. Jediné zreteľné Comptonovské hrany sú tie v grafe 2, jedna z nich je hrana spätného rozptylu. 
+
+Kvalitatívne sme teda pozorovali všetky hlavné javy spomenuté v teórii, a dokoncia niektoré sekundárne javy. Nie vždy však boli pozorované a presné určenie energie, pri ktorej nastávali, bolo obtiažne. 
+
+Signály od žiaričov v pozadí boli tiež dobre pozorovateľné. Niektoré peaky, napríklad od rádia, boli v spektre rádia v praktiku vyznačené, no neboli spomenuté v študijnom texte ako energie prislúchajúce rádiu. Pozorovali sme výrazný signál od draslíka.
+
+Zaujímavá bola geometria detektora, išlo o valcový polovodičový diel s medenou tyčou v strede. Práve v tejto medi mohli prebiehať druhotné javy ako comptonov rozptyl či tvorba páru. My sme potom mohli pozorovať produkty týchto javov, letiacich von z medi cez detektor.
+
+Účinnosť detektora bola v nízkych desiatkach percent. Pre energiu $E_0=\varepsilon$ ju môžeme odhadnúť z pomeru výšok \textit{SEP} a \textit{DEP}, prvý skúma javy pri ktorých sa jeden z dvoch fotónov zachytí, druhý skúma javy pri ktorých sa nezachytí ani jeden. Tento pomer je približne $2:3$. Pre vyššie energie je asi ešte nižší, čo môžeme usudzovať z pomeru \textit{FEP} peakov pre mäkkú a tvrdú $\gamma$ v spektre sodíka
+
+Spresnenie merania by spočívalo hlavne v spresnení kalibrácie.
+%%%
+\section*{Záver}
+Popísali sme hlavné mechanizmy tvorby signálov v polovodičovom detektore. 
+
+Namerali sme spektrá pre kalibráciu a pre dva žiariče (grafy 1, 2 a 3). Nakalibrovali sme detektor a popísali sme peaky a hrany pozorované v spektrách. Identifikovali sme tiež žiarenie od pozadia. Namerané polohy jednotlivých peakov a hrán sú v príslušných sekciách výsledkov meraní
+%%%
+
+\begin{thebibliography}{9}
+\bibitem{stud}
+    \emph{Študijný text ku úlohe A0} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_400.pdf} 29.10.2013
+\bibitem{stud5}
+    \emph{Študijný text ku úlohe A5} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_405.pdf} 30.10.2013
+\end{thebibliography}
+\end{document}
