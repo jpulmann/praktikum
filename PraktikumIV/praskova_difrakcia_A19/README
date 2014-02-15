@@ -1,9 +1,25 @@
-##Body 20
-
+##Body 
+20
 ##Komentáre v protokole
+Výborná práce
+poznámky ku formuláciám a diskusii asymetrie peakov:
+teória, 
+    prvá veta: miestach -> smeroch
+    
+    V Bragg-Brentanovej geometrii bude uhol medzi žiarením a vzorkou rovnaký ako medzi žiarením a detektorom,
+    ->
+    V Bragg-Brentanovej geometrii bude uhol medzi dopadajúcim žiarením a vzorkou rovnaký ako medzi difraktovaným žiarením a vzorkou,
+    
+graf 1: popisok "Counts N" -> "Intensity / Counts"
+
+diskusia: "Keďže všetky namerané hodnoty $Q_i$ sú väčšie ako tie tabelované, očakávame, že sme namerali príliš malé $d_{h_1 k_1 l_1}$." : $d_{h_1 k_1 l_1}$ je v čitateli pre $Q_i$, teda sme namerali priveľké $d_{h_1 k_1 l_1}$! (čo je aj vidieť na grafe 2). Napriek tomu, v grafe 2 vidíme, že sú body pre $a_{h_1 k_1 l_1}$ pod čiarou fitu, ďalšia argumentácia je teda relevantná.
+
+záver: spetkrum -> difraktogram
 
 ##Moje komentáre
+Zaujímavé a celkom jednoduché, väčšinu spracovania urobíte na mieste. Prerekvizita pre úlohu A22, ktorú tiež odporúčam.
 
+Nakoniec som priraďovanie Millerových indexov difrakčným peakom napísal v pythone, je to prekvapivo jednoduché.
 ##Inštrukcie
 Spúštajte
 ```
