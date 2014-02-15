@@ -1,0 +1,191 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage[version=3]{mhchem}
+
+
+\usepackage{float}
+\newfloat{graph}{h}{graphs}
+\floatname{graph}{Graf}
+\usepackage{caption}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Určení měrného náboje elektronu z charakteristik magnetronu}
+\author{Ján Pulmann}
+\date{29. 11. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Zmerajte VA charakteristiky magnetrónu pri konštantnom magnetickom poli. Rozsah napätia magnetrónu volte $0-200\unit V$ (s minimálnym krokom $0.1-0.3\unit V$ v oblasti skoku). Premerajte 10-15 charakteristík v rozsahu magnetizačných prúdov $0-2.5\unit A$.
+    \item Pre každú nameranú charakteristiku (pri danom magnetickom poli) určte hodnotu kritického napätia (napr. numerickou deriváciou). Získané hodnoty spracujte graficky a určte z nich merný náboj elektrónu. Diskutujte presnosť výsledku.
+    \item Z nameraného súboru dát vytvorte jeden graf závislosti anódového prúdu magnetrónom $I\di A$ na magnetickej indukcii $B$ pri konštantnom anódovom napätí $U\di A$ a popíšte ho.
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+Schéma magnetrónu je na obrázku 1 v \cite{stud}. Ide o dve súosé valcové elektródy. Vnútorná, katóda, je zohriata na vysokú teplotu a emituje elektróny. Medzi elektródami je napätie, elektróny sú  urýchlované smerom ku vonkajšiej anóde. Dráhy elektrónov sa tiež zakrivujú kvôli pôsobeniu magnetického poľa (obrázok 2 v \cite{stud}). Pri istom kritickom magnetickom poli $B\di {kr}$ sa začnú zakrivovať natoľko, že nedoletia na anódu a mi pozorujeme prudký pokles prúdu. 
+
+Podobne, pri konštantnom magnetickom poli existuje kritické napätie, pri ktorom nastáva prudké zvýšenie prúdu medzi elektródami, pretože elektróny ju dosiahnu
+
+\cite{stud} odvádza pohyb elektrónov, ktoré vyletujú z katódy nulovou rýchlosťou. Pri značnení polomerov anódy a katódy $r\di A$ a $r\di R$ a kritického napätia $U\di {kr}$ prislúchajúcemu kritickému magnetickému poľu $B\di{kr}$ platí 
+\begin{equation}
+\label{eq:teor:merny_naboj}
+\frac{e}{m} = \frac{8U\di{kr}}{B\di{kr}^2r\di A ^2}\frac{1}{\left(1 - \frac{r\di K^2}{r\di A ^2}\right)^2}\,.
+\end{equation}
+Magnetické pole tvorí dvojica cievok v Helmholtzovom usporiadaní, ktoré dávajú vo svojom strede pole s dobrou homogenitou. Veľkosť indukcie je 
+\begin{equation}
+\label{eq:teor:pole}
+B = \frac{8\mu_0}{5\sqrt{5}}\frac{NI\di{mag}}{\rho_0}\,,
+\end{equation}
+kde $N$ a $I\di{mag}$ sú počet závitov jednej cievky a prúd cievkou a $\rho_0$ je polomer cievky. 
+
+%%%
+\section*{Postup merania}
+\begin{itemize}
+\item Zvolíme si magnetizačné prúdy a pri každom prúde nameriame dve VA charakteristiky. Jednu meriame nahrubo, v celom rozsahu napätia a s veľkým krokom. Tak určíme oblasť so skokom napätia a tú premeriame s malým krokom 
+\item Hodnoty presnejšieho merania vyhladíme a numericky zderivujeme. Dostaneme tak maximum, jeho poloha a pološírka budú hodnota a neistota kritického napätia.
+\item Závislosť kritického napätia na magnetickom poli vykreslíme a vyhodnotíme podľa \ref{eq:teor:merny_naboj}. Tiež si zvolíme jednu pevnú hodnotu napätia a vykreslíme závislosť prúdu na magnetickom poli.
+\end{itemize}
+\subsection*{Pomôcky}
+magnetrón, Helmholtzove cievky, zdroje napätia a merače. 
+%%%
+\section*{Výsledky merania}
+Použité parametre cievky a magnetrónu sú
+\begin{align*}
+r\di K &= 0.19\unit{mm}\,,\\
+r\di A &= 5.00\unit{mm}\,,\\
+N &= 630\,,\\
+\rho_0 &= 75\unit{mm}\,.
+\end{align*}
+Namerané hodnoty kritického napätia a magnetizačné prúdy sú v tabuľke \ref{tab:napatie} a grafe \ref{graph:naboj}. V grafe je aj preložená kvadratické závislosť. Podľa vzťahu \ref{eq:teor:merny_naboj} teraz z tejto konštanty určíme hodnotu merného náboja ako 
+$$
+\frac{e}{m} = (\input{output/c_mn.tex} )\cdot 10^{11} \unit{C/kg}\,.
+$$
+Neistoty v tabuľke pochádzajú z kolísania magnetizačného prúdu a pološírky maxima v prvej numerickej derivácii VA charakteristiky. Neistota merného náboja je štatistická neistota prekladania. Keďže je podobná či trochu vyššia ako neistoty nameraných veličín, budeme ju brať ako neistotu výsledku.
+
+Pre najmenšie prúdu (do $500\unit{mA}$) sme na zvýraznenie inflexného bodu od nameraných dát najprv odčítali závislosť pri nulovom magnetickom poli. Porovnali sme aj takto určenú hodnotu s hodnotou bez odčítania. Odchýľka bola menšia ako neistota merania.
+
+Pre napätie $U=  \input{output/chosen_napatie.tex}\unit V$ sme do tabuľky \ref{tab:chosen} a do grafu \ref{graph:chosen} naniesli závislosť prúdu magnetrónom na magnetickej indukcii. 
+
+V grafe \ref{graph:spolu} sú nanesené všetky namerané VA charakteristiky.
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/naboj_graph.tex}
+\caption{ Kritické napätie pri danom poli, určenie merného náboja \label{graph:naboj}}
+\end{graph}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/chosen_graph.tex}
+\caption{ Prúd magnetrónom pre pevné napätie }
+ \label{graph:chosen}
+\end{graph}
+
+\begin{table}[t]
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|c}
+Prúd cievkou $ I\di{mag}\,/\unit{A} $ & 
+$ B\,/\unit{mT} $& 
+$ U\di{kr}\,/\unit{V}$ 
+\\
+\midrule 
+\input{output/napatia_p.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Kritické napätia pri rôznych magnetických poliach\label{tab:napatie}}
+\end{table}
+
+\begin{table}[t]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+$ B\,/\unit{mT} $& 
+$ I\di A\,/\unit{\mu A}$ 
+\\
+\midrule 
+\input{output/chosen.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Prúdy pri danom napätí \label{tab:chosen}}
+\end{table}
+
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\hspace*{-50pt}
+\input{output/spolu1.tex}
+\caption{ Kritické napätie pri danom poli, určenie merného náboja \label{graph:spolu}}
+\end{graph}
+
+
+%%%
+\section*{Diskusia}
+Nameraný efekt dobre súhlasí s teoretickou predpoveďou, či už skokmi v grafoch \ref{graph:chosen} a \ref{graph:spolu} alebo kvadratickou závislosťou v \ref{graph:naboj}. Skok v prúde pri zvyšujúcom sa napätí nie je úplne ostrý, no aj tak sme boli schopný určiť jeho polohu pomerne presne (graf \ref{graph:naboj}). 
+
+Na grafe \ref{graph:chosen} vidíme alternatívnu charakteristiku magnetrónu, prúd v závislosti od magnetickej indukcie. Dostávame očakávané prudké zníženie pri kritickej hodnote magnetického poľa, elektróny nedoletia na anódu.
+
+Určená hodnota merného náboja sa v rámci chyby zhoduje z tabuľkovou hodnotou
+$$
+\frac{e}{m\di e} = 1.7588\cdot 10^{11}\unit{C/kg}\,.
+$$
+Neistota merania je spôsobená štatistickým rozptylom určených hodnôt kritického napätia, na zníženie chyby by sme teda museli presnejšie určovať polohy skokov v prúde. Rýchlo by sme tak mohli naraziť na systematické vplyvy znižujúce presnosť experimentu. Jeden z prejavov je oblasť záporného odporu, ktorú vidíme na grafe \ref{graph:spolu}.
+\begin{itemize}
+\item Elektróny vyletujú z katódy nenulovou rýchlosťou. To je jeden z dôvodov, prečo nemáme ostré skoky - niektoré elektróny potrebujú dodať menšiu energiu, aby sa dostali na anódu.
+\item Teoretické odvodenie nepočíta s okrajovými efektami, no samotná elektróda má podobnú dĺžku ako priemer. Elektróny vyletujúce mimo elektródu cítia slabšie elektrické pole, preto pre ne môže byť ťažšie dostať sa na anódu. To z časti spôsobuje pomalšie nasycovanie na maximálny prúd.
+\item V magnetróne nie je vákuum, elektróny teda môžu narážať do atómov vzduchu. Môžu tak prísť o časť energie potrebnej na dosiahnutie anódy. Ionizované atómy majú oveľa nižší merný náboj (a teda väčší Larmorov polomer), no majú opačný náboj a sú priťahované ku katóde. Práve tento efekt môže spôsobovať oblasť záporného odporu, podobne ako vo VA charakteristike plynovej výbojky. Pri vyšších magnetických poliach potrebujeme väčší potenciál, aby sme elektrón dostali do nejakej vzdialenosti od katódy a udelili mu potrebnú rýchlosť - možno preto pozorujeme posúvanie miesta záporného odporu ku vyšším napätiam v grafe \ref{graph:spolu}.
+
+Problémom tohoto vysvetlenia je pomerne nízke napätie a prúd, pre ktoré tento jav nastáva (plynové výbojky operujú na vyšších napätiach a cielene pripravujú atmosféru na výboj, pričom tu sa snažíme o opak).
+\item Magnetické pole v magnetróne môže byť vyosené. To by opäť spôsobovalo rozšírenie skoku, pretože potrebné napätie na dosiahnutie anódy by bolo rôzne pre rôzne cesty. Zložka poľa kolmo na os by ale mohla posúvať častice von z magnetrónu, čím by sme mohli prispieť ku oblasti záporného odporu.
+\item Magnetické pole má tiež istú nehomogenitu, ale tento efekt je malý, viz diskusiu homogenity poľa v \cite{stud}.
+\end{itemize}
+
+Všetky tieto efekty spôsobujú rôzne zakrivenia ideálneho skoku, ktorý by sme pozorovali podľa teoretického modelu.
+
+Neistoty odvodených veličín sú počítané podľa vzťahu o prenose chýb parciálnou deriváciou.
+
+Na presnejšie meranie by sme potrebovali presnejší magnetrón - teda väčšie eletródy a silnejšie vákuum. Tiež by sme mohli predpokladať rýchlostné rozdelenie elektrónov (zo štatistickej fyziky) vylietavajúcich z katódy a korigovať tak aspoň jeden z vyššie diskutovaných efektov. Znížili by sme tak neistoty nameraných kritických napätí.
+%%%
+\section*{Záver}
+Namerali sme VA charakteristiky magnetróny pre rôzne veľkosti magnetického poľa, viz tabuľka graf \ref{graph:spolu}. Z nameraných charakteristík sme určili kritické napätie a preložili sme teoretickou závislosťou (tabuľka \ref{tab:napatie}, graf \ref{graph:naboj}). Z prekladania sme určili merný náboj elektrónu 
+$$
+\frac{e}{m} = (\input{output/c_mn.tex} )\cdot 10^{11} \unit{C/kg}\,.
+$$
+Pre vybrané napätie $U=  \input{output/chosen_napatie.tex}\unit V$ sme v tabuľke \ref{tab:chosen} a grafe \ref{graph:chosen} vykreslili závislosť prúdu magnetrónom na magnetickej indukcii.
+
+V diskusii sme diskutovali systematické chyby merania.
+%%%
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    \emph{Študijný text ku úlohe A13} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_413.pdf} 29.11.2013
+
+\end{thebibliography}
+\end{document}

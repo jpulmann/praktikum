@@ -1,0 +1,26 @@
+##Body 
+20
+##Komentáre v protokole
+Pomôcky: merače -> multimetry, meracie prístroje
+graf 1: závislosť je skôr aB^2 + b, aký význam má konštantný člen?
+(môj komentár: b je IMO zanedbateľné, inak: kritické napätie pri nulovom poli je zrejme záporné, pretože aj pri malom zakrivovaní sa elektróny dostanú na anódu, kvôli nenulovej rýchlosti)
+
+diskusia:
+    chýba odkaz na tabuľkovú hodnotu
+    
+    "záporného odporu" je podčiarknuté a dopísaný otáznik: (môj komentár: myslel som oblasť, kde je dI/dU záporné)
+    
+    tretí bod v diskusii systematických vplyvov: ionizačné potenciály prvkov sú rádovo 10V, viz Frack-Hertzov pokus
+    
+    aký je vplyv kontaktného potenciálu? (môj komentár: neviem, hodilo by sa zistiť, z akých kovov boli elektródy)
+
+##Moje komentáre
+Meranie otrava, stihnete počas neho napísať časť protokolu. Vyhodnocovanie v pohode, určovanie kritických napätí som robil na mieste v Origine, čo bolo rýchle, no nereplikovateľné. Na výrobu VA charakteristiky som si Origin nanútiť nenechal, čo sa stretlo s ľahkou skepsou. .gnp príkazy generujem v pythone, takže boli ľahko modifikovateľné.
+##Inštrukcie
+Spúštajte
+```
+>python process.py
+>gnuplot graph.gnp
+>pdflatex ulohaA13.tex
+>pdflatex ulohaA13.tex #kvôli citáciám
+```
