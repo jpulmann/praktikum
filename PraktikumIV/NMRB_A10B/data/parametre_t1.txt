@@ -1,0 +1,5 @@
+T1=10.5us
+D1=20us
+T2=5.5us
+D2=menime
+D3=30us

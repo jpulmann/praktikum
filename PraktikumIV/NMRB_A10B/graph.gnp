@@ -1,0 +1,133 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+#~ set fit quiet
+set samples 1000
+set print "output/gnuplot_output.dat"
+set output 'output/T1_ms.tex'
+spacing = 0.08
+
+
+set term epslatex color colortext size 6, 4.4
+
+set logscale x
+
+set xrange [2:1000]
+set yrange [0:0.104]
+set xlabel '$t\,/\unit{ms}$'
+set ylabel '$A$'
+
+set key at graph 0.99, 0.3
+
+set style line 1 lc rgb '#ECD078' lt 1 lw 3
+set style line 2 lc rgb '#D95B43' lt 1 lw 3
+set style line 3 lc rgb '#C02942' lt 1 lw 3
+set style line 4 lc rgb '#ffa500' lt 1 lw 3
+set style line 5 lc rgb '#542437' lt 1 lw 3
+set style line 6 lc rgb '#53777A' lt 1 lw 3
+
+
+
+load 'output/T1_graph_all.gnp'
+
+
+set output 'output/T2_ms.tex'
+unset logscale
+set key at graph 0.99, 0.98
+set xrange [-1:72]
+set yrange [0.001:0.12]
+
+#~ set logscale x
+#~ 
+#~ ff0(x) = AA_00*exp(-2*x/T2_0 - c0*x**3)
+#~ AA_00 = 0.1
+#~ T2_0 = 4.0
+#~ c0 = 0
+#~ c0_err = 0
+#~ fit ff0(x) 'output/t2_0.dat' via AA_00, T2_0
+
+#~ print 'AA_00 ', AA_00, AA_00_err
+#~ print 'T2_0 ', T2_0, T2_0_err
+#~ print 'c0 ', c0, c0_err
+set logscale y
+
+load 'output/T2_graph_all.gnp'
+set output 'output/T2_ms2.tex'
+unset logscale
+set key at graph 0.99, 0.98
+set xrange [-1:72]
+set yrange [0.001:0.12]
+
+set logscale y
+
+load 'output/T2_graph_all2.gnp'
+
+
+set output 'output/T1_cfit.tex'
+set term epslatex monochrome size 6, 4.4
+
+unset logscale
+
+set xrange [0:1.1]
+set yrange [0:200]
+
+set xlabel '$c/c_0$'
+set ylabel '$T_1^{-1} \,/\unit{s^{-1}}$'
+
+g(x) = a*x+b 
+fit g(x) 'output/T1c.dat' using 1:4:5 via a, b
+
+tx = 0.7
+ty = 0.15
+
+set label 1 sprintf('$\alpha_1 = (%1.0f\pm %1.0f) \unit{s^{-1}}$', a, a_err) at graph tx, ty
+set label 2 sprintf('$\beta_1 = (%1.1f\pm %1.1f) \unit{s^{-1}}$', b, b_err) at graph tx, ty-spacing
+
+set key at graph 0.7, 0.98
+
+plot 'output/T1c.dat' using 1:4:5 ps 2.4 lw 3 with yerrorbars title 'Určené $T_1^{-1}$', g(x) lw 3 title 'Lineárna závislosť $T_1^{-1}(c/c_0) = \alpha_1 c/c_0+\beta_1$'
+
+set output 'output/T2_cfit.tex'
+set term epslatex monochrome size 6, 4.4
+
+unset logscale
+
+set xrange [0:1.1]
+set yrange [0:200]
+
+set xlabel '$c/c_0$'
+set ylabel '$T_2^{-1} \,/\unit{s^{-1}}$'
+
+gg(x) = a2*x+b2
+fit gg(x) 'output/T2c.dat' using 1:4:5 via a2, b2
+
+
+set label 1 sprintf('$\alpha_2 = (%1.0f\pm %1.0f) \unit{s^{-1}}$', a2, a2_err) at graph tx, ty
+set label 2 sprintf('$\beta_2 = (%1.1f\pm %1.1f) \unit{s^{-1}}$', b2, b2_err) at graph tx, ty-spacing
+
+
+plot 'output/T2c.dat' using 1:4:5 ps 2.4 lw 3 with yerrorbars title 'Určené $T_2^{-1}$', gg(x) lw 3 title 'Lineárna závislosť $T_2^{-1}(c/c_0) = \alpha_2 c/c_0+\beta_2$'
+
+set output 'output/t1guma_graph.tex'
+
+set xrange [0:500]
+set yrange [0:0.05]
+set key at graph 0.27, 0.98
+
+set xlabel '$t \,/\unit{ms}$'
+set ylabel '$A \,/\unit{arb. unit}$'
+
+f1guma(x) = Aguma * abs(1 - 2*exp(-x/T1guma))
+Aguma = 0.1
+T1guma = 8
+fit f1guma(x) 'output/t1guma.dat' via Aguma, T1guma
+
+tx = 0.5
+ty = 0.2
+
+set label 1 sprintf('$A_{0, \mathrm g} = (%1.1f\pm %1.1f) \cdot 10^{-3} \unit{arb. unit}$', Aguma*1000, Aguma_err*1000) at graph tx, ty
+set label 2 sprintf('$T_{1, \mathrm g} = (%1.1f\pm %1.1f) \unit{ms}$', T1guma, T1guma_err) at graph tx, ty-spacing
+
+
+plot 'output/t1guma.dat' using 1:2:3 ps 2.4 lw 3 with yerrorbars title 'Pryž, $A(t)$', f1guma(x) lw 3 title 'Fit \ref{eq:teor:ir}'

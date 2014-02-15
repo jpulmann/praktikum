@@ -1,0 +1,16 @@
+##Body 
+20
+##Komentáre v protokole
+namiesto korekcie do ďalšieho rádu by som mohol použiť ešte konštantný člen (vo vzťahu 2)
+##Moje komentáre
+Meranie opäť nepríjemné kvôli ovládaniu, prof. Englich trochu hnal do práce. Spracovanie a fity 
+celkom pekne vychádzajú. Pekné grafy a možnosť realizovať sa v pythone (odporúčam napr. graf 1)
+##Inštrukcie
+Spúštajte
+prerekvizita: preložená úloha A10 - využíva jednu hodnotu.
+```
+>python process.py
+>gnuplot graph.gnp
+>pdflatex ulohaA10B.tex
+>pdflatex ulohaA10B.tex #kvôli citáciám
+```

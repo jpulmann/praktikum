@@ -1,0 +1,323 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[version=3]{mhchem}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Studium relaxací NMR v roztocích a pevné fázi}
+\author{Ján Pulmann}
+\date{8. 11. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+	\item Meranie spin-mriežkovej relaxačnej doby $T_1$ signálu NMR $^1\mathrm{H}$ v roztokoch s premennlivou koncentráciou $\mathrm {CuSO_4}$ metódou $(\pi, \pi/2)$ pulzu (\textit{inversion recovery})
+	\item Meranie spin-spinovej relaxačnej doby $T_2$ signálu NMR $^1\mathrm{H}$ v roztokoch s premennlivou koncentráciou $\mathrm {CuSO_4}$ metódou spinového echa
+    \item Meranie spin-mriežkovej relaxačnej doby  $T_1$ signálu NMR $^1\mathrm{H}$ vo vzorke pryže metódou inversion recovery
+ \end{enumerate}
+
+ %%%
+\section*{Teória}
+Princíp spin-spinovej metódy sme opísali v predchádzajúcom protokole \cite{predch}. Amplitúda signálu závisí od vzdialenosti $\pi/2$ a $\pi$ pulzu $t_w$ vzťahom z \cite{studA} 
+\begin{equation}
+\label{eq:teor:spinspin}
+A(t_w) = A_0 \exp\left(-\frac{2t_w}{T_2}\right)\,.
+\end{equation}
+
+Pre vodu sa však v priebehu relaxácie molekuly vody tiež hýbu Brownovým pohybom. Preto sa aj po $\pi/2$-pulze a obrátení fáz momentov nesfázujú všetky momenty, keďže sa ich lokálne pole zmenilo. Ak aproximujeme zmenu poľa iba jeho lineárnym gradientom v danom mieste, dostaneme korekciu vyššieho rádu ku \ref{eq:teor:spinspin}
+\begin{equation}
+\label{eq:teor:spinspin2}
+A(t_w) = A_0 \exp{\left( -\frac{2t_w}{T_2} - C t_w^3 \right)}\,.
+\end{equation}
+(Hahnov výsledok \cite{rozs}). Tento vzťah bol odvodený pre pole s axiálnou symetriou, konštanta $C$ závisí na gradiente magnetického poľa. Jeho tvar ale skúsime predpokladať aj pre všeobecné nehomogénne pole.
+
+
+Relaxačnú dobu spin-mriežkovej interakcie meriame tzv. metódou \textit{inversion recovery}. Najprv úplne stočíme magnetizáciu  pomocou $\pi$-pulzu. Po čase $t$ stočíme zmenšené pole späť do roviny kolmej na $B_0$ a pozorujeme \textit{FID} signál s amplitúdou
+\begin{equation}
+\label{eq:teor:ir}
+A(t) = A_0 \left|1 - 2\exp\left(-\frac{t}{T_1}\right)\right|\,.
+\end{equation}
+Taktiež pre čas 
+\begin{equation}
+\label{eq:teor:t0}
+t_0 = T_1\ln 2
+\end{equation}
+nameriame nulovú intenzitu. 
+
+Z teórie v \cite{stud} vyplýva, že v izotropných kvapalinách s nízkou viskozitou je pribline $T_1 \approx T_2$. Pre kvapaliny s vysokou viskozitou a pevné látky $T_2 \ll T_1$.
+
+Pre čistú vodu sú obe relaxačné doby v ráde sekúnd (je veľmi ťažké takéto doby namerať, lebo aj malé prímesy majú veľký vplyv). Paramagnetické ióny vytvárajú pole o tri rády silnejšie (kvôli malej hmotnosti elektrónu). Rýchlosť relaxácie (prevrátená hodnota relaxačnej doby) závisí od štvorca tohoto poľa, teda ide o rozdiel rýchlostí 6 rádov. 
+
+Pravdepodobnosť výskytu takéhoto silného lokálneho poľa v blízkosti iónu rastie priamo úmerne s koncentráciou, teda očakávame že aj rýchlosť relaxácie bude priamo úmerná koncentrácii.
+
+
+
+%%%
+\section*{Postup merania}
+\begin{enumerate}
+\item Používame vzorky roztoku modrej skalice ($\mathrm{CuSO_4}$) s geometricky rozdelenými koncentráciami 
+\begin{equation}
+\label{eq:postup:conc}
+c_i = \frac{c_0}{2^i}, \;\; i = 0\ldots 5 \,.
+\end{equation}
+Pri použití metódy inversion recovery volíme časy $t$ tak, aby sme premerali celú závislosť, teda počiatky s vysokými hodnotami a okolie minima v $t_0$. Pri príliš krátkych $t$ (menej ako $2\unit{ms}$) však navyše nameriame aj spinové echo, ktoré nám zkresluje signál. Kedže nevieme v programe v praktiku určiť rozsah, z ktorého sa robí FT, volíme väčšie časy $t$. Taktiež musíme dbať na to, aby sme mali opakovaciu dobu merania oveľa väčšiu ako $T_1$, inak máme zase oslabený signál. Touto metódou odmeriame aj gumu a porovnáme hodnotu $T_1$ s nezávisle určenou hodnotou v \cite{predch}.  Počet opakovaní jedného merania volíme podľa opakovacej doby $T_0$.
+\item Spin-spinovú interakciu meriame rovnako ako v \cite{predch}, tentokrát už len pre roztoky modrej skalice (úplne rovnaké meranie pre gumu sme už robili v \cite{predch})
+\item Relaxačné časy $T_1$ a $T_2$ získame prekladaním nameraných závislostí amplitúdy. Pre príslušné relaxačné rýchlosti potom overíme lineárnu závislosť rýchlosti na koncentrácii. 
+\end{enumerate}
+\subsection*{Pomôcky}
+Roztoky modrej skalice a pryž, magnet, generátory pulzov a merače, počítač s AD prevodníkom a program na spracovanie.
+%%%
+\section*{Výsledky merania}
+Ako neistotu určenia amplitúdy opäť berieme jednu cifru, ktorá sa pri opakovaní merania hýbala, teda $0.0001\unit{arb. unit}$. Niekedy ju pre prehľadnosť nepíšeme.
+\subsection*{Určenie $T_1$}
+Do tabuľky 1 sme vpísali namerané závislosti amplitúdy maxima FT na vzdialenosti pulzov $t$. Tieto závislosti sme potom pre 6 vzoriek roztokov modrej skalice vykreslili do grafu 1 a prekladali sme závislosťami tvaru \ref{eq:teor:ir}. Graf má na vodorovnej osi logaritmickú škálu, kvôli prehľadnosti - väčšina hodnôt bola blízko počiatku. Výsledné parametre fitu sme aj s ich štatistickými neistotami vniesli do tabuľky 2. V grafe 2 sme závislosť relaxačnej doby spin-mriežkovej interakcie prekladali lineárnou závislosťou, podľa teórie. Pri prekladaní využijeme rozdielne presnosti nameraných hodnôt a vážime ich prevrátenou hodnotou ich disperzie.
+
+
+Rovnako sme určili hodnotu $T_1$ pre gumu, pre ktorú sme ju určovali v \cite{predch} inou metódou. namerané hodnoty intenzít sú v tabuľke 3 a v grafe 3.
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c||c|c||c|c||c|c||c|c||c|c}
+\multicolumn{2}{c||}{Roztok 0} & 
+\multicolumn{2}{c||}{Roztok 1} & 
+\multicolumn{2}{c||}{Roztok 2} & 
+\multicolumn{2}{c||}{Roztok 3} & 
+\multicolumn{2}{c||}{Roztok 4} & 
+\multicolumn{2}{c}{Roztok 5} 
+\\
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ 
+\\
+\midrule 
+\input{output/T1_all_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 1} Namerané hodnoty intenzity pri metóde inversion recovery v roztoku $\ce{CuSO4}$}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c|c|c}
+$ i $ & 
+$ T_1\,/\unit{ms}$ &
+$ 1/T_1\,/\unit{s^{-1}}$ &
+$ A_0\,/\unit{arb. unit}$ 
+\\
+\midrule 
+\input{output/T1c.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 2} Parametre fitu - určenie $T_1$ roztoku $\ce{CuSO4}$}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/T1_ms.tex}
+\caption*{\textbf{Graf 1} Namerané metódy a fity v metóde inversion recovery - závislosť $A(t)$}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/T1_cfit.tex}
+\textbf{Graf 2} Prekladanie závislosti relaxačného času na koncentrácii 
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+$ t\,/\unit{ms} $ & 
+$ A\,/\unit{arb. unit}$ 
+\\
+\midrule 
+\input{output/t1guma.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 3} Meranie metódou inversion recovery pre gumu}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/t1guma_graph.tex}
+\caption*{\textbf{Graf 3} Meranie inversion recovery pre gumu, fit \ref{eq:teor:ir}}
+\end{figure}
+
+\subsection*{Určenie $T_2$}
+Podobne ako v predchádzajúcom meraní, v tabuľke 4 sú namerané hodnoty pre všetky roztoky. V grafe 4 sú tieto hodnoty preložené závislosťou \ref{eq:teor:spinspin2}, teda až na prvé dve merania. $C$ tu totiž bolo prakticky nulové. Pretože to bol parameter navyše, výrazne to zvyšovalo štatistickú odchýľku ostatných konštánt. Merania pre vzorky 0 a 1 sme teda fitovali s fixným $C = 0$. Výsledné parametre fitu sú v tabuľke 5. V tomto grafe je prirodzene využitá zvislá logaritmická os, bez korekcie do tretieho rádu v 
+\ref{eq:teor:spinspin2} by mali namerané hodnoty ležať na priamkách.  Opäť sme závislosť $T_2(c_i)$ prekladali lineárne - tieto hodnoty a fit sú v grafe 5. I tu sme jednotlivé hodnoty vážili ich neistotou.
+\begin{table}[t]
+\centering
+\begin{tabular}{c|c||c|c||c|c||c|c||c|c||c|c}
+\multicolumn{2}{c||}{Roztok 0} & 
+\multicolumn{2}{c||}{Roztok 1} & 
+\multicolumn{2}{c||}{Roztok 2} & 
+\multicolumn{2}{c||}{Roztok 3} & 
+\multicolumn{2}{c||}{Roztok 4} & 
+\multicolumn{2}{c}{Roztok 5} 
+\\
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ &
+$ \frac{t_w}{\unit{ms}} $ & 
+$ \frac{A}{\unit{arb. unit}}$ 
+\\
+\midrule 
+\input{output/T2_all_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 4} Namerané hodnoty intenzity pri metóde spinového echa v roztoku $\ce{CuSO4}$}
+\end{table}
+
+
+\begin{table}[t]
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|c|c|c}
+$ i $ & 
+$ T_2\,/\unit{ms}$ &
+$ 1/T_2\,/\unit{s^{-1}}$ &
+$ A_0\,/\unit{arb. unit}$ &
+$ C\,/\unit{10^{-6}\cdot ms^{-3}}$ 
+\\
+\midrule 
+\input{output/T2c.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 5} Parametre fitu - určenie $T_2$ roztoku $\ce{CuSO4}$}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\vspace*{-15pt}
+\input{output/T2_ms.tex}
+\textbf{Graf 4.} Namerané metódy a fity v metóde spinového echa - závislosť $A(t_w)$
+\end{figure}
+
+
+\begin{figure}[t]
+\centering
+\vspace*{-15pt}
+\input{output/T2_cfit.tex}
+\textbf{Graf 5.} Závislosť relaxačnej doby $T_2$ na koncentrácii, fit   
+\end{figure}
+%%%
+
+
+\section*{Diskusia}
+V \cite{predch} sme určili pre gumu hodnotu 
+$$ T_1 = (\input{../NMR_A10/output/T1.tex}) \unit{ms}\,.$$
+Relatívna zmena približne $10\%$ môže byť spôsobená zmenou podmienok merania (teplota) alebo výmenou kúsku gumy.
+
+Namerané závislosti z metódy spinového echa nám podobne ako v predchádzajúcom protokole dobre sedia s teoretickými hodnotami (graf 4.), hlavne pre veľké koncentrácie. Pre silnejšie odchýľky od závislosti \ref{eq:teor:spinspin2} už ale ani korekcia nedáva presné predpovede (hodnoty $c_4$, $c_5$). Letmým pokusom sa môžeme presvedčiť, že korekcia iba do rádu $t_w^2$ (tzn iba nahradenie $Ct_w^3\to C't_w^2$ v \ref{eq:teor:spinspin2}) dáva lepšiu zhodu s našimi nameranými hodnotami (viz graf 6 a tabuľku 6). Taktiež určené hodnoty $T_2$ sú bližšie hodnotám $T_1$. Teoretické zdôvodnenie ale ku korekcii takéhoto rádu nemáme.
+
+Závislosť $C$ na koncentrácii je ťažko určitelná, pre malé časy sa totiž neprejavuje ($c_0$ a $c_1$ sme merali len do týchto časov). Vidíme ale klesajúci  trend, čo by súhlasilo s tým, že podľa \cite{rozs} je $C$ úmerné druhej mocnine gradientu poľa - čím menej iónov, tým menšia nehomogenita.
+
+Pri korekcii z \cite{rozs} už relaxačné doby pre malé koncentrácie nezávisia lineárne od koncentrácie. Čiastočne to môže byť spôsobené nedokonalou zhodou našeho teoretického modelu (v tabuľke 6 sa hodnoty trochu viac podobajú tým z tabuľky 2), ale aj nečistotami vo vode. Tie majú väčší vplyv práve pri nižších koncetráciách a je možné, že inak vplývajú na $T_1$ a $T_2$. 
+
+Pri meraní metódou inversion recovery tiež dosahujeme dobrej zhody teórie a experimentu. Lineárna závislosť relaxačnej rýchlosti od teploty je tu lepšia ako v prípade spin-spinovej interakcie (menšie neistoty parametrov fitu). 
+
+Keďže tu meriame do vyšších časov, museli sme pri meraní meniť opakovaciu dobu $T_0$. Už pre $T_0 \approx 5t$ bol totiť rozdiel medzi takoutou a dvojnásobnou opakovacou dobou takmer dvojnásobná amplitúda peaku vo FT - pri zachovaní všetkých ostatných parametrov. Pokúsili sme sa teda voliť dostatočnú opakovaciu dobu.
+
+V oboch prípadoch nám vyšiel absolútny člen lineárnej závislosti v rámci chyby merania nulový. Správne by mal výjsť veľmi malý (uvádza sa hodnota $1/6\unit s$). Naša presnosť ale nie je dostatočná na takéto extrapolovanie.  Napriek nepresnostiam sa ale parametre lineárnej závislosť v grafoch 2 a 5 rovnajú v rámci chyby merania.
+
+Presnejšie meranie by sa dalo realizovať väčším počtom meraných bodov a koncentrácií. Najviac by tu pomohlo automatizovanie nastavovania generátora pulzov - samotná sekvencia merania trvá v rádoch sekúnd, no nastavovanie vyžaduje neustálu pozornosť a často niekoľko násobne viac času. Pre viac nameraných koncentrácií by sme potom vedeli posúdiť rozdiel korekcií v druhom a treťom ráde v \ref{eq:teor:spinspin}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/T2_ms2.tex}
+\textbf{Graf 6} Prekladanie závislosti relaxačného času na koncentrácii s korekciou druhého rádu 
+\end{figure}
+
+\begin{table}[t]    
+\centering
+\hspace*{30pt}
+\begin{tabular}{c|c|c|c}
+$ i $ & 
+$ T_2\,/\unit{ms}$ &
+$ A_0\,/\unit{arb. unit}$ &
+$ C'\,/\unit{10^{-3}\cdot ms^{-2}}$ 
+\\
+\midrule 
+\input{output/T22c.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 6} Parametre fitu - určenie $T_2$ s korekciou v druhom ráde}
+\end{table}
+%%%
+\section*{Záver}
+Použili sme metódu inversion recovery na meranie $T_1$, relaxačnej doby spin-mriežkovej interakcie (grafy 1, 2 a tabuľky 1, 2 pre modrú skalicu, graf a tabuľka 3 pre gumu). 
+
+Porovnali sme dva spôsoby určenia $T_1$ pre gumu s relatívnou odchýľkou asi $10\%$
+
+Namerali sme aj relaxačnú dobu spin-spinovej interakcie, tiež v závislosti na koncentrácii modrej skalice v roztoku (grafy a tabuľky 4, 5). 
+
+Nakoniec sme otestovali prekladanie alternatívou vzťahu \ref{eq:teor:spinspin2} s korekciou iba do druhého rádu, grafy a tabuľka 6.
+
+Ku protokolu je priložený ukážkový priebeh signálu pri metóde inversion recovery.
+%%%
+
+\begin{thebibliography}{9}
+
+
+\bibitem{predch}
+    \emph{Protokol ku úlohe A10}. Ján Pulmann, odovzdané 8. 11. 2013\\
+
+
+\bibitem{studA}
+    \emph{Študijný text ku úlohe A10} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_410.pdf} 5.11.2013
+
+
+\bibitem{stud}
+    \emph{Študijný text ku úlohe A10 B} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_410b.pdf} 8.11.2013
+
+\bibitem{rozs} 
+    \emph{Rozširujúci text v praktiku, časť ,,Diffusion in an Inhomogenous Magnetic Field"}
+
+\end{thebibliography}
+\end{document}
