@@ -1,0 +1,291 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{bm} % bold mathhttp://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols
+\usepackage[section]{placeins}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Nukleární magnetická rezonance (NMR) (část základní)}
+\author{Ján Pulmann}
+\date{11. 1. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Nastavenie optimálnych excitačných podmienok signálu \textit{FID} $^1\mathrm H$ vo vzorke gumy
+	\item Meranie závislosti amplitúdy signálu \textit{FID} $^1\mathrm H$ vo vzorke gumy na dĺžce excitačného pulzu. Určenie veľkosti amplitúdy rádiofrekvenčného poľa $B_1$.
+    \item Štúdium signálu dvojimpulzového spinového echa $^1\mathrm H$ vo vzorke gumy
+    \item Štúdium procesu koherentnej sumácie
+ \end{enumerate}
+  %%%
+\section*{Teória}
+Častica s magnetickým momentom môže vo vonkajšom magnetickom poli konať tzv. Larmorovu precesiu. Frekvencia tejto precesie závisí na veľkosti magnetického poľa $B_0$ lineárne (\cite{stud}). 
+
+Magnetické pole má za úlohu aj vytvoriť nerovnomernú populáciu hladín s rôzne natočenými magnetizáciami, takže môžeme sledovať magnetizované atómy globálne - príspevky sa nevyrušia. 
+
+Magnetický moment sa uvádza v násobkoch jadrového magnetónu (s elementárnym nábojom $e$ a hmotnosťou protónu $m\di p$)
+\begin{equation}
+\label{eq:teor:magneton}
+\mu_N=\frac{e\hbar}{2m\di p }\,.
+\end{equation}
+Pre jadro s momentom hybnosti $\bm I$ má magnetický moment tvar
+\begin{equation}
+\label{eq:teor:magneticky_moment}
+\bm \mu = g\mu_N \frac{\bm I}{\hbar}\,,
+\end{equation}
+kde $g$ je takzvaný jadrový $g$-faktor. 
+
+Teraz už môžeme vyjadriť uhlovú rýchlosť precesného pohybu 
+\begin{equation}
+\label{eq:teor:uhlova_rychost}
+\omega_0 = \frac{g\mu_N}{\hbar} B_0\equiv \gamma B_0\,,
+\end{equation}
+kde sme zaviedli veličinu $\gamma$ nazývanú gyromagnetický pomer.
+
+Ak budeme budiť jadro ďalším magnetickým poľom s frekvenciou blízkou $\omega_0$, môžeme pozorovať rezonanciu.
+
+Rovnovážny stav jadra je ale orientovaný v smere magnetického poľa. Po vychýlení z rovnovážnej polohy môžemem priblížiť návrat späť exponenciálnou časovou závislosťou. Zložka magnetizácie v smere poľa sa vracia s charakteristickým časom $T_1$, zložka kolmá na pole s časom $T_2$ (vzťahy 8 a 9 v \cite{stud}). Tieto časy nazývame postupne spin-mriežkovou a spin-spinovou relaxačnou dobou. V pevných látkach platí $T_2 \ll T_1$ - priečna zložka magnetizácie vymizne oveľa rýchlejšie.
+
+Pri meraní budeme stáčať magnetizáciu spínaním rotujúceho magnetického poľa s veľkosťou $B_1 \ll B_0$. Toto pole rotuje v rovine kolmej na smer konštantného poľa $B_0$. Ak budíme poľom o (uhlovej) frekvencii presne $\omega_0$, priečna magnetizácia má po pulze trvajúcom $\tau$ veľkosť
+\begin{equation}
+\label{eq:teor:priecna_magnetizacia}
+M_{t = 0} = M_0 \sin (\gamma B_1 \tau) \equiv M_0 \sin \varphi\,.
+\end{equation}
+Podľa veľkosti $\varphi$ nazývame potom pulz $\pi/2$-pulz či $\pi$-pulz.
+
+Pri ďalšej nehomogenite stacionárneho poľa je pokles priečnej zložky magnetizáce ešte oveľa rýchlejší. Závislosť veľkosti magnetizácie na čase potom nazývame \textit{FID} - \textit{free induction decay}. \cite{stud} hovorí, že táto závislosť je Fourierových obrazom spektra NMR. 
+
+Na maximálne vybudenie používame $\pi/2$-pulz, naopak $\pi$-pulz nevytvorí žiadnu priečnu magnetizáciu. Ak však tento pulz aplikujeme po odoznení signálu \textit{FID} (v čase $t_w$), dôjde v čase $2t_w$ ku opätovnému sfázovaniu rozfázovaných magnetických momentov. $\pi$-pulz totiž práve spôsobi výmenu pomalých a rýchlych pulzov (obrázok 2 v \cite{stud}). Amplitúda tohoto signálu však stále klesá dobou $T_2$, teda pre ňu platí
+
+\begin{equation}
+\label{eq:teor:amplituda}
+A(t_{w}) \approx A_0 \exp\left(-\frac{2t_w}{T_2}\right)\,.
+\end{equation}
+ 
+\subsection*{Štatistika šumu}
+\cite{stud} uvádza v sekcii 5 podrobnú analýzu šumu a jeho sčítavanie pri opakovanom meraní. Šum sa pri opakovaných meraniach nasčítava, no jeho amplitúda rastie len s počtom meraní, v porovnaní s lineárne rastúcimi signálmi. Relatívne teda šum mizne s odmocninou z počtu meraní.
+
+\subsection*{Princíp merania}
+Ako zdroj statického poľa použijeme permanentný magnet. Komerčné prístroje majú oveľa vyššie požiadavky na homogenitu poľa, no my sa uspokojíme aj s takýmto magnetom.
+
+Striedavé pole je generované pomocou generátoru striedavého napätia. Toto napätie je zosilnené, modulované pulzným napätím a privedená na cievku pri vzorke. Tá istá cievka potom zaznamenáva zvyškové priečne pole vo vzorke. Počítač potom tento signál z cievky zaznamenáva a spracúva (okrem iného diskrétnou Fourierovou transformáciou).
+
+%%%
+\section*{Postup merania}
+\begin{enumerate}
+\item Na generátore striedavého napätia nastavíme frekvenciu okolo
+$18.306\unit{MHz}$ \cite{pokyny}. Nastavíme synchronizačný pulz na budiaci pulz a určíme tak mŕtvu dobu prístroja. O túto dobu potom posunieme synchronizačný pulz. Vzorkou posúvame, aby sme našli najpomalší proces poklesu \textit{FID}, teda najväčšiu homogenitu poľa. Nakoniec v FT stredovaného signálu určíme skutočnú Larmorovu frekvenciu a korigujeme nastavenie generátoru napätia.
+
+    \item Budeme merať závislosť amplitúdy maxima v FT spektre na trigrovacej hodnote $T_0$, teda opakovacej dobe pulzu. Pri príliš častých opakovaniach pulzu sa vzorka nestihne relaxovať, no dĺhé pulzy sú nepraktické z hladiska merania. Amplitúda signálu závisí na $T_0$ ako (viz. \cite{stud})
+    \begin{equation}
+    \label{eq:postup:amplituda_trig}
+    A = A_0 \left(1-e^{-T_0/T_1}\right)\,.
+    \end{equation}
+    
+    \item Ďalej budeme meniť dĺžku excitačného pulzu. Očakávame závislosť podľa \ref{eq:teor:priecna_magnetizacia}. Meriame však absolútnu hodnotu magnetizácie, prekladáme teda závislosťou
+    \begin{equation}
+    \label{eq:postup:amplituda_pulz}
+    A = A_0 |\sin (\omega_1 \tau)|\,,
+    \end{equation}
+    kde bude platiť $\omega_1 = \gamma B_1$. \cite{pokyny} uvádza hodnotu
+    \begin{equation}
+    \label{eq:postup:gamma}
+    \frac{\gamma}{2\pi} = 42.512990 \unit{MHz/T}\,.
+    \end{equation}
+    
+    \item Na štúdium dvojimpulzového echa načítame prednastavenú pulzú sekvenciu. Dva excitačné pulzy budú od seba vzdialenú dobu $t_{w}$ a pulzy budú postupne $\pi/2$ a $\pi$-pulzy. Pri druhom excitačnom pulze teda nevybudíme žiaden \textit{FID} signál. Potom budeme meniť hodnotu $t_{w}$ a budeme sledovať amplitúdu signálu spinového echa. Prekladáme vzťahom \ref{eq:teor:amplituda}
+
+    \item Na konci nastavíme dlhú dobu $t_{w}$, takže nebudeme schopní pozorovať signál spinového echa priamo. Budeme teda stredovať cez zväčšujúce sa počty meraní. Zaznamenávame FT spektrá a vyhodnocujeme disperziu šumu.
+
+\end{enumerate}
+\subsection*{Pomôcky}
+gumová vzorka, magnet, aparatúra - generátor a detektor magnetického poľa, generátor pulzov, zosilovače, počítač s AD prevodníkom
+%%%
+\section*{Výsledky merania}
+Mŕtvu dobu sme určili ako $70\unit{\mu s}$.
+
+V tabuľke 1 a grafe 1 sú namerané hodnoty závislosti amplitúdy signálu na vzdialeností trigrovacích signálov.
+
+Z použitej frekvencie $f_0 = (18.305\pm0.001)\unit{MHz}$ môžeme pomocou vzťahu \label{eq:teor:uhlova_rychost} spočítať veľkosť stacionárneho magnetického poľa
+$$B_0 = (\input{output/B0.tex}) \unit{T}\,.$$
+
+Neistotu amplitúdy vo Fourierovej transformácii sme odhadli s z rozdielu pri dvoch meraniach urobených hned po sebe. 
+
+Pre praktické meranie sme potom volili $T_0 = 400\unit{ms}$.
+
+Do tabuľky a grafu 2. sme zaniesli výsledky druhého merania, kde sme menili dĺžku pulzu. Vieme tak zo vzťahu \ref{eq:teor:priecna_magnetizacia} spočítať magnetickú indukciu striedavého, priečneho poľa
+$$B_1 = (\input{output/B1.tex}) \unit{mT}\,.$$
+Ako neistotu tu berieme štatistickú chybu určenia frekvencie. 
+Dalej sme pri meraní použili dĺžku $\pi/2$-pulzu rovnú $6\unit{\mu s}$ a pre $\pi$-pulz $11\unit{\mu s}$
+
+Do grafu a tabuľky 3 sme zaznačili namerané intenzity spinového echa, v závislosti na vzdialenosti medzi dvoma pulzami $t_w = D2$. 
+
+
+V tabuľke 4 sú spočítané disperzie šumu z meraní v grafu 5. (z častí bez peaku). Pri zisťovaní odchýlky disperzie sme postupovali nasledovne: z hodnôt amplitúdy $A$ sme vyrobili hodnoty $$(A - \langle A\rangle)^2 $$
+a pre tieto hodnoty sme zistili strednú hodnotu a disperziu. Odmocninou z tohoto vzťahu sme dostali disperziu hodnôt $A$ a jej odchýľku.
+
+V grafe 4. sú tieto hodnoty preložené teoretickou závislosťou zo vzťahu 28 v \cite{pokyny}. V grafe 5 sú ukážky FT spektier pre rôzne počty meraní (a teda stredovaní).
+
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+$ T_0\,/\unit{ms} $ & 
+ Amplitúda $ A\,/\unit{arb. unit} $
+\\
+\midrule 
+\input{output/T0_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 1} Amplitúda \textit{FID} pri premennej vzdialenosti budiacich signálov}
+\end{table}
+
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/T0_graph.gnp}
+\textbf{Graf 1.} Amplitúda \textit{FID} pri premennej vzdialenosti budiacich signálov
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+$ \tau\,/\unit{\mu s} $ & 
+ Amplitúda $ A\,/\unit{arb. unit} $
+\\
+\midrule 
+\input{output/tau_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 2}  Amplitúda \textit{FID} pri premennej dĺžke pulzov}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/tau_graph.gnp}
+\textbf{Graf 2.} Amplitúda \textit{FID} pri premennej dĺžke pulzov
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+$t_w\,/\unit{\mu s} $ & 
+ Amplitúda $ A\,/\unit{arb. unit} $
+\\
+\midrule 
+\input{output/D2_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 3}  Amplitúda spinového echa v závislosti na oneskorení $\pi$-pulzu}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/D2_graph.gnp}
+\textbf{Graf 3.} Amplitúda spinového echa v závislosti na oneskorení $\pi$-pulzu
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c|c}
+$N$ & $1/\sqrt N$ & $\sigma_N$
+ Amplitúda $ A\,/\unit{arb. unit} $
+\\
+\midrule 
+\input{output/stat_tab.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption*{\textbf{ Tab. 4}  Štandardné odchýľky stredované šumu v závislosti na počte stredovaných meraní $N$}
+\end{table}
+
+
+\begin{figure}[!ht]
+\centering
+\vspace*{-15pt}
+\input{output/stat0_graph.gnp}
+\textbf{Graf 4.} Štandardné odchýľky stredované šumu v závislosti na počte stredovaných meraní $N$
+\end{figure}
+
+\begin{figure}[]
+\centering
+%~ \vspace*{-15pt}
+\input{output/stat_graph.gnp}
+\textbf{Graf 5.} Ukážky FT spektier signálov spinového echa pre rôzne počty meraní $N$.
+\end{figure}
+%%%
+\section*{Diskusia}
+V súlade s predpovedami v \cite{stud} sme pozorovali \textit{FID} signál, teda veľmi rýchle rozfázovanie magnetických momentov. Toto rozfázovanie bolo spôsobené nehomogenitou magnetického poľa permanentného magnetu. Vzhľadom na spôsob, akým sme merali, to ale nemalo vplyv na meranie. Mŕtva doba prístroja bola spôsobená tým, že prístroj meral aj budiaci pulz a taktiež chvíľu potom. Táto doba bola dostatočne krátka voči strednej dobe života \textit{FID} signálu. 
+
+Vzorkou sme posúvali a odhadom z tvaru peaku vo Fourierovom obrazke a z dĺžky signálu sme našli najdlhšie doznievajúci \textit{FID} signál. 
+
+Z frekvencie odozvy sme určili relatívne silné pole $B_0$ vo vnútri magnetu.
+
+Aby sme získali presnejšie výsledky, priemerovali sme viacero meraní. V grafe 1 sme zisťovali možné opakovacie doby - od $400\unit{ms}$ už nebol pozorovateľný pokles. Mohli sme takto tiež určiť pokles intenzity pozdĺžnej zložky magnetizácie $T_1$. Porovnaním s meraním spin echa vidíme správnosť predpokladu $T_2\ll T_1$
+
+Určili sme tiež veľkosť amplitúdy priečneho magnetického poľa $B_1$, potvrdzuje sa $B_1\ll B_0$. V grafe 2 je tiež dobré overenie modelu, že striedavé magnetické pole stáča magnetizáciu konštantnou uhlovou rýchlosťou.
+
+Celkovo sú merania NMR v dobrej zhode s teoretickými predpoveďami. Odchýľky môžu byť spôsobené šumom, nepresnosťou spínania a tiež zlyhávaním našeho teoretického modelu (ktorý je výrazne nekvantový). 
+
+Na štatistickom spracovaní sme si overili intuíciu vybudovanú dlhodobým meraním v praktiku o škálovaní signálu a šumu. V grafe 4 vidíme dobrú zhodu (a tiež si uvedomíme, že náhodné dáta nemusia vždy ležať predpokladanej závislosti, aj keď odpovedajú modelu presne). V grafe 5 potom vidíme postupné zoslabovanie šumu, kvantifikované v predchádzajúcom grafe. 
+%%%
+\section*{Záver}
+Určili sme veľkosti magnetických polí
+\begin{align*}
+B_0 &= (\input{output/B0.tex}) \unit{T}\,,\\
+B_1 &= (\input{output/B1.tex})\unit{mT}\,,
+\end{align*}
+a relaxačné doby pozdĺžnej a priečnej zložky magnetického poľa
+\begin{align*}
+T_1 &= (\input{output/T1.tex}) \unit{ms}\,,\\
+T_2 &= (\input{output/T2.tex})\unit{\mu s}\,.
+\end{align*}
+Namerali sme závislosti intenzity pulzov na rôznych časovaniach pulzov - ich dĺžke, rozostupe a perióde (tab. 1, 2, 3). V tabuľke 4 sme namerali priemerovanie náhodného šumu.
+V grafoch 1, 2, 3 a 4 sme overili teoretické závislosti o magnetizácii a o všeobecnom šume. V grafe 5 sme znázornili postupné vynáranie signálu zo zašumeného merania, pri priemerovaní cez zväčšujúci sa počet meraní.
+
+Ku protokolu sú, okrem záznamu z merania, priložené aj obrázky \textit{FID} signálu, jeho FT a spinový signál.
+%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    \emph{Študijný text ku úlohe A10} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_410.pdf} 5.11.2013
+
+\bibitem{pokyny}
+    \emph{Študijný text ku úlohe A10} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/pokyny/410a.pdf} 5.11.2013
+\end{thebibliography}
+\end{document}

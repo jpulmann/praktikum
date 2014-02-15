@@ -1,0 +1,22 @@
+##Body 
+18
+##Komentáre v protokole
+meranie T_2 zrejme zle vyhodnotené
+
+graf 3: hodnota T2 zakrúžkovaná a s otáznikom (môj komentár: chyba je v jednotke,
+nie je to \mu s^{-1}, ale iba \mu s. Mýli to, lebo T1 je uvedená v ms)
+
+##Moje komentáre
+Meranie bolo OK, zaujímavý princíp, no zlé ovládanie - nastavovanie relaxačných dôb
+prebieha na prístroji so 4 tlačítkami, ktoré občas vynechávajú. Spracovanie bolo pekné,
+fity dobre vychádzajú.
+
+Do pozornosti odporúčam graf 5, ak sa snažíte vyrobiť niečo podobné.
+##Inštrukcie
+Spúštajte
+```
+>python process.py
+>gnuplot graph.gnp
+>pdflatex ulohaA10.tex
+>pdflatex ulohaA10.tex #kvôli citáciám
+```

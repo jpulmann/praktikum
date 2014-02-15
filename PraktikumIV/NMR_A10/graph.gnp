@@ -1,0 +1,207 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+set fit quiet
+set samples 1000
+set print "output/gnuplot_output.dat"
+#~ set border linewidth 1.5
+
+#~ set term epslatex color colortext size 6, 4
+set term epslatex monochrome size 6, 4
+set output "output/T0_graph.gnp"
+
+set xrange [-100:1800]
+set yrange [0:0.045]
+
+set xlabel '$T_0 / \mathrm{ms}$'
+set ylabel 'Amplitúda $A /\mathrm{arb. unit}$'
+
+set key at graph 0.9, 0.2 
+#~ 
+#~ set label 1 sprintf('$a_1 = (%1.3f\pm %1.3f) \,  \mathrm {mS}$', a1*1e3, a1_err*1e3) at graph 0.8, graph 0.28 right
+
+f(x) = A0*(1-exp(-x/T1))
+
+fit f(x) 'output/T0_gnp.dat' using 1:2 via A0, T1
+
+print 'T1 ', T1, T1_err
+spacing = 0.08
+tx = 0.3
+ty = 0.7
+
+set label 1 sprintf('$A_0 = (%1.4f\pm %1.4f) \unit{arb. unit}$', A0, A0_err) at graph tx, ty
+
+set label 2 sprintf('$T_1 = (%1.1f\pm %1.1f) \unit{ms}$', T1, T1_err) at graph tx, ty-spacing
+
+
+
+plot 'output/T0_gnp.dat' using 1:2:3 with yerrorbars ps 2 lw 2 title 'Nameraná $A(T_0)$',\
+    f(x) lw 2 title 'preloženie vzťahom \ref{eq:postup:amplituda_trig}'
+    
+
+set output "output/tau_graph.gnp"
+
+set xrange [0:42]
+set yrange [0:0.053]
+
+set xlabel '$\tau / \mathrm{\mu s}$'
+set ylabel 'Amplitúda $A /\mathrm{arb. unit}$'
+
+set key at graph 0.93, 0.93
+#~ 
+#~ set label 1 sprintf('$a_1 = (%1.3f\pm %1.3f) \,  \mathrm {mS}$', a1*1e3, a1_err*1e3) at graph 0.8, graph 0.28 right
+
+f(x) = A0 * abs(sin(omega*x))
+
+omega = 0.3
+A0 = 0.04
+
+
+
+fit f(x) 'output/tau_gnp.dat' using 1:2 via omega, A0
+
+print 'omega ', omega, omega_err
+
+
+spacing = 0.08
+tx = 0.07
+ty = 0.9
+
+
+set label 1 sprintf('$A^\prime_0 = (%1.4f\pm %1.4f) \unit{arb. unit}$', A0, A0_err) at graph tx, ty
+
+set label 2 sprintf('$\omega = (%1.4f\pm %1.4f) \unit{\mu s^{-1}}$', omega, omega_err) at graph tx, ty-spacing
+
+
+
+plot 'output/tau_gnp.dat' using 1:2:3 with yerrorbars ps 2 lw 2 title 'Nameraná $A(\tau)$',\
+    f(x) lw 2 title 'preloženie vzťahom \ref{eq:postup:amplituda_pulz}'
+
+
+
+set output "output/D2_graph.gnp"
+
+set xrange [0:7000]
+set yrange [0:0.06]
+
+set xlabel '$\tau / \mathrm{\mu s}$'
+set ylabel 'Amplitúda $A /\mathrm{arb. unit}$'
+
+set key at graph 0.93, 0.93
+#~ 
+#~ set label 1 sprintf('$a_1 = (%1.3f\pm %1.3f) \,  \mathrm {mS}$', a1*1e3, a1_err*1e3) at graph 0.8, graph 0.28 right
+
+f(x) = A0 * exp(-(2*x)/(2*tw))
+
+A0 = 0.05
+tw = 1000
+
+
+
+fit f(x) 'output/D2_gnp.dat' using 1:2 via tw, A0
+
+print 'omega ', omega, omega_err
+print 'T2 ', tw, tw_err
+
+
+spacing = 0.08
+tx = 0.55
+ty = 0.7
+
+
+set label 1 sprintf('$A^{\prime\prime}_0 = (%1.4f\pm %1.4f) \unit{arb. unit}$', A0, A0_err) at graph tx, ty
+
+set label 2 sprintf('$T_2 = (%1.0f\pm %1.0f) \unit{\mu s^{-1}}$', tw, tw_err) at graph tx, ty-spacing
+
+
+plot 'output/D2_gnp.dat' using 1:2:3 with yerrorbars ps 2 lw 2 title 'Nameraná $A(t_w)$',\
+     f(x) lw 2 title 'preloženie vzťahom \ref{eq:teor:amplituda}'
+set output "output/stat0_graph.gnp"
+
+set xrange [0:0.8]
+set yrange [0:0.00025]
+
+set xlabel '$1/\sqrt{N}$'
+set ylabel 'Štandardná odchýľka $\sigma /\mathrm{arb. unit}$'
+
+set key at graph 0.6, 0.93
+#~ 
+#~ set label 1 sprintf('$a_1 = (%1.3f\pm %1.3f) \,  \mathrm {mS}$', a1*1e3, a1_err*1e3) at graph 0.8, graph 0.28 right
+
+f(x) = a*x
+
+
+unset label
+
+fit f(x) 'output/stat_gnp.dat' using 1:2 via a
+
+print 'a ', a, a_err
+set label 1 sprintf('$\sigma_0 = (%1.0f\pm %1.0f)\cdot 10^{-6} \unit{arb. unit}$', a*1e6, a_err*1e6) at graph 0.8, graph 0.28 right
+
+spacing = 0.08
+tx = 0.55
+ty = 0.7
+
+set xlabel 'Frekvencia $f/\unit{kHz}$'
+set ylabel 'Amplitúda  $A /\mathrm{arb. unit}$'
+
+
+
+plot 'output/stat_gnp.dat' using 1:2:3  with yerrorbars ps 2 lw 2 title 'Nameraná $A(t_w)$', \
+    f(x) lw 2 title 'Lineárna závislosť $\sigma_N = \sigma_0/\sqrt(N)$'
+set term epslatex color colortext size 6, 4
+
+set output "output/stat_graph.gnp"
+set xrange [-80:80]
+set yrange [0:0.009]
+
+set style line 1 lc rgb '#800000' lt 1 lw 2
+set style line 2 lc rgb '#ff0000' lt 1 lw 2
+set style line 3 lc rgb '#ff4500' lt 1 lw 2
+set style line 4 lc rgb '#ffa500' lt 1 lw 2
+set style line 5 lc rgb '#006400' lt 1 lw 2
+set style line 6 lc rgb '#0000ff' lt 1 lw 2
+set style line 7 lc rgb '#9400d3' lt 1 lw 2
+
+
+unset label 
+
+# Axes
+set style line 11 lc 'black' lt 1
+set border ls 11
+set tics  scale 0.75
+# Grid
+set style line 12 lc rgb'#808080' lt 0 lw 1
+#~ set grid back ls 12
+
+set ytics 0, 0.0015, 0.0015
+
+set mxtics 2
+set mytics 10
+
+shift = 0.0015
+offset = 0.0009
+
+f(x) = shift
+
+set label 1 '$N=2$'  at -70, shift*0+offset center tc ls 1
+set label 2 '$N=6$'  at -70, shift*1+offset center tc ls 2
+set label 3 '$N=16$'  at -70, shift*2+offset center tc ls 3
+set label 4 '$N=42$'  at -70, shift*3+offset center tc ls 4
+set label 5 '$N=110$'  at -70, shift*4+offset center tc ls 5
+set label 6 '$N=288$'  at -70, shift*5+offset center tc ls 6
+
+plot \
+    'data/statistika/2.dat'  u 1:2 w l ls 1 notitle, \
+    f(x) notitle lt 2 lc 'black' , \
+    'data/statistika/6.dat'  u 1:($2+shift) w l ls 2 notitle, \
+    2*f(x) notitle lt 2 lc 'black', \
+    'data/statistika/16.dat'  u 1:($2+2*shift) w l ls 3 notitle, \
+    3*f(x) notitle lt 2 lc 'black', \
+    'data/statistika/42.dat'  u 1:($2+3*shift) w l ls 4 notitle, \
+    4*f(x) notitle lt 2 lc 'black', \
+    'data/statistika/110.dat'  u 1:($2+4*shift) w l ls 5 notitle, \
+    5*f(x) notitle lt 2 lc 'black', \
+    'data/statistika/288.dat'  u 1:($2+5*shift) w l ls 6 notitle,\
+    6*f(x) notitle lt 2 lc 'black'
