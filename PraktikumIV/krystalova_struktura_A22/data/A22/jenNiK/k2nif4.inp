@@ -1,0 +1,34 @@
+  ! Template file to be used with the program FOURIER
+  ! Title of the job
+Titl   K2NiF4 jen Ni v (0,0,0), K v (0,0,z)
+
+  ! Cell parameters
+Cell      4.0130    4.0130   13.0886   90.0000   90.0000   90.0000
+
+  ! Atoms in the asymmetric unit 
+Atom  Ni       0.00000   0.00000   0.00000   1.00000
+Atom  K        0.00000   0.00000   0.18537   1.00000
+
+  ! Space group symbol
+Spgr I 4/m m m           
+
+  ! Type of Fourier synthesis 
+Fourier Fobs 
+
+  ! Name of the Fourier-reflection file
+File  fou k2nif4.fou
+
+  ! Format of the Fourier-reflection file
+Form    h k l fo fc phase
+
+  ! List distances
+List   dist  0.6  2.6
+
+  ! Standard output binary file
+File   bin
+
+  ! Peak search 
+Scan   5
+
+  ! End of file
+End 

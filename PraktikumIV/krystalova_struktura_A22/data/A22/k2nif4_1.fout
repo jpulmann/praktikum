@@ -1,0 +1,256 @@
+ !***************************************************************************!
+ !****  FOURIER MAPS CALCULATION PROGRAM (Version: Windows XP/Vista/7)   ****!
+ !****  Copyright(c) 1999-2005.                          Release:  04.06 ****!
+ !****  Javier Gonzalez-Platas         &        Juan Rodriguez-Carvajal  ****!
+ !****                                                                   ****!
+ !****  Date: 11/12/2013                                 Time: 23:37:18  ****!
+ !***************************************************************************!
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Files Information
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+         Input Data:  k2nif4_1.inp
+        Output Data:  k2nif4_1.fout
+        HKL- F Data:  k2nif4_1.fou
+        Binary Data:  k2nif4_1.bin
+         Peaks Data:  k2nif4_1.pks
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Cell parameters Information
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+
+        Metric information:
+        -------------------
+
+ => Direct cell parameters:
+
+         a =       4.0131      b =       4.0131      c =      13.0882
+     alpha =       90.000   beta =       90.000  gamma =       90.000
+                        Direct Cell Volume =     210.7851
+
+ => Reciprocal cell parameters:
+
+         a*=     0.249184      b*=     0.249184      c*=     0.076405
+     alpha*=       90.000   beta*=       90.000  gamma*=       90.000
+                    Reciprocal Cell Volume =   0.00474417
+
+ => Direct and Reciprocal Metric Tensors:
+
+                   GD                                       GR
+     16.1050      0.0000      0.0000          0.062093    0.000000    0.000000
+      0.0000     16.1050      0.0000          0.000000    0.062093    0.000000
+      0.0000      0.0000    171.3010          0.000000    0.000000    0.005838
+
+ =>  Cartesian frame: z // c; y is in the bc-plane; x is y ^ z   
+
+     Crystal_to_Orthonormal_Matrix              Orthonormal_to_Crystal Matrix
+              Cr_Orth_cel                               Orth_Cr_cel  
+      4.0131      0.0000      0.0000          0.249184    0.000000    0.000000
+      0.0000      4.0131      0.0000          0.000000    0.249184    0.000000
+      0.0000      0.0000     13.0882          0.000000    0.000000    0.076405
+
+     Busing-Levy B-matrix: Hc=B.H            Inverse of the Busing-Levy B-matrix
+                BL_M                                      BL_Minv  
+    0.249184    0.000000    0.000000            4.0131      0.0000      0.0000
+    0.000000    0.249184    0.000000            0.0000      4.0131      0.0000
+    0.000000    0.000000    0.076405            0.0000      0.0000     13.0882
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Space Group Information
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+
+
+        Information on Space Group: 
+        --------------------------- 
+
+ =>  Number of Space group: 139
+ => Hermann-Mauguin Symbol: I 4/m m m
+ =>            Hall Symbol: -I 4 2
+ =>   Table Setting Choice: 
+ =>           Setting Type: IT (Generated from Hermann-Mauguin symbol)
+ =>         Crystal System: Tetragonal
+ =>             Laue Class: 4/mmm
+ =>            Point Group: 4/mmm
+ =>        Bravais Lattice: I
+ =>         Lattice Symbol: tI
+ => Reduced Number of S.O.:   8
+ =>   General multiplicity:  32
+ =>         Centrosymmetry: Centric (-1 at origin)
+ => Generators (exc. -1&L):   2
+ =>        Asymmetric unit:  0.000 <= x <=  0.500
+                             0.000 <= y <=  0.500
+                             0.000 <= z <=  0.250
+ => List of S.O. without inversion and lattice centring translations
+ => SYMM( 1): x,y,z                                => SYMM( 2): -y,x,z
+ => SYMM( 3): -x,-y,z                              => SYMM( 4): y,-x,z
+ => SYMM( 5): -x,y,z                               => SYMM( 6): y,x,z
+ => SYMM( 7): x,-y,z                               => SYMM( 8): -y,-x,z
+
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     FFT Information
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+       Type: Patterson (Fo) 
+ 
+       Grid Dimensions:    Nx =   16   Dx =  0.062
+                           Ny =   16   Dy =  0.062
+                           Nz =   64   Dz =  0.016
+ 
+       Reflections used:       87
+ 
+                           H max =    5     H min =    0     
+                           K max =    3     K min =    0     
+                           L max =   16     L min =    0     
+ 
+       F000 =      0.000             Scale =      1.000
+ 
+       Density Max:   802807.875     Density Min:   -48085.352
+       Average Den:       -0.004       Sigma Den:    50616.156
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Scan Peaks Information
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+       Number of Peaks =     5
+ 
+       Peak    x/a       y/b       z/c      Occ      Density
+ 
+       Pk_1    0.0000    0.0000    0.0000    0.0625**********
+       Pk_2    0.5000    0.5000    0.1480    0.1250**********
+       Pk_3    0.5000    0.5000    0.0000    0.0625**********
+       Pk_4    0.0000    0.0000    0.1604    0.1250**********
+       Pk_5    0.5000    0.0000    0.0000    0.1250**********
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     List of Distance/Angles (Atoms - Peaks)
+ !----  wdicvol04 solution (automatic generated pcr file)
+ !----
+ 
+ 
+   In the following list <Chem> corresponds to the number of the peak that 
+   is close to a given atom, or to ** when no atom is close to the found peak
+
+        Atoms information:
+        ------------------
+
+    Atom      Chem        x/a       y/b       z/c       Biso     Occ       Mult
+    ===========================================================================
+    Pk_1       **       0.0000    0.0000    0.0000    0.0000    0.0625        2  None
+    Pk_2       **       0.5000    0.5000    0.1480    0.0000    0.1250        4  None
+    Pk_3       **       0.5000    0.5000    0.0000    0.0000    0.0625        2  None
+    Pk_4       **       0.0000    0.0000    0.1604    0.0000    0.1250        4  None
+    Pk_5       **       0.5000    0.0000    0.0000    0.0000    0.1250        4  None
+ 
+
+ => Symmetry operators combined with inversion centre:
+ => SYMM( 9): -x,-y,-z              => SYMM(10): y,-x,-z                        
+ => SYMM(11): x,y,-z                => SYMM(12): -y,x,-z                        
+ => SYMM(13): x,-y,-z               => SYMM(14): -y,-x,-z                       
+ => SYMM(15): -x,y,-z               => SYMM(16): y,x,-z                         
+                                                                                
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_1   0.0000  0.0000  0.0000
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    1   4   1  (Pk_1 )-(Pk_4 ):   2.0993     0.0000  0.0000  0.1604  ( 0  , 0  , 0  )  x,y,z
+    1   4   9  (Pk_1 )-(Pk_4 ):   2.0993     0.0000  0.0000 -0.1604  ( 0  , 0  , 0  )  -x,-y,-z
+    1   5   1  (Pk_1 )-(Pk_5 ):   2.0066    -0.5000  0.0000  0.0000  (-1  , 0  , 0  )  x,y,z
+    1   5   1  (Pk_1 )-(Pk_5 ):   2.0066     0.5000  0.0000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    1   5   2  (Pk_1 )-(Pk_5 ):   2.0066     0.0000 -0.5000  0.0000  ( 0  ,-1  , 0  )  -y,x,z
+    1   5   2  (Pk_1 )-(Pk_5 ):   2.0066     0.0000  0.5000  0.0000  ( 0  , 0  , 0  )  -y,x,z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_2   0.5000  0.5000  0.1480
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    2   3   1  (Pk_2 )-(Pk_3 ):   1.9366     0.5000  0.5000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    2   4   9  (Pk_2 )-(Pk_4 ):   2.5082     0.5000  0.5000  0.3396  ( 1/2, 1/2, 1/2)  -x,-y,-z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_3   0.5000  0.5000  0.0000
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    3   2   1  (Pk_3 )-(Pk_2 ):   1.9366     0.5000  0.5000  0.1480  ( 0  , 0  , 0  )  x,y,z
+    3   2   9  (Pk_3 )-(Pk_2 ):   1.9366     0.5000  0.5000 -0.1480  ( 1  , 1  , 0  )  -x,-y,-z
+    3   5   1  (Pk_3 )-(Pk_5 ):   2.0066     0.5000  0.0000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    3   5   1  (Pk_3 )-(Pk_5 ):   2.0066     0.5000  1.0000  0.0000  ( 0  , 1  , 0  )  x,y,z
+    3   5   2  (Pk_3 )-(Pk_5 ):   2.0066     0.0000  0.5000  0.0000  ( 0  , 0  , 0  )  -y,x,z
+    3   5   2  (Pk_3 )-(Pk_5 ):   2.0066     1.0000  0.5000  0.0000  ( 1  , 0  , 0  )  -y,x,z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_4   0.0000  0.0000  0.1604
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    4   1   1  (Pk_4 )-(Pk_1 ):   2.0993     0.0000  0.0000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    4   2   9  (Pk_4 )-(Pk_2 ):   2.5082     0.0000  0.0000  0.3520  ( 1/2, 1/2, 1/2)  -x,-y,-z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_5   0.5000  0.0000  0.0000
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    5   1   1  (Pk_5 )-(Pk_1 ):   2.0066     0.0000  0.0000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    5   1   1  (Pk_5 )-(Pk_1 ):   2.0066     1.0000  0.0000  0.0000  ( 1  , 0  , 0  )  x,y,z
+    5   3   1  (Pk_5 )-(Pk_3 ):   2.0066     0.5000 -0.5000  0.0000  ( 0  ,-1  , 0  )  x,y,z
+    5   3   1  (Pk_5 )-(Pk_3 ):   2.0066     0.5000  0.5000  0.0000  ( 0  , 0  , 0  )  x,y,z
+ 
+ 
+       Cpu Time:     0.12 secs
+ 
+       Fourier Program finished OK
+ 
+ !***************************************************************************!
+ !****  wdicvol04 solution (automatic generated pcr file)                ****!
+ !****  Date: 11/12/2013                                 Time: 23:37:18  ****!
+ !****                                                                   ****!
+ !***************************************************************************!

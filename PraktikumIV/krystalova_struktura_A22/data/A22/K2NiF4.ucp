@@ -1,0 +1,8 @@
+ DICVOL CONDENSED RESULTS: 
+   . input  file: E:\skola\praktika\Praktikum_IV\krystalova_struktura_A22\data\A22\K2NiF4.dic
+   . output file: E:\skola\praktika\Praktikum_IV\krystalova_struktura_A22\data\A22\K2NiF4.ind
+   . INSTRM: 10
+   . WAVE:    1.54060  1.54439  0.50000
+    a(A)    b(A)    c(A)    alfa    beta    gama   symmetry   Volume(A3)  zero_shift       M(N)       F(N)       N     IMP
+-----------------------------------------------------------------------------------------------------------------------------
+  4.0139  4.0139 13.0917  90.000  90.000  90.000    Tetrag.      210.92      -0.0190      169.9      114.9      20       0

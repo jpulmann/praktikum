@@ -1,0 +1,24 @@
+##Body 
+17
+##Komentáre v protokole
+velmi pěkné!
+
+literatúra sa čísluje podľa poradia, v ktorom sa objavuje
+
+príliš veľká presnosť mriežkových parametrov, mali byť tak 3-4 desatinné miesta
+
+strana 4, komentár "22 atómov F": iba 8xF, ostatné symetricky ekvivalentné
+
+chýba legenda v grafe 6
+##Moje komentáre
+Nie úplne najjednoduchšie, dôležité je pamätať si väčšinu krokov v neprehľadom FullProfe. Spracovanie je na dlhšie, ale ide skôr o pochopenie - ručne som nekreslil žiadne grafy ani nespracovával žiadne dáta. Celkovo ale jedna z najzaujímavejších úloh, aké som v praktiku robil.
+
+V priečinku A22 sú všetky možné výstupy z FullProfu, v podpriečinkoch sú čiastkové simulácie pre jednotlivé atómy. 
+##Inštrukcie
+Spúštajte
+```
+>pdflatex ulohaA19.tex
+>pdflatex ulohaA19.tex #kvôli citáciám
+```
+
+

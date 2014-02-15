@@ -1,0 +1,129 @@
+
+
+        **********************************************************
+        ** PROGRAM FullProf.2k (Version 5.30 - Mar2012-ILL JRC) **
+        **********************************************************
+                       M U L T I -- P A T T E R N                 
+            Rietveld, Profile Matching & Integrated Intensity     
+                 Refinement of X-ray and/or Neutron Data
+
+
+    Date: 06/12/2013  Time: 17:02:47.090                              
+
+ => PCR file code: k2nif4
+ => DAT file code: k2nif4.dat           -> Relative contribution: 1.0000                                                            
+ => Title: K2NiF4 jen Ni v (0,0,0), K v (0,0,z)
+
+ ==> CONDITIONS OF THIS RUN FOR PATTERN No.:  1
+
+ => Global Refinement of X-ray powder diffraction data                                                                              
+ => Global Refinement of X-ray powder diffraction data                                                                              
+    Bragg-Brentano(X-rays) or Debye-Scherrer geometry(Neutrons)
+ => The    5th default profile function was selected
+
+ => X-Y type of data: 2theta/TOF/E(Kev) Intens sigma for pattern:  1
+ => Wavelengths:  1.54060 1.54439
+ => Cos(Monochromator angle)=   0.7998
+ => Absorption correction (AC), muR-eff =   0.0000  0.0000
+ => Base of peaks: 2.0*HW*   20.00
+ ==> Angular range, step and number of points:
+     2Thmin:      10.120000  2Thmax:     150.000000  Step:       0.020004  No. of points:   6995
+ =>-------> Pattern#  1
+ => Crystal Structure Refinement for phase: 1
+ => The density (volumic mass) of phase 1 is:    2.157 g/cm3
+ => Scor: 5.3100
+
+ ==> RESULTS OF REFINEMENT:
+
+
+ => No. of fitted parameters:    8
+
+
+------------------------------------------------------------------------------
+ => Phase No.  1  phase 1:                               I 4/m m m           
+------------------------------------------------------------------------------
+
+ =>  No. of reflections for pattern#:   1:   176/2
+
+
+ ==> ATOM PARAMETERS:
+
+  Name      x     sx       y     sy       z      sz      B   sB   occ. socc.  Mult
+ Ni      0.00000(   0)  0.00000(   0)  0.00000(   0)  0.000(  0)  2.000(  0)    2
+ K       0.00000(   0)  0.00000(   0)  0.18537(  78)  0.000(  0)  4.000(  0)    4
+
+ ==> PROFILE PARAMETERS FOR PATTERN#  1
+
+ => Cell parameters      :
+                              4.01304   0.00007
+                              4.01304   0.00007
+                             13.08858   0.00056
+                             90.00000   0.00000
+                             90.00000   0.00000
+                             90.00000   0.00000
+ 
+ => overall scale factor :      0.000006400     0.000000191
+ => Eta(p-v) or m(p-vii) :    0.69909   0.07464
+ => Overall tem. factor  :   -0.82184   0.09106
+ => Halfwidth parameters :    0.00000   0.00000
+                              0.00000   0.00000
+                              0.01292   0.00146
+ => Preferred orientation:    1.00000   0.00000
+                              0.00000   0.00000
+ => Asymmetry parameters :    0.00000   0.00000
+                              0.00000   0.00000
+                              0.00000   0.00000
+                              0.00000   0.00000
+ => X and y parameters   :    0.00000   0.00000
+                              0.00000   0.00000
+ => Strain parameters    :    0.00000   0.00000
+                              0.00000   0.00000
+                              0.00000   0.00000
+ => Size parameters (G,L):    0.00000   0.00000
+                              0.00000   0.00000
+
+ ==> GLOBAL PARAMETERS FOR PATTERN#  1
+
+
+ => Zero-point:     0.0023    0.0023
+ => Cos( theta)-shift parameter :   0.0000  0.0000
+ => Sin(2theta)-shift parameter :   0.0000  0.0000
+
+ ==> RELIABILITY FACTORS WITH ALL NON-EXCLUDED POINTS FOR PATTERN:  1
+
+  => Cycle:  1 => MaxCycle: 10
+ => N-P+C:  6986
+ =>  R-factors (not corrected for background) for Pattern:  1
+ => Rp:  46.5     Rwp:  59.7     Rexp:    2.25 Chi2:  702.      L.S. refinement
+ => Conventional Rietveld R-factors for Pattern:  1
+ => Rp:  85.6     Rwp:  87.2     Rexp:    3.29 Chi2:  702.    
+ => Deviance:  0.173E+08     Dev*  :   2477.    
+ => DW-Stat.:    0.0348     DW-exp:     1.9281
+ => N-sigma of the GoF: ********
+
+ ==> RELIABILITY FACTORS FOR POINTS WITH BRAGG CONTRIBUTIONS FOR PATTERN:  1
+
+ => N-P+C:  6424
+ =>  R-factors (not corrected for background) for Pattern:  1
+ => Rp:  47.6     Rwp:  60.6     Rexp:    2.19 Chi2:  763.      L.S. refinement
+ => Conventional Rietveld R-factors for Pattern:  1
+ => Rp:  85.4     Rwp:  87.2     Rexp:    3.16 Chi2:  763.    
+ => Deviance:  0.173E+08     Dev*  :   2693.    
+ => DW-Stat.:    0.0348     DW-exp:     1.9251
+ => N-sigma of the GoF:    43186.320
+
+ => Global user-weigthed Chi2 (Bragg contrib.):   763.    
+
+     -----------------------------------------------------
+     BRAGG R-Factors and weight fractions for Pattern #  1
+     -----------------------------------------------------
+
+ => Phase:  1      phase 1:
+ => Bragg R-factor:   82.0       Vol:  210.785( 0.011)  Fract(%):  100.00( 4.23)
+ => Rf-factor=  55.3             ATZ:      120217.602   Brindley:  1.0000
+
+ 
+              CPU Time:     0.391 seconds
+                            0.007 minutes
+
+ => Run finished at:     Date: 06/12/2013  Time: 17:02:47.487                              

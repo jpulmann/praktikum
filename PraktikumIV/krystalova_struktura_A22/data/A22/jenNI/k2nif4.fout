@@ -1,0 +1,303 @@
+ !***************************************************************************!
+ !****  FOURIER MAPS CALCULATION PROGRAM (Version: Windows XP/Vista/7)   ****!
+ !****  Copyright(c) 1999-2005.                          Release:  04.06 ****!
+ !****  Javier Gonzalez-Platas         &        Juan Rodriguez-Carvajal  ****!
+ !****                                                                   ****!
+ !****  Date: 11/12/2013                                 Time: 16:59:30  ****!
+ !***************************************************************************!
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Files Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+         Input Data:  k2nif4.inp
+        Output Data:  k2nif4.fout
+        HKL- F Data:  k2nif4.fou
+        Binary Data:  k2nif4.bin
+         Peaks Data:  k2nif4.pks
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Cell parameters Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+
+        Metric information:
+        -------------------
+
+ => Direct cell parameters:
+
+         a =       4.0131      b =       4.0131      c =      13.0888
+     alpha =       90.000   beta =       90.000  gamma =       90.000
+                        Direct Cell Volume =     210.7948
+
+ => Reciprocal cell parameters:
+
+         a*=     0.249184      b*=     0.249184      c*=     0.076401
+     alpha*=       90.000   beta*=       90.000  gamma*=       90.000
+                    Reciprocal Cell Volume =   0.00474395
+
+ => Direct and Reciprocal Metric Tensors:
+
+                   GD                                       GR
+     16.1050      0.0000      0.0000          0.062093    0.000000    0.000000
+      0.0000     16.1050      0.0000          0.000000    0.062093    0.000000
+      0.0000      0.0000    171.3167          0.000000    0.000000    0.005837
+
+ =>  Cartesian frame: z // c; y is in the bc-plane; x is y ^ z   
+
+     Crystal_to_Orthonormal_Matrix              Orthonormal_to_Crystal Matrix
+              Cr_Orth_cel                               Orth_Cr_cel  
+      4.0131      0.0000      0.0000          0.249184    0.000000    0.000000
+      0.0000      4.0131      0.0000          0.000000    0.249184    0.000000
+      0.0000      0.0000     13.0888          0.000000    0.000000    0.076401
+
+     Busing-Levy B-matrix: Hc=B.H            Inverse of the Busing-Levy B-matrix
+                BL_M                                      BL_Minv  
+    0.249184    0.000000    0.000000            4.0131      0.0000      0.0000
+    0.000000    0.249184    0.000000            0.0000      4.0131      0.0000
+    0.000000    0.000000    0.076401            0.0000      0.0000     13.0888
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Space Group Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+
+
+        Information on Space Group: 
+        --------------------------- 
+
+ =>  Number of Space group: 139
+ => Hermann-Mauguin Symbol: I 4/m m m
+ =>            Hall Symbol: -I 4 2
+ =>   Table Setting Choice: 
+ =>           Setting Type: IT (Generated from Hermann-Mauguin symbol)
+ =>         Crystal System: Tetragonal
+ =>             Laue Class: 4/mmm
+ =>            Point Group: 4/mmm
+ =>        Bravais Lattice: I
+ =>         Lattice Symbol: tI
+ => Reduced Number of S.O.:   8
+ =>   General multiplicity:  32
+ =>         Centrosymmetry: Centric (-1 at origin)
+ => Generators (exc. -1&L):   2
+ =>        Asymmetric unit:  0.000 <= x <=  0.500
+                             0.000 <= y <=  0.500
+                             0.000 <= z <=  0.250
+ => List of S.O. without inversion and lattice centring translations
+ => SYMM( 1): x,y,z                                => SYMM( 2): -y,x,z
+ => SYMM( 3): -x,-y,z                              => SYMM( 4): y,-x,z
+ => SYMM( 5): -x,y,z                               => SYMM( 6): y,x,z
+ => SYMM( 7): x,-y,z                               => SYMM( 8): -y,-x,z
+
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     FFT Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+       Type: Fourier Fo     
+ 
+       Grid Dimensions:    Nx =   16   Dx =  0.062
+                           Ny =   16   Dy =  0.062
+                           Nz =   64   Dz =  0.016
+ 
+       Reflections used:       87
+ 
+                           H max =    5     H min =    0     
+                           K max =    3     K min =    0     
+                           L max =   16     L min =    0     
+ 
+       F000 =      0.000             Scale =      1.000
+ 
+       Density Max:     2108.890     Density Min:     -196.630
+       Average Den:        0.000       Sigma Den:       91.007
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Atoms Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+
+        Atoms information:
+        ------------------
+
+    Atom      Chem        x/a       y/b       z/c       Biso     Occ       Mult
+    ===========================================================================
+    Ni         Ni       0.0000    0.0000    0.0000    0.0000    0.0625        2  None
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     Scan Peaks Information
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+       Number of Peaks =     5
+ 
+       Peak    x/a       y/b       z/c      Occ      Density
+ 
+       Pk_1    0.0000    0.0000    0.0000    0.0625 2108.8901
+       Pk_2    0.4991    0.5000    0.1418    0.5000  597.4933
+       Pk_3    0.4984    0.4998    0.0000    0.5000  309.6075
+       Pk_4    0.0000    0.0098    0.0658    0.5000 -196.6303
+       Pk_5    0.0000    0.0037    0.2057    0.5000  151.4489
+ 
+ !----
+ !----  FOURIER  PROGRAM (Version: Windows XP/Vista/7)   
+ !----     List of Distance/Angles (Atoms - Peaks)
+ !----  k2nif4 jen ni v (0,0,0)
+ !----
+ 
+ 
+   In the following list <Chem> corresponds to the number of the peak that 
+   is close to a given atom, or to ** when no atom is close to the found peak
+
+        Atoms information:
+        ------------------
+
+    Atom      Chem        x/a       y/b       z/c       Biso     Occ       Mult
+    ===========================================================================
+    Ni          1       0.0000    0.0000    0.0000    0.0000    0.0625        2  None
+    Pk_2       **       0.4991    0.5000    0.1418    0.0000    0.5000       16  None
+    Pk_3       **       0.4984    0.4998    0.0000    0.0000    0.5000       16  None
+    Pk_4       **       0.0000    0.0098    0.0658    0.0000    0.5000       16  None
+    Pk_5       **       0.0000    0.0037    0.2057    0.0000    0.5000       16  None
+ 
+
+ => Symmetry operators combined with inversion centre:
+ => SYMM( 9): -x,-y,-z              => SYMM(10): y,-x,-z                        
+ => SYMM(11): x,y,-z                => SYMM(12): -y,x,-z                        
+ => SYMM(13): x,-y,-z               => SYMM(14): -y,-x,-z                       
+ => SYMM(15): -x,y,-z               => SYMM(16): y,x,-z                         
+                                                                                
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Ni     0.0000  0.0000  0.0000
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    1   4   1  (Ni   )-(Pk_4 ):   0.8624     0.0000  0.0098  0.0658  ( 0  , 0  , 0  )  x,y,z
+    1   4   2  (Ni   )-(Pk_4 ):   0.8624    -0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  -y,x,z
+    1   4   3  (Ni   )-(Pk_4 ):   0.8624     0.0000 -0.0098  0.0658  ( 0  , 0  , 0  )  -x,-y,z
+    1   4   4  (Ni   )-(Pk_4 ):   0.8624     0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  y,-x,z
+    1   4   9  (Ni   )-(Pk_4 ):   0.8624     0.0000 -0.0098 -0.0658  ( 0  , 0  , 0  )  -x,-y,-z
+    1   4  10  (Ni   )-(Pk_4 ):   0.8624     0.0098  0.0000 -0.0658  ( 0  , 0  , 0  )  y,-x,-z
+    1   4  11  (Ni   )-(Pk_4 ):   0.8624     0.0000  0.0098 -0.0658  ( 0  , 0  , 0  )  x,y,-z
+    1   4  12  (Ni   )-(Pk_4 ):   0.8624    -0.0098  0.0000 -0.0658  ( 0  , 0  , 0  )  -y,x,-z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_2   0.4991  0.5000  0.1418
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    2   2   2  (Pk_2 )-(Pk_2 ):   0.0049     0.5000  0.4991  0.1418  ( 1  , 0  , 0  )  -y,x,z
+    2   2   3  (Pk_2 )-(Pk_2 ):   0.0070     0.5009  0.5000  0.1418  ( 1  , 1  , 0  )  -x,-y,z
+    2   2   4  (Pk_2 )-(Pk_2 ):   0.0049     0.5000  0.5009  0.1418  ( 0  , 1  , 0  )  y,-x,z
+    2   3   1  (Pk_2 )-(Pk_3 ):   1.8557     0.4984  0.4998  0.0000  ( 0  , 0  , 0  )  x,y,z
+    2   3   2  (Pk_2 )-(Pk_3 ):   1.8557     0.5002  0.4984  0.0000  ( 1  , 0  , 0  )  -y,x,z
+    2   3   3  (Pk_2 )-(Pk_3 ):   1.8557     0.5016  0.5002  0.0000  ( 1  , 1  , 0  )  -x,-y,z
+    2   3   4  (Pk_2 )-(Pk_3 ):   1.8557     0.4998  0.5016  0.0000  ( 0  , 1  , 0  )  y,-x,z
+    2   5   9  (Pk_2 )-(Pk_5 ):   1.9963     0.5000  0.4963  0.2943  ( 1/2, 1/2, 1/2)  -x,-y,-z
+    2   5  10  (Pk_2 )-(Pk_5 ):   1.9963     0.5037  0.5000  0.2943  ( 1/2, 1/2, 1/2)  y,-x,-z
+    2   5  11  (Pk_2 )-(Pk_5 ):   1.9963     0.5000  0.5037  0.2943  ( 1/2, 1/2, 1/2)  x,y,-z
+    2   5  12  (Pk_2 )-(Pk_5 ):   1.9962     0.4963  0.5000  0.2943  ( 1/2, 1/2, 1/2)  -y,x,-z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_3   0.4984  0.4998  0.0000
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    3   2   1  (Pk_3 )-(Pk_2 ):   1.8557     0.4991  0.5000  0.1418  ( 0  , 0  , 0  )  x,y,z
+    3   2   2  (Pk_3 )-(Pk_2 ):   1.8557     0.5000  0.4991  0.1418  ( 1  , 0  , 0  )  -y,x,z
+    3   2   3  (Pk_3 )-(Pk_2 ):   1.8557     0.5009  0.5000  0.1418  ( 1  , 1  , 0  )  -x,-y,z
+    3   2   4  (Pk_3 )-(Pk_2 ):   1.8557     0.5000  0.5009  0.1418  ( 0  , 1  , 0  )  y,-x,z
+    3   2   9  (Pk_3 )-(Pk_2 ):   1.8557     0.5009  0.5000 -0.1418  ( 1  , 1  , 0  )  -x,-y,-z
+    3   2  10  (Pk_3 )-(Pk_2 ):   1.8557     0.5000  0.5009 -0.1418  ( 0  , 1  , 0  )  y,-x,-z
+    3   2  11  (Pk_3 )-(Pk_2 ):   1.8557     0.4991  0.5000 -0.1418  ( 0  , 0  , 0  )  x,y,-z
+    3   2  12  (Pk_3 )-(Pk_2 ):   1.8557     0.5000  0.4991 -0.1418  ( 1  , 0  , 0  )  -y,x,-z
+    3   3   2  (Pk_3 )-(Pk_3 ):   0.0091     0.5002  0.4984  0.0000  ( 1  , 0  , 0  )  -y,x,z
+    3   3   3  (Pk_3 )-(Pk_3 ):   0.0129     0.5016  0.5002  0.0000  ( 1  , 1  , 0  )  -x,-y,z
+    3   3   4  (Pk_3 )-(Pk_3 ):   0.0091     0.4998  0.5016  0.0000  ( 0  , 1  , 0  )  y,-x,z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_4   0.0000  0.0098  0.0658
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    4   1   1  (Pk_4 )-(Ni   ):   0.8624     0.0000  0.0000  0.0000  ( 0  , 0  , 0  )  x,y,z
+    4   4   2  (Pk_4 )-(Pk_4 ):   0.0554    -0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  -y,x,z
+    4   4   3  (Pk_4 )-(Pk_4 ):   0.0784     0.0000 -0.0098  0.0658  ( 0  , 0  , 0  )  -x,-y,z
+    4   4   4  (Pk_4 )-(Pk_4 ):   0.0554     0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  y,-x,z
+    4   4   9  (Pk_4 )-(Pk_4 ):   1.7248     0.0000 -0.0098 -0.0658  ( 0  , 0  , 0  )  -x,-y,-z
+    4   4  10  (Pk_4 )-(Pk_4 ):   1.7239     0.0098  0.0000 -0.0658  ( 0  , 0  , 0  )  y,-x,-z
+    4   4  11  (Pk_4 )-(Pk_4 ):   1.7231     0.0000  0.0098 -0.0658  ( 0  , 0  , 0  )  x,y,-z
+    4   4  12  (Pk_4 )-(Pk_4 ):   1.7239    -0.0098  0.0000 -0.0658  ( 0  , 0  , 0  )  -y,x,-z
+    4   5   1  (Pk_4 )-(Pk_5 ):   1.8311     0.0000  0.0037  0.2057  ( 0  , 0  , 0  )  x,y,z
+    4   5   2  (Pk_4 )-(Pk_5 ):   1.8315    -0.0037  0.0000  0.2057  ( 0  , 0  , 0  )  -y,x,z
+    4   5   3  (Pk_4 )-(Pk_5 ):   1.8318     0.0000 -0.0037  0.2057  ( 0  , 0  , 0  )  -x,-y,z
+    4   5   4  (Pk_4 )-(Pk_5 ):   1.8315     0.0037  0.0000  0.2057  ( 0  , 0  , 0  )  y,-x,z
+
+
+    -------------------------------------------------------------------
+    Distances less than  2.6000  to atom: Pk_5   0.0000  0.0037  0.2057
+    -------------------------------------------------------------------
+
+
+
+
+ Orig. extr. p.equiv.           Distance      x_ext   y_ext   z_ext    tx   ty   tz    Sym. op.
+
+
+    5   2   9  (Pk_5 )-(Pk_2 ):   1.9963     0.0009  0.0000  0.3582  ( 1/2, 1/2, 1/2)  -x,-y,-z
+    5   2  10  (Pk_5 )-(Pk_2 ):   1.9962     0.0000  0.0009  0.3582  (-1/2, 1/2, 1/2)  y,-x,-z
+    5   2  11  (Pk_5 )-(Pk_2 ):   1.9963    -0.0009  0.0000  0.3582  (-1/2,-1/2, 1/2)  x,y,-z
+    5   2  12  (Pk_5 )-(Pk_2 ):   1.9963     0.0000 -0.0009  0.3582  ( 1/2,-1/2, 1/2)  -y,x,-z
+    5   4   1  (Pk_5 )-(Pk_4 ):   1.8311     0.0000  0.0098  0.0658  ( 0  , 0  , 0  )  x,y,z
+    5   4   2  (Pk_5 )-(Pk_4 ):   1.8315    -0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  -y,x,z
+    5   4   3  (Pk_5 )-(Pk_4 ):   1.8318     0.0000 -0.0098  0.0658  ( 0  , 0  , 0  )  -x,-y,z
+    5   4   4  (Pk_5 )-(Pk_4 ):   1.8315     0.0098  0.0000  0.0658  ( 0  , 0  , 0  )  y,-x,z
+    5   5   2  (Pk_5 )-(Pk_5 ):   0.0208    -0.0037  0.0000  0.2057  ( 0  , 0  , 0  )  -y,x,z
+    5   5   3  (Pk_5 )-(Pk_5 ):   0.0294     0.0000 -0.0037  0.2057  ( 0  , 0  , 0  )  -x,-y,z
+    5   5   4  (Pk_5 )-(Pk_5 ):   0.0208     0.0037  0.0000  0.2057  ( 0  , 0  , 0  )  y,-x,z
+ 
+ 
+       Cpu Time:     0.15 secs
+ 
+       Fourier Program finished OK
+ 
+ !***************************************************************************!
+ !****  k2nif4 jen ni v (0,0,0)                                          ****!
+ !****  Date: 11/12/2013                                 Time: 16:59:30  ****!
+ !****                                                                   ****!
+ !***************************************************************************!
