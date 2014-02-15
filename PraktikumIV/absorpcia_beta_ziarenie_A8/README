@@ -1,0 +1,14 @@
+##Body 
+20
+##Komentáre v protokole
+---protokol sa ku mne nedostal
+##Moje komentáre
+Jednoduché, no zdĺhavé meranie. Hľadanie nulového bodu nevychádzalo. 
+##Inštrukcie
+Spúštajte
+```
+>python process.py
+>gnuplot graph.gnp
+>pdflatex uloha8.tex
+>pdflatex uloha8.tex #kvôli citáciám
+```

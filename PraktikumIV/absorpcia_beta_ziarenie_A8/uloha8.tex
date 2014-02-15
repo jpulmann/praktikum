@@ -1,0 +1,224 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Absorpce beta záření. Určení energie beta-rozpadu měřením absorpce emitovaného záření.}
+\author{Ján Pulmann}
+\date{22. 10. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Namerajte závislosť počtu registrovaných elektrónov na hrúbke tienenia pre žiarič $^{90}\mathrm{Sr}$.
+	\item Určte maximálnu energiu $\beta-$žiarenia pre Stroncium a jeho produkt $_{39}^{90}\mathrm{Y}$.
+
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+Stroncium sa rozpadá na rádioaktívne Ytrium, žiarič je teda tvorený zmesou týchto prvkov (a tretieho stabilného prvku, Zirkónia). Podľa \cite{stud} je závislosť počtu elektrónov, ktoré prejdú absorbátorom hrúbky $d$ a hustoty $\rho$, daná
+\begin{equation}
+\label{eq:teor:abs1}
+N(d) = N(0) \exp\left(-\frac{\mu}{\rho} d\rho\right)\,,
+\end{equation}
+kde konštanta $\mu/\rho$ závisí od materiálu a maximálnej energie rozdelenie $\beta-$žiarenia. Podľa \cite{stud} je to pre hliník vzťah
+\begin{equation}
+\label{eq:teor:mu}
+\frac{\mu/\rho}{\mathrm{cm^2 \cdot g^{-1}}} = 22\cdot\left(\frac{E_0}{\mathrm{MeV}}\right)^{-4/3}\,.
+\end{equation}
+Vzťah \ref{eq:teor:abs1} neplatí presne a existuje hrúbka materiálu $R_\beta$, pre ktorú už materiálom neprejde žiadne žiarenie. Závislosť tejto hrúbky na maximálnej energii žiarenia je 
+\begin{equation}
+\label{eq:teor:Rbeta}
+\frac{R_\beta \rho}{\mathrm{g\cdot cm^{-2}}} =  \begin{dcases}
+     0.407 \cdot (E_0 / \mathrm{MeV})^{1.38},\;\;\; 0.15 < E_0 \le 0.8  \unit{MeV}\,,\\
+     0.542 \cdot E_0 / \mathrm{MeV}-0.133,\;\;\; E_0 > 0.8  \unit{MeV}\,.
+   \end{dcases}
+\end{equation}
+
+Keďže je žiarič tvorený zmesou dvoch prvkov, tak aj jeho spektrá a namerané počty zaregistrovaných častíc budú súčtom dvoch spektier pre rôzne maximálne energie $E_0^{(1), (2)}$ a netienené intenzity $N^{(1), (2)}(0)$. Taktiež pripočítavame konštanté žiarenie pozadia $N_B$, spôsobené odrážaním častíc od stien detektora a ostatným žiarením. My teda nameriame 
+\begin{equation}
+\label{eq:teor:abs2}
+N(d) = \sum_{i = 1, 2}N^{(i)}(0) \exp\left(-\frac{\mu(E_0^{(i)})}{\rho} d\rho\right) + N_B\,.
+\end{equation}
+
+\section*{Postup merania}
+\begin{enumerate}
+
+	\item Postupne pridávame tienenie a nameriame čas potrebný na zaregistrovanie konštantného počtu častíc (1000, kvôli konštantnej relatívnej chybe). Taktiež nameriame tento čas pre olovené tienenie. Tienenie najprv pridávame v malých krokoch, po utlmení slabšieho žiarenia krok zväčšíme (kroky sú $10$ a $100\unit{mg/cm^2}$).
+
+    \item Na odhadnutie chyby jedného merania nameriame viacero časov na jednej hrúbke tienenia a štatisticky vyhodnotíme odchýľku jednej hodnoty.
+ \end{enumerate}
+
+\subsection*{Pomôcky} Žiarič, hliníkové tienenia rôznej hrúbky, Geiger-M\"ullerov počítač, hrubé olovené tienenie.
+
+%%%
+\section*{Výsledky merania}
+
+\begin{table}[h!]
+\centering
+%~ \hspace*{60pt}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+$ t(0)\,/\unit s $ & 
+\input{output/no_shielding_tab.tex}
+\end{tabular}
+%~ \newline
+%~ \vspace*{2pt}
+\caption*{\textbf{ Tab. 1.} Doba merania 1000 pulzov bez tienenia}
+\end{table}
+
+V tabuľke 1 sú namerané hodnoty času potrebného na zaregistrovanie 1000 častíc. To isté meranie je opakované viac krát. Relatívna chyba jedného merania, počítaná ako odhad štandardnej odchýľky normálneho rozdelenia, vychádza $\input{output/relative.tex}\%$. Stredný čas spolu s chybou priemeru je 
+$$\bar t(0) = \input{output/no_shielding_mean.tex} \unit s\,.$$
+
+V tabuľke 2 sú namerané časy potrebné na zaregistrovanie 1000 častíc pri daných hrúbkach hliníkového tienenia. Tiež je v treťom stĺpci dopočítaný počet častíc zaregistrovaný za sekundu. Neurčitosť hodnoty $d\rho$ je odhadnutá ako neurčitosť v poslednej cifre, čo je asi $1\%$. Ostatné neurčitosti (v celom protokole) sú dopočítavané podľa zákona prenosu chýb.
+
+\begin{table}[h!]
+\centering
+%~ \hspace*{60pt}
+\begin{tabular}{c|c|c}
+$ d\rho\,/\unit {mg/cm^2} $ & $t\,/\unit{s}$ & $N \,/\unit{counts/s}$ \\
+\midrule
+\input{output/counts_tab.tex}
+\end{tabular}
+%~ \newline
+%~ \vspace*{2pt}
+\caption*{\textbf{ Tab. 2.} Doba merania 1000 pulzov bez tienenia}
+\end{table}
+
+Podľa \cite{stud} môžeme zvoliť postup postupného prekladania exponenciálnych závislostí z \ref{eq:teor:abs2} a odčítavania týchto hodnôt. Tento postup je ale ekvivalentný prekladaniu nameraných hodnôt celou funkciou \ref{eq:teor:abs2} vo viacerých krokoch:
+\begin{enumerate}
+    \item Posledné tri hodnoty sa napriek veľkému rozdielu v tienení takmer nelíšia, preto použijeme $N_B \approx 1.5\unit s^{-1}$. 
+    \item Najprv nastavíme parameter $N^{(2)}(0) = 0$ a prekladáme iba menením parametrov $N^{(1)}(0)$, $\mu^{(1)}(0)$ v rozsahu $d\rho \in [200, 1200]\unit {mg/cm^2}$.
+    \item Ďalej prekladáme v rozsahu $d\rho \in [0, 200]\unit {mg/cm^2}$ podľa parametrov $N^{(2)}(0)$, $\mu^{(2)}(0)$
+    \item Nakoniec, po získaní dobrého odhadu všetkých parametrov, môžeme preložiť naraz vo všetkých piatich parametroch. Tak aj získame štatistické odhady neistoty.
+\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/counts_graph.tex}
+\textbf{Graf 1.} Frekvencia častíc v závislosti na hrúbke tienenia
+\end{figure}
+
+Ďalej sme vypísali výsledné parametre prekladania. Postup a výsledné parametre sú robustné voči počiatočnej voľbe $N_B$. 
+
+\begin{align*}
+N^{(1)}(0) &= \input{output/N1_fit.tex} \unit{counts/s}\\
+N^{(2)}(0) &= \input{output/N2_fit.tex} \unit{counts/s}\\
+\mu(E^{(1)}_0)/\rho &= \input{output/a1_fit.tex} \unit{cm^2\cdot g^{-1}}\\
+\mu(E^{(2)}_0)/\rho &= \input{output/a2_fit.tex} \unit{cm^2\cdot g^{-1}}\\
+N_B &= \input{output/NB_fit.tex} \unit{counts/s}
+\end{align*}
+
+Konštantu $R_\beta$ určíme prekladaním kvadratickej závilosti tvaru 
+$$
+N(\rho d) = a (\rho d - D_0) + b (\rho d - D_0)^2
+$$
+časťou nameraných hodnôt blízkou nule. Pre každú energiu prekladáme hodnotami, od ktorých odčítame preloženú závislosť pre druhé spektrum a člen $N_B$. Toto preloženie je v grafoch 2 a 3.
+
+    
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/zero1_gnp.tex}
+\textbf{Graf 2.} Hľadanie nulového bodu $N(\rho d)$ pre spektrum 1
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\vspace*{-15pt}
+\input{output/zero2_gnp.tex}
+\textbf{Graf 3.} Hľadanie nulového bodu $N(\rho d)$ pre spektrum 2
+\end{figure}
+
+Teraz môžeme dopočítať maximálne energie rozdelenia. Zo vzťahu \ref{eq:teor:mu} dostávame
+\begin{align*}
+_\mu E^{(1)} &= \input{output/muE1.tex} \unit{MeV}\,,\\
+_\mu E^{(2)} &= \input{output/muE2.tex} \unit{MeV}\,.
+\end{align*}
+Z maximálneho doletu, teda rovnice \ref{eq:teor:Rbeta}
+\begin{align*}
+_{R_\beta} E^{(1)} &= \input{output/RE1.tex} \unit{MeV}\,,\\
+_{R_\beta} E^{(2)} &= \input{output/RE2.tex} \unit{MeV}\,.
+\end{align*}
+
+Namerali sme počet častíc za sekundu pri tienení hrubým oloveným plechom - dostali sme 
+$$(0.681\pm0.002) \unit{counts/s}\,.$$
+Táto hodnota je výrazne menšia ako intenzita pri silnom tienení hliníkom.
+
+Namerali sme tiež intenzitu pri vybratom žiariči ($20$ častíc za $79\unit{s}$), čo predstavuje
+$$(0.25\pm0.03) \unit{counts/s}\,,$$
+s chybou odhadnutou ako rozptyl Poissonovho rozdelenia.
+
+%%%
+\section*{Diskusia}
+Najprv sme uskutočnili to isté meranie 10 krát, aby sme poznali očakávateľný rozptyl hodnôt. Vidíme, že určená relatívna chyba $2.5\%$ je podobná relatívnej chybe Poissonovho rozdelenia, $1/\sqrt(1000)\approx 3\%$ (\cite{poisson}). 
+
+Meranie samotnej intenzity žiariča je teda zrejme celkom presné. Nepresnosti do merania vznášalo umiestňovanie tieniacich hliníkových plieškov. Tie na seba úplne nedoliehali, niekedy boli trochu nakrivo. Tiež mali rôzne rozmery, čo mohlo mať vplyv na odrazené žiarenie. 
+
+Vidíme, že okolo hodnoty $\rho d \approx 100 \unit{mg\cdot cm^{-2}}$ nastáva nejaká nepresnosť v meraní. Na grafe 1 závislosť má akoby nábeh na inflexný bod (nepresne vyjadrené), lepšie viditeľné je to na grafe 3. Po odčítaní exponenciály dostávame minimum, tesne na hranici chyby merania. Môže ísť o nepresné určenie $\rho d$ kvôli tenšiemu miestu na plechu, či o krivé ukladanie plechov na seba. Úlohu hraje aj nesúlad vzťahu \ref{eq:teor:abs1} zo skutočnosťou, dostávame sa práve do oblasti kde tento vzťah prestáva platiť. 
+
+Samotné prekladanie súčtom dvoch exponenciálnych poklesov v grafe 1 má prijateľnú presnosť. Vidíme, že tvrdšia časť hodnôt (pre silnejšie tienenie) dobre súhlasí (grafy 1 a 2). Pre mäkkú časť spektra je tu už spomínaný skok. 
+
+Na určenie bodu, kde je všetko žiarenie odtienené, sme prekladali okolie nulového bodu rozvojom do druhého rádu. Hlavne v grafe 3 vidíme, že takéto prekladanie nemusí vždy dobre fungovať. Preto sú hodnoty neistoty $D_0$, získané z gnuplotu, podhodnotením skutočných chýb. Zmenou intervalov hodnôt, ktorými prekladáme (tie boli rovnaké ako je definičný obor prekladanej funkcie v grafoch 2, 3), môžeme totiž dosiahnuť výrazné zmeny nulových bodov. Prekladanie polynómom iba druhého stupňa tie zrejme nevystihuje správanie okolo nuly dostatočne, no na vyššie stupňe polynómu nemáme dostatok hodnôt ani presnosť.
+
+Hodnoty energie určené pomocou určovania $\mu$ teda pokladáme za presnejšie. Vidíme, že obe žiariče žiarili približne rovnakým počtom častíc (pri chýbajúcom tienení), no tvrdšie žiarenie má asi štvornásobnú maximálnu energiu. 
+
+Vidíme, že hodnoty určené maximálnej energie určené z $R_\beta$ sú podhodnotené oproti hodnotám určenými priamim prekladaním exponenciál. Ide tu o nesprávne určené $R_\beta$. Pri našej presnosti ale ide o dostatočnú zhodu.
+
+Pri meraní s tienením hrubým oloveným plechom sme dostali oveľa menej častíc ako pri vysokých tieneniach hliníkom. Ide tu zrejme o odtienenie $\gamma$ zložky žiarenia, ktorá bola takmer neovplyvnená použitým hliníkom. Preto túto hodnotu nepoužívame ako správnu hodnotu $N_B$ - toto číslo (tak, ako ho používame na prekladanie) obsahuje celé $\gamma$ spektrum.  
+
+Zaujímavé bolo tiež namerať žiarenie bez žiariča (so zavretým oloveným krytom). Toto žiarenie, približne tretina žiarenia tieneného olovom, pochádza zrejme zo zvyškového žiarenia aktivovaného krytu. 
+
+Ďalšiu chybu tiež zaniesol Geiger-M\"ullerov počítač, pretože sme nekorigovali mŕtvu dobu prístroja. 
+
+Na zlepšenie presnosti by bolo treba hlavne dlhšie meranie (už takto bol čas v praktiku takmer naplnený, viz. tab. 2 a hlavne žiarenie pri tienení olovom) a presnejšie určovanie a zvyšovanie tienenia.
+
+%%%
+\section*{Záver}
+Namerali sme závislosť počtu zaregistrovaných častíc za jednotku času od hrúbky tienenia, tab. 1, 2 a graf 1. Určili sme tiež chybu merania, ktorá je v dobrej zhode so strednou chybou Poissonovho rozdelenia (tab. 1).
+
+Preložili sme namerané hodnoty teoretickou závislosťou \ref{eq:teor:abs2} a určili sme počty častíc z jednotlivých žiaričov
+\begin{align*}
+N^{(1)}(0) &= \input{output/N1_fit.tex} \unit{counts/s}\,\\
+N^{(2)}(0) &= \input{output/N2_fit.tex} \unit{counts/s}
+\end{align*}
+a energie spektier, pomocou sklonu exponenciály a tiež maximálneho doletu
+\begin{align*}
+_\mu E^{(1)} &= \input{output/muE1.tex} \unit{MeV}\,,\\
+_\mu E^{(2)} &= \input{output/muE2.tex} \unit{MeV}\,,\\
+_{R_\beta} E^{(1)} &= \input{output/RE1.tex} \unit{MeV}\,,\\
+_{R_\beta} E^{(2)} &= \input{output/RE2.tex} \unit{MeV}\,.
+\end{align*}
+Hodnoty $_\mu E$ považujeme za presnejšie určené.
+%%%
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    Pavel Cejnar, \emph{Študijný text ku úlohe A8}, 1991 \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_408.pdf} 27.10.2013
+
+\bibitem{poisson}
+    Weisstein, Eric W. \emph{Poisson Distribution}, From MathWorld--A Wolfram Web Resource.\\ \url{http://mathworld.wolfram.com/PoissonDistribution.html} 27.10.2013
+\end{thebibliography}
+\end{document}

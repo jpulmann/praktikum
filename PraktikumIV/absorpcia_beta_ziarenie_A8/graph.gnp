@@ -1,0 +1,100 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+set fit quiet
+set samples 1000
+set term epslatex monochrome size 6, 4.3
+set print "output/gnuplot_output.dat"
+set output 'output/counts_graph.tex'
+
+
+f(x) = Nb + N1*exp(-a1*x/1000) + N2*exp(-a2*x/1000)
+
+N1 = 80
+a1 = 5
+
+Nb = 0.1
+N2 = 0
+a2 = 0
+
+fit [200:1200] f(x) 'output/counts_gnp.dat' using 1:5 via N1, a1
+N2 = N1
+a2 = a1
+
+fit [0:200] f(x) 'output/counts_gnp.dat' using 1:5 via N2, a2
+fit [0:1200] f(x) 'output/counts_gnp.dat' using 1:5 via N1, a1, N2, a2, Nb
+
+
+f1(x) = N1*exp(-a1*x/1000)
+f2(x) = N2*exp(-a2*x/1000)
+
+set xlabel '$\rho d\,/\unit{mg\cdot cm^{-2} }$ '
+set ylabel '$N\,/\unit{counts/s}$'
+
+set xrange [-30:1100]
+set yrange [0:180]
+
+plot 'output/counts_gnp.dat' using 1:5:2:6 with xye lw 3 lt 1 ps 3 title 'Namerané hodnoty $N(\rho d)$', \
+    f(x) lw 2 lt 1 title 'Teoretická závislosť  \ref{eq:teor:abs2}', \
+    f1(x) lw 2 lt 2 title 'Časť 1 v \ref{eq:teor:abs2} (index $i=1$ v sume)', \
+    f2(x) lw 2 lt 3 title 'Časť 2 v \ref{eq:teor:abs2} (index $i=2$ v sume)'
+
+print 'NB ', Nb, Nb_err
+print 'N1 ', N1, N1_err
+print 'N2 ', N2, N2_err
+print 'a1 ', a1, a1_err
+print 'a2 ', a2, a2_err
+
+#~ set term wxt
+set output 'output/zero1_gnp.tex'
+#~ set print 
+b=1e-6
+b_err=0
+x0 = 600
+l(x) = a*(x-x0) + b*(x-x0)**2
+
+set xrange [100:1000]
+set yrange [-5:45]
+
+set ylabel '$N_1\,/\unit{counts/s}$'
+
+
+fit [400:1100] l(x) 'output/counts_gnp.dat' using 1:($5 - f2($1)-Nb) via a, b, x0
+
+###
+spacing = 0.08
+tx = 0.3
+ty = 0.8
+set label 1 sprintf('$D_{0,1} = (%1.0f\pm %1.0f) \unit{mg\cdot cm^{-2}}$', x0, x0_err) at graph tx, ty
+set label 2 sprintf('$a_1 = (%1.0f\pm %1.0f) \cdot 10^{-3} \unit{counts\cdot cm^2 \cdot s^{-1}\cdot mg^{-1}}$', a*1e3, a_err*1e3) at graph tx, ty-spacing
+set label 3 sprintf('$b_1 = (%1.0f\pm %1.0f)\cdot 10^{-6} \unit{counts\cdot cm^4 \cdot s^{-1}\cdot mg^{-2}}$', b*1e6, b_err*1e6) at graph tx, ty-2*spacing
+###
+plot 'output/counts_gnp.dat' using 1:($5 - f2($1)-Nb):2:6 w xye  ps 2 lw 3 title 'Spektrum žiariča 1', (x<1100 & x>400)?l(x):(1/0) lw 3 title 'Kvadratická závislosť', \
+f1(x) title 'Časť 1 v \ref{eq:teor:abs2} (index $i=1$ v sume)'
+
+set output 'output/zero2_gnp.tex'
+print 'D01 ', x0, x0_err
+
+b=0.1
+x0 = 80
+set xrange [-2:180]
+set yrange [-5:100]
+set ylabel '$N_2\,/\unit{counts/s}$'
+
+fit [50:140] l(x) 'output/counts_gnp.dat' using 1:($5 - f1($1)-Nb) via a,b,  x0
+
+###
+spacing = 0.08
+tx = 0.4
+ty = 0.8
+set label 1 sprintf('$D_{0,2} = (%1.0f\pm %1.0f) \unit{mg\cdot cm^{-2}}$', x0, x0_err) at graph tx, ty
+set label 2 sprintf('$a_2 = (%1.2f\pm %1.2f) \unit{counts\cdot cm^2 \cdot s^{-1}\cdot mg^{-1}}$', a, a_err) at graph tx, ty-spacing
+set label 3 sprintf('$b_2 = (%1.1f\pm %1.1f) \cdot 10^{-3}\unit{counts\cdot cm^4 \cdot s^{-1}\cdot mg^{-2}}$', b*1e3, b_err*1e3) at graph tx, ty-2*spacing
+###
+
+plot 'output/counts_gnp.dat' using 1:($5 - f1($1)-Nb):2:6 w xye  ps 2 lw 3 title 'Spektrum žiariča 2', (x<140 & x>50)?l(x):(1/0) lw 3 title 'Kvadratická závislosť', \
+f2(x) title 'Časť 2 v \ref{eq:teor:abs2} (index $i=2$ v sume)'
+
+
+print 'D02 ', x0, x0_err
