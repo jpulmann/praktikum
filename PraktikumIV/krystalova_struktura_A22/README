@@ -17,8 +17,8 @@ V priečinku A22 sú všetky možné výstupy z FullProfu, v podpriečinkoch sú
 ##Inštrukcie
 Spúštajte
 ```
->pdflatex ulohaA19.tex
->pdflatex ulohaA19.tex #kvôli citáciám
+>pdflatex ulohaA22.tex
+>pdflatex ulohaA22.tex #kvôli citáciám
 ```
 
 
