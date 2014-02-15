@@ -1,0 +1,267 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=3cm, right=3cm, bottom=3cm, top =3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage[version=3]{mhchem}
+
+
+\usepackage{float}
+\newfloat{graph}{h}{graphs}
+\floatname{graph}{Graf}
+\usepackage{caption}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\newcommand{\dd}{\ensuremath{ \mathrm{d} }}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\di}[1]{\ensuremath{_\mathrm{#1}}}
+
+\begin{document}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\title{Prostorové kvantování magnetického momentu atomu - Sternův-Gerlachův experiment}
+\author{Ján Pulmann}
+\date{22. 11. 2013}
+\maketitle
+%%%
+\section*{Úlohy}
+\begin{enumerate}
+
+	\item Skontrolujte vákuum v aparatúre a pri dosiahnutí potrebného vákua sprevádzkujte detektor iónov a piecku. Sledujte zbytkový prúd detektoru a v prípade potreby vyčistite povrch emisnej elektródy odporúčaným postupom.
+    \item Pomocou súradnicového zapisovača premerajte priestorový profil atómového zväzku pri nulovom magnetickom poli.
+    \item Pomocou súradnicového zapisovača premerajte priestorové profily atómového zväzku pri magnetizačných prúdoch približne $200\unit{mA}$, $300\unit{mA}$, $450\unit{mA}$ a $600\unit{mA}$.
+    \item Z nameraných hodnôt štiepenia zväzku určte hodnotu Bohrovho magnetónu a diskutujte presnosť metódy.
+
+ \end{enumerate}
+ 
+ %%%
+\section*{Teória}
+Príncíp experimentu je postavený na fakte, že na magnetický dipól letiaci magnetickým polom pôsobí sila, rastúca s veľkosťou gradientu tohoto poľa \cite{stud}. Vie sa, že niektoré častice majú dipólový moment, takto ich teda môžeme separovať v závislosti na natočení ich momentu. Klasicky by sme očakávali spojité rozloženie, pretože nabité častice vytvárame náhodne, žhavením látky. Dôležitý dôsledok kvantovej mechaniky ale je, že budeme pozorovať len dve diskrétne hodnoty, prislúchajúce dvom rôznym stavom častice so spinom $\frac 12$. Prvý krát toto správanie pozorovali Stern a Gerlach v roku 1921. \cite{stud}
+
+Stern a Gerlach sledovali priechod atómového zväzku striebra vo vákuu pri prechode nehomogénnym polom. Zväzok potom zaznamenávali na sklenenú dosku za nehomogénnym magnetom. Dôležité je pri pozorovaní použiť nenabitú časticu, nabitá častica by bola oveľa silnejšie ovplyvnená priamo Lorentzovou silou na vlastný náboj. Striebro, aj nami používaný draslík, majú na valenčnej vrstve len jeden elektrón, preto sa nám jeho spinové vlastnosti javia rovnako ako spin daného elektrónu. Zavádzajú sa rôzne veličiny charakterizujúce veľkosť dipólového momentu, pre nás je dôležitý Bohrov magnetón
+
+\begin{equation}
+\label{eq:teor:bohrov_magneton}
+\mu\di B = \frac{e\hbar}{2m\di e}\,,
+\end{equation}
+pomocou ktorého môžeme vyjadriť silu pri poli $(0, 0, B(z))$
+\begin{equation}
+\label{eq:teor:sila}
+F_z = -g\di s m\di s \mu\di B \frac{\partial B}{\partial z}\,,
+\end{equation}
+kde $m\di s$ je hodnota magnetického spinového čísla (v predchádzajúcom vzorci nastáva zrážka notácie, $m\di e$ je hmotnosť elektrónu) a $g\di s$ je takzvaný $g$-faktor elektrónového spinu, ktorého hodnotu určí Diracova relativistická teória elektrónu ako $2$. QED dáva potom korekcie v treťom ráde.
+
+Pre spin $\frac 12$ sú možné hodnoty $m\di s = \pm \frac 12$, teda očakávame rozdvojenie zväzkov (tieto dve hodnoty zodpovedajú rôzmnym \emph{priemetom} momentu do osi $z$). 
+
+Prúd atómov draslíka získavame v piecky rozohriatej na približne $200\unit{^\circ C}$. Ten je tienený viacerými štrbinami, aby sme zaistili jeho rozmery a tiež aby neznečisťoval vnútro aparatúry.
+
+Vákuum je vo vnútri udržované dvoma súpravami od firmy VAKUUM Praha. Pri výmene vzorky treba aparatúru premývať inertným plynom, aby sme zamedzili prístupu uhlovodíkov. Draslík totiž na uhlovodíkoch reaguje oveľa jednoduchšie. Tlak v aparatúre sa pohybuje v okolí $\unit{mPa}$.
+
+Experiment používa elektromagnet na vytvorenie nehomogenity. Jeho pólové nástavce sú umiestnené tak, aby tvorili pole podobné dvom vodičom. Veľkosť magnetickej indukcie v mieste prechodu zväzku $B\di H$ máme nakalibrovanú v praktiku, jej gradient udáva približný vzťah z \cite{stud}
+\begin{equation}
+\label{eq:teor:gradient}
+\left(\frac{\partial B}{\partial z}\right)_{z = 1.3 a} \approx 0.968 \frac{B\di H}{a}\,,
+\end{equation}
+$a$ je polovica vzdialenosti pomyselných vodičov a $z=1.3 a$ je približná poloha zväzku.
+
+Použijeme Lagnmuirov - Taylorov detektor. Hlavná časť je wolfrámové vlákno rozohriate na približne $800\unit{^\circ}$. Wolfrám samotný veľa elektrónov neemituje, no ionizačná energia draslíku je nižšia ako tá wolfrámu a teplota je vhodne nastavená, teda je draslík po chvíli vyparený ako ión. Íony sú potom urýchlované napäťovým rozdielom a detekujeme slabý prúd. Tento prúd prinesieme do zosilovača.
+
+Na spracovanie výsledkov potrebujeme určiť profil zväzku pri vypnutom magnetickom poli. Nech je profil nenulový na intervale vzdialeností $(-D, D)$. Potom ho modelujeme dvoma zbiehavými lineárnymi úsekmi ktoré, vo vzájomnej vzdialenosti $2p$, prechádzajú na parabolu.
+
+Pri rozdvojení pozorujeme dve maximá  na hodnotách súradnice $\pm u\di e$. 
+Ak zavedieme 
+\begin{equation}
+\label{eq:teor:C}
+C := \frac{D^4 - p^4/4}{D^2 - p^2/3}\,,
+\end{equation}
+môžeme vyjadriť závislosť $u\di e$ na ostatných parametroch podľa vzťahu 17 z \cite{ref}
+\begin{equation}
+\label{eq:teor:ue_na_dBz}
+\mu\di B = \frac{2k\di B T}{l L \left(1-\frac{L}{2l}\right)}\frac{3u\di e - \frac{C}{u\di e}}{\frac{\partial{B_z}}{\partial z}}\,.
+\end{equation}
+Nepomenované parametre tu ostali $T$ teplota v piecke, $L$ dĺžka magnetického analyzátoru a $l$ je vzdialenosť začiatku magnetického analyzátoru a roviny detektoru.
+%%%
+\section*{Postup merania}
+\begin{itemize}
+\item Aparatúra musí byť pred meraním pod vákuom. Na začiatku rozohrejeme piecku a pre informáciu sledujeme závislosť nameraného napätia na detektore od teploty piecky. 
+\item Na XY zapisovači nakalibrujeme os X posúvaním detektoru a zaznamenávaním každej celej otáčky machuľou na osi. Celá sústava obsahuje vlnovec, takže môžeme detektor posúvať otáčaním skrutky. 
+\item Pre vypnuté magnetické pole a pre dané magnetizačné prúdy nameriame intenzity na detektore v závislosti na posune detektora.
+\end{itemize}
+\subsection*{Pomôcky}
+Aparatúra s vákuovým odčerpávaním, pieckou, magnetom a detektorom, zdroje a merače (teplota piecky, napätie na zosilovači signálu z detektora, magnetizačný a žhaviaci prúd, kontrola vákuových púmp), XY zapisovač.
+%%%
+\section*{Výsledky merania}
+Namerané a udané veličiny, ktoré potrebujeme pri vyhodnotení, sú
+\begin{align*}
+L &= 70 \unit{mm}\,, \\
+l &= 455 \unit{mm}\,, \\ 
+a &= 2.5 \unit{mm}\,, \\
+\alpha &= 1.8\unit{mm}\; \text{\it posunutie detektoru na jednu otáčku stupnice,}\\
+T &= (175\pm 2) \unit{^\circ C}\,,\\
+\end{align*}
+chyba teploty je odhadnutá z odčítavania na stupnici.
+
+Ďalej sme nameraný XY záznam previedli do počítača. Problém je s nelineárnou osou, preto sme závislosť polohy detektoru na polohe na papieri prekladali kalibračnou funkciou (presnejšie išlo o polynóm 3. stupňa, viz graf \ref{graph:kalibracia}). Namerané závislosti sme prekonvertovali a zaniesli už rovno do grafu \ref{graph:profily}, kde je na osi $x$ priamo otočenie skrutky, pomocou ktorej sme otáčali detektor.
+
+Merali sme 5 meraní, prvé (nazývame \textit{meranie 0}) bez magnetického poľa a potom 4 merania s magnetickým poľom. Pre tieto merania sme určili prúd a magnetické pole s odhadovanou nepresnosťou danou nestabilitou prúdu a odčítavaním z kalibračného grafu pri určovaní indukcie. Podľa vzťahu \ref{eq:teor:gradient} sme určili gradient poľa. Z nameraných dát sme určili polohy maxím. Ich neistoty sme odhadli z intervalu, v ktorom mohlo maximum byť - ide o nadhodnotenie chyby oproti napr. prekladaniu peakov. Hodnoty sme odčítali, vydelili 2 aby sme dostali polohy maxím $\pm u\di e$ a prepočítali na hodnotu v milimetroch pomocou $\alpha$.
+
+Ďalej sme určili hodnoty $D$ a $p$ z grafu \ref{graph:profil}. V miestach, kde sme tieto hodnoty určovali, sú dve priamky. Hlavne priamka pre určenie $p$ nie je presne daná, vybrali sme miesto kde sa preložená kvadratická závislosť vrcholom priamky. Keďže je voľba škály zvislej osi a počiatku ľubovoľná, jediná konštanta fitu, ktorá má výpovednú hodnotu, je poloha maxima kvadratickej závislosti 
+$$
+x_0 = \input{output/c_x0.tex}\,.
+$$
+
+$D$ a $p$ sme určili podľa obrázku 7 z \cite{stud}, neistotu sme odhadli z šírky čiary nameraných dát. Dostávame
+\begin{align*}
+D = \input{output/c_D.tex}\unit{\mu m}\,,\\
+p = \input{output/c_p.tex}\unit{\mu m}\,.
+\end{align*}
+Do grafu \ref{graph:fit} sme vyniesli závislosť výrazu
+$$
+3u\di e - \frac{C}{u\di e}
+$$
+na
+$$
+l L \left(1-\frac{L}{2l}\right)\frac{\partial{B_z}}{\partial z}\,,
+$$
+čo je podľa \ref{eq:teor:ue_na_dBz} priamka so smernicou
+$$\frac{\mu\di B}{2k\di B T}\,.$$
+Táto závislosť je teda preložené v grafe \ref{graph:fit}
+Zo smernice $k$ určíme Bohrov magnetón jednoducho, prenásobením $2k\di B T$
+$$
+\mu\di {B, E} = (\input{output/c_uB.tex})\cdot 10^{-24}\unit{J\cdot T^{-1}}\,.
+$$
+Upozorňujeme ale, že prakticky všetka neistota tejto hodnoty pochádza zo štatistickej neistoty fitovania - neberieme teda ohľad na neistotu prekladaných hodnôt. Tá sa pre hodnoty premennej $Y$ v grafe \ref{graph:fit} pohybuje v rozsahu 7\% až 30\%, Skutočnú relatívnu chybu teda môžeme odhadnúť na celkom vysokých 15\%, čo dáva
+$$
+\mu\di {B, E} = (\input{output/c_uBB.tex})\cdot 10^{-24}\unit{J\cdot T^{-1}}\,.
+$$
+
+Do grafu \ref{graph:ohr} sme pre ilustráciu zaniesli závislosť napätia na detektore častíc na teplote piecky. Závislosť je tiež preložená predpokladanou kvadratickou závislosťou. Hodnoty sú v tabuľke \ref{tab:ohr}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/kalibracia.tex}
+\caption{ Kalibrácia \label{graph:kalibracia}}
+\end{graph}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/vyrovnane.tex}
+\caption{ Profily zväzku pri rôznym poliach \label{graph:profily}}
+\end{graph}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/profil.tex}
+\caption{ Profil zväzku pri absencii poľa - určenie $D$ a $p$ \label{graph:profil}}
+\end{graph}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/ub.tex}
+\caption{ Určenie Bohrovho magnetónu zo vzťahu \ref{eq:teor:ue_na_dBz} \label{graph:fit}}
+\end{graph}
+
+\begin{graph}[t]
+\centering
+\vspace*{-15pt}
+\input{output/ohr.tex}
+\caption{ Ohrievanie piecky \label{graph:ohr}}
+\end{graph}
+
+
+\begin{table}[t]
+\centering
+%~ \hspace*{30pt}
+\begin{tabular}{c|c|c|c|c|c|c}
+Meranie & 
+$I/\unit{mA}$&
+$B\di H\,/\unit{T}$&
+$\frac{\partial{B_z}}{\partial z}\,/\unit{T\cdot m^{-1}}$&
+1. maximum &
+2. maximum& 
+$u\di e\,/\unit{mm}$
+\\
+\midrule 
+\input{output/tab_maxima.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Namerané prúdy a príslušné maximá intenzity lúča draslíka\label{tab:maxima}}
+\end{table}
+
+\begin{table}[t]
+\centering
+\hspace*{60pt}
+\begin{tabular}{c|c}
+teplota $t\,/\unit{^\circ C}$ & 
+$U\,/\unit{V}$
+\\
+\midrule 
+\input{data/zohr.tex}
+\end{tabular}
+\newline
+\vspace*{2pt}
+\caption{Nameraný signál detektoru pri teplotách piecky $t$ \label{tab:ohr}}
+\end{table}
+%%%
+\section*{Diskusia}
+Kalibrácia bola pomerne presná, štatistické neistoty parametrov prekladania boli nízke jednotky percent.
+
+Namerané hodnoty sú pomerne zašumené, čo môžeme vidieť v grafe \ref{graph:profily}. Malé ostré hrany sú spôsobené chybným detektorom či zosilovačom. Šum bol spôsobený menšou intenzitou prúdu draslíka, zásobník už bol starší. 
+
+Na profiloch tiež vidíme asymetriu profilov, aj v neštiepenom profile (rôzne sklony), aj v rôznych výškach rozštiepených peakov. To môže byť čiastočne spôsobené tým, že profil mohol byť nastavovaný pri použití nelineárnej stupnice prevodníku zo skrutky na napätie.
+
+Pri ohrievaní sme potvrdili exponenciálnu závislosť (podľa dozoru na praktiku), hoci zhoda nie je dokonalá. 
+
+Najväčší zdroj chyby mohlo do merania zaniesť určenie hodnôt $p$ a $D$. Hlavne hodnota $p$ môže byť určená s veľkou ľubovôľou. 
+
+Ďalšie neistoty sú spôsobené určovaním maxím a tiež neistotami kvôli kalibrácii a odčítaniu (pri dosadzovaní do vzťahov, ako napr. prepočet z polohy na papieri na polohu na osi, sme vždy chyby prenášali podľa vzťahu o prenose do prvého rádu podľa prvých parciálnych derivácií). 
+
+Napriek tomu je experimentálna hodnota Bohrovo magnetónu celkom presná - tabuľková hodnota je podľa \cite{bohr}
+$$
+\mu\di B = 9.274 \cdot 10^{-24} \unit{J\cdot T^{-1}}\,.
+$$
+Zaujímavé je, že ak priamku v \ref{graph:fit} prekladáme aj s konštantným členom, dostaneme presnejšiu hodnotu 
+$$
+\mu\di {B, E} = (\input{output/c_uB_const.tex})\unit{J\cdot T^{-1}}\,,
+$$
+hoci s väčšou štatistickou odchýľkou. Ide ale zrejme iba o náhodu, keďže je meranie zaťažené podstatnou chybou
+
+Existuje viacero spôsobov ako spresniť meranie. Vhodné by bolo namerať polohy viac štiepení ako 4, ako sme robili. Meranie by sme mohli zjednodušiť, ak by sme merali len okolie maxima. XY zapisovač by sme mohli nahradiť niečím bez takej veľkej doby odozvy.
+
+Ďalšia možnosť je skôr o spracovaní, ak sme totiž presne namerali profil neštiepeného zväzku, môžeme spočítať podľa \cite{stud} ako by mali vyzerať rozštiepené profily a porovnávať s nameranými hodnotami.
+%%%
+\section*{Záver}
+Namerali sme profily zväzku atómov draslíka pri rôznych gradientoch magnetického poľa a určili sme ich parametre (grafy \ref{graph:kalibracia}, \ref{graph:profil}, \ref{graph:profily}, tabuľka \ref{tab:maxima}). Prekladaním sme potom v grafe \ref{graph:fit} určili hodnotu Bohrovho magnetónu ako
+$$
+\mu\di {B, E} = (\input{output/c_uBB.tex})\cdot 10^{-24}\unit{J\cdot T^{-1}}\,.
+$$
+Táto hodnota je v zhode s tabuľkovou hodnotou, hoci len vďaka benevolentnému zvoleniu neistoty.
+
+Tiež sme pre ilustráciu vykreslili a prekladali závislosť intenzity draslíkového zväzku na teplote piecky, graf \ref{graph:ohr} a tabuľka \ref{tab:ohr}.
+
+%%%
+\begin{thebibliography}{9}
+
+\bibitem{stud}
+    \emph{Študijný text ku úlohe A11} \\
+    \url{http://physics.mff.cuni.cz/vyuka/zfp/_media/zadani/texty/txt_411.pdf} 22.11.2013
+
+\bibitem{bohr}
+    ,,CODATA value: Bohr magneton". \textit{The NIST Reference on Constants, Units, and Uncertainty} \url{http://physics.nist.gov/cgi-bin/cuu/Value?mub} 29. 11. 2013
+
+\end{thebibliography}
+\end{document}

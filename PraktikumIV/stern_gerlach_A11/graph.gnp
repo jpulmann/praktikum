@@ -1,0 +1,121 @@
+
+#####Kalibracia
+reset
+set fit errorvariables
+set fit quiet
+set samples 1000
+set print "output/gnuplot_output.dat"
+#~ set border linewidth 1.5
+
+set term epslatex monochrome size 6, 4
+
+set output 'output/kalibracia.tex'
+
+set output 'output/kalibracia.tex'
+
+f(x)  = a + b*x + c*x**2 + d*x**3
+fit f(x) 'output/kalibracia.dat' using 3:1 via a, b, c, d
+print 'a1 ', a, a_err
+print 'b1 ', b, b_err
+print 'c1 ', c, c_err
+print 'd1 ', d, d_err
+
+tx = 0.6
+ty = 0.3
+spacing = 0.06
+
+set label 1 sprintf('$a = (%1.3f\pm %1.3f)$', a, a_err) at graph tx, ty
+set label 2 sprintf('$b = (%1.2f\pm %1.2f)\cdot 10^{-3}$', b*1e3, b_err*1e3) at graph tx, ty-spacing
+set label 3 sprintf('$c = (%1.2f\pm %1.2f)\cdot 10^{-6}$', c*1e6, c_err*1e6) at graph tx, ty-2*spacing
+set label 4 sprintf('$d = (%1.3f\pm %1.3f)\cdot 10^{-9}$', d*1e9, d_err*1e8) at graph tx, ty-3*spacing
+
+set xlabel 'Poloha na papieri v px'
+set ylabel 'Poloha skrutky'
+plot 'output/kalibracia.dat' using 3:1 ps 2 lw 2 title 'Body na stupnici $x$' , f(x) title 'Fit kubickým polynómom $a + bx + cx^2+dx^3$'
+
+set xlabel 'Poloha stupnice skrutky $x$'
+set ylabel 'Intenzita na detektore'
+
+set yrange [0:8000]
+g(x) = aa*x + bb
+fit g(x) 'output/kalibracia.dat' using 3:2 via aa, bb
+print 'aa ', aa, aa_err
+print 'bb ', bb, bb_err
+unset label
+#~ quit
+set output 'output/vyrovnane.tex' 
+set term epslatex color colortext size 6, 4
+set style line 1 lc rgb '#ECD078' lt 1 lw 2
+set style line 2 lc rgb '#D95B43' lt 1 lw 2
+set style line 3 lc rgb '#C02942' lt 1 lw 2
+set style line 4 lc rgb '#ffa500' lt 1 lw 2
+set style line 5 lc rgb '#542437' lt 1 lw 2
+set style line 6 lc rgb '#53777A' lt 1 lw 2
+
+start = 3350
+step = 1000
+plot 'output/norm_s0.dat' using 1:((start-$3)*2 + 0*step)  every 10 w lines ls 1 lw 2  title 'Meranie 0',\
+ 'output/norm_s1.dat' using 1:((start-$3)*2 +1*step)  every 10 w lines ls 2 lw 2 title 'Meranie 1',\
+ 'output/norm_s2.dat' using 1:(start-$3 +2*step)  every 10 w lines ls 3 lw 2 title 'Meranie 2',\
+ 'output/norm_s3.dat' using 1:(start-$3 + 3*step )  every 10 w lines ls 4 lw 2 title 'Meranie 3',\
+ 'output/norm_s4.dat' using 1:(start-$3 + 4*step)  every 10 w lines ls 5 lw 2 title 'Meranie 4'
+
+set output 'output/profil.tex' 
+
+set xlabel 'Poloha stupnice skrutky $x$'
+set ylabel 'Intenzita na detektore'
+
+set xrange [4:7]
+set yrange [0:8000]
+
+g2(x) = a2*x+b2
+g1(x) = a1*x+b1
+
+fit [5.75:6.0] g2(x) 'output/norm_s0.dat' using 1:((start-$3)*2 + 0*step) via a2, b2
+fit [5.1:5.6] g1(x) 'output/norm_s0.dat' using 1:((start-$3)*2 + 0*step) via a1, b1
+
+c(x) = a3*(x-x0)**2 + b3
+a3 = -27573.813
+x0 = 5.671
+b3 = start-508.54
+
+line(x) = (start-713)*2
+line2(x) = (start-2900)*2
+
+fit [5.5:5.8] c(x) 'output/norm_s0.dat' using 1:((start-$3)*2 + 0*step) via a3, b3, x0
+plot 'output/norm_s0.dat' using 1:((start-$3)*2 + 0*step) every 5 w lines ls 1 lw 1  title 'Profil', g1(x) ls 3 lw 3 notitle, g2(x) ls 3 lw 3 notitle, c(x) ls 5 lw 3 notitle, line(x) ls 2 notitle, line2(x) ls 2 notitle
+
+print 'x0 ', x0, x0_err
+set output 'output/ub.tex'
+set xlabel '$\left[X:= l L \left(1-\frac{L}{2l}\right)\frac{\partial{B_z}}{\partial z}\right]\,/\unit{T\cdot m}$'
+set ylabel '$\left[Y:=3u\di e - \frac{C}{u\di e}\right]\,/\unit{m}$'
+
+#~ set format y '$%.2t \cdot 10^{%+03T}$'
+set xrange [*:*]
+set yrange [*:*]
+ls(x) = ub*x 
+fit ls(x) 'output/tofit.dat' using 1:($3) via ub
+print 'ub ', ub, ub_err
+con = 1.38e-23*448*2
+print ub*con
+tx = 0.7
+ty = 0.15
+spacing = 0.06
+set label 1 sprintf('$k = (%1.2f\pm %1.2f)\unit{mT}$', ub*1e3, ub_err*1e3) at graph tx, ty
+plot 'output/tofit.dat' using 1:($3):2:($4) with xyerrorbars lc rgb 'black' title 'Namerané hodnoty štiepenia zväzku', ls(x) ls 3 title 'Závislosť $Y = k X$'
+
+set output 'output/ohr.tex'
+unset label
+set xlabel 'Teplota $t \,/\unit{^\circ C}$'
+set ylabel 'Signál na detektore $U\,/\unit{V}$'
+f(x) = a*exp(x/b)
+b = 100
+a = 0.05
+fit f(x) 'data/zohr.dat' via a, b
+tx = 0.6
+set label 1 sprintf('$A = (%1.1f\pm %1.1f)\unit{mV}$', a*1000, a_err*1000) at graph tx, ty
+set label 2 sprintf('$t_0 = (%1.0f\pm %1.0f)\unit{^\circ C^{-1}}$', b, b_err) at graph tx, ty-spacing
+
+
+plot 'data/zohr.dat' ps 3 lw 3 title 'Namerané $U(t)$', f(x)  ls 3 lw 3 title 'Fit $U(t)= Ae^{t/t_0}$'
+

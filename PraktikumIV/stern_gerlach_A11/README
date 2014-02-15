@@ -1,0 +1,17 @@
+##Body 
+20
+##Komentáre v protokole
+--- protokol sa ku mne nedostal
+##Moje komentáre
+Pekné meranie, hlavne z historického hladiska. Spracovanie som si skomplikoval
+kalibráciou stupnice a skenovaním nameraných grafov.
+
+Hodnotu c_uB_const.tex som získal ručne, fitovaním so spomínanou konštantnou.
+##Inštrukcie
+Spúštajte
+```
+>python process.py #trvá to pár minút
+>gnuplot graph.gnp
+>pdflatex ulohaA11.tex
+>pdflatex ulohaA11.tex #kvôli citáciám
+```
